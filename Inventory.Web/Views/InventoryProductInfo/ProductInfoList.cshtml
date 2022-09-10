@@ -1,0 +1,70 @@
+﻿@model Inventory.CommonViewModels.InventoryVM
+@{
+    ViewBag.Title = "ProductInfoList";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script src="~/Scripts/CustomScripts/Inventory_table-managed.js"></script>
+
+<!-- END SAMPLE FORM PORTLET-->
+<div class="portlet box green">
+    <div class="portlet-title">
+        <div class="caption">
+            ProductInfo List
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse">
+            </a>
+            <a href="#portlet-config" data-toggle="modal" class="config">
+            </a>
+            <a href="javascript:;" class="reload">
+            </a>
+            <a href="javascript:;" class="remove">
+            </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <table class="table table-striped table-bordered table-hover" id="InventoryProductInfoList">
+            <thead>
+                <tr>
+                    <th>
+                        Item
+                    </th>
+                    <th>
+                        Category
+                    </th>
+                    <th>
+                        Edit
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.InventoryProductList)
+                {
+                    <tr class="odd gradeX">
+                        <td>
+                            @item.Name
+                        </td>
+                        <td>
+                            @item.CategoryName
+                        </td>
+                        <td>
+                            @*<a href="/Vendor/NewVendorInfo?venderID=@item.VendorId" id="VendorId" class="edit">Edit</a>*@
+                            <a href="Javascript(0)" class="edit">Edit</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+@*<script>
+    jQuery(document).ready(function () {
+        TableManaged.init();
+    });
+</script>*@
+
+

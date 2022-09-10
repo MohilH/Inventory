@@ -1,0 +1,17 @@
+﻿@model Inventory.CommonViewModels.InventoryVM
+
+<form id="frm_AddNewCategory">
+        <div class="form-group">
+            <div class="close_icon">
+                <span><i class="fa fa-times" aria-hidden="true" onclick="HidePopupFrame();"></i></span>
+            </div>
+            <label class="col-md-3 control-label">Add Category</label>
+            <div class="col-md-9">
+                @Html.TextBoxFor(Model => Model.InventoryProductDetails.CategoryId, new { @class = "form-control", @placeholder = "Category Name", @id = "txt_Category", @maxlength = "150" })
+            </div>
+        </div>
+        <div class="btn_CategoryPopUp">
+            <input type="button" class="btn btn-primary" value="Save" id="btn_SaveAddCategoryPopup">
+            <input type="button" class="btn btn-primary" onclick="HidePopupFrame();" value="Cancel" id="btn_CancelAddCategoryPopup">
+        </div>
+</form>

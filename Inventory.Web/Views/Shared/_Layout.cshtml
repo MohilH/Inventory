@@ -1,0 +1,354 @@
+﻿<!DOCTYPE html>
+<html>
+
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>Inventory | @ViewBag.Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>*@
+    <script src="~/Content/assets/global/plugins/jquery-1.11.0.min.js"></script>
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/uniform/css/uniform.default.css" rel="stylesheet" />
+    <link href="~/Content/assets/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" />
+    @*<link href="~/Content/assets/global/plugins/bootstrap-editable/bootstrap-editable/css/bootstrap-editable.css" rel="stylesheet" />*@
+    <link href="~/Content/assets/global/plugins/select2/select2.css" rel="stylesheet" />
+    <link href="~/Content/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css" rel="stylesheet" />
+
+    <link href="~/Content/assets/components.css" rel="stylesheet" />
+    <link href="~/Content/assets/plugins.css" rel="stylesheet" />
+    <link href="~/Content/assets/layout.css" rel="stylesheet" />
+    <link href="~/Content/assets/default.css" rel="stylesheet" />
+    <link href="~/Content/assets/custom.css" rel="stylesheet" />
+    <link href="~/Content/CommonCss/Common.css" rel="stylesheet" />  <!--24052017 -->
+    <style>
+        .portlet-tabs {
+            width: 1000px;
+            float: right;
+        }
+
+            .portlet-tabs > .nav-tabs > li {
+                float: left;
+            }
+
+            .portlet-tabs > .nav-tabs {
+                top: 0;
+            }
+
+        .page-logo h3 {
+            margin: 10px 0;
+        }
+    </style>
+
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
+    @*<!-- END GLOBAL MANDATORY STYLES -->
+        <!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
+        <link href="~/Content/LayoutPluginStyle/jquery.gritter.css" rel="stylesheet" />
+        <link href="~/Content/LayoutStyle/datepicker3.css" rel="stylesheet" />
+        <link href="~/Content/LayoutPluginStyle/daterangepicker-bs3.css" rel="stylesheet" />
+        <link href="~/Content/LayoutPluginStyle/fullcalendar.css" rel="stylesheet" />
+        <link href="~/Content/LayoutPluginStyle/jqvmap.css" rel="stylesheet" />
+        <!-- END PAGE LEVEL PLUGIN STYLES -->
+        <!-- BEGIN PAGE STYLES -->
+
+        <link href="~/Content/LayoutStyle/tasks.css" rel="stylesheet" />
+        <!-- END PAGE STYLES -->
+
+        <link rel="shortcut icon" href="favicon.ico" />*@
+
+    @*@Styles.Render("~/Content/css")*@
+    @*@Scripts.Render("~/bundles/modernizr")*@
+
+</head>
+<!-- END HEAD -->
+
+<body class="page-header-fixed page-quick-sidebar-over-content">
+
+    <!-- BEGIN HEADER -->
+    <div class="page-header navbar navbar-fixed-top">
+        <!-- BEGIN HEADER INNER -->
+        <div class="page-header-inner">
+            <!-- BEGIN LOGO -->
+            <div class="page-logo">
+                <h3 style="color:white">Inventory</h3>
+                <div class="menu-toggler sidebar-toggler hide">
+
+                    <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+                </div>
+            </div>
+            <!-- END LOGO -->
+            <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+            <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+            </a>
+            <!-- END RESPONSIVE MENU TOGGLER -->
+
+        </div>
+        <!-- END HEADER INNER -->
+    </div>
+
+    <div class="clearfix">
+    </div>
+
+    <!-- BEGIN SIDEBAR -->
+    <div class="page-container">
+        <!-- BEGIN SIDEBAR -->
+        <div class="page-sidebar-wrapper">
+            <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+            <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+            <div class="page-sidebar navbar-collapse collapse">
+                <!-- BEGIN SIDEBAR MENU -->
+                <ul class="page-sidebar-menu " data-auto-scroll="true" data-slide-speed="200">
+                    <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
+                    @*<li class="sidebar-toggler-wrapper">          ///////17052017(D)////////
+        <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+        <div class="sidebar-toggler">
+        </div>
+        <!-- END SIDEBAR TOGGLER BUTTON -->
+    </li>*@
+                    <!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
+
+                    <li class="start ">
+                        <a href="javascript:;">
+                           
+                            <i class="fa fa-user-circle"></i>
+                            <span class="title">VENDOR</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="/Vendor/NewVendorInfo">
+                                    <i class="fa fa-user-plus"></i>
+                                    New Vendor
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Vendor/VendorList">
+                                    <i class="fa fa-list" aria-hidden="true"></i>
+                                    Vendor List
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="icon-basket"></i>
+                            <span class="title">PURCHASE ORDER</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="/PurchaseOrder/AddPurchaseOrder">
+                                    <i class="icon-basket"></i>
+                                    New Purchase Order
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/PurchaseOrder/PurchaseOrdeList">
+                                    <i class="fa fa-list" aria-hidden="true"></i>
+                                    Purchase Order List
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i class="icon-home"></i>
+                            <span class="title">INVENTORY</span>
+                            <span class="selected"></span>
+                            <span class="arrow open"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="/InventoryProductInfo/AddNewProductInfo">
+                                    New Product
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/InventoryProductInfo/ProductInfoList">
+                                    <i class="fa fa-list" aria-hidden="true"></i>
+                                    ProductInfoList
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a href="layout_blank_page.html">
+                                    Current Stock
+                                </a>
+                            </li>
+                            <li>
+                                <a href="layout_boxed_page.html">
+                                    Adjust Stock
+                                </a>
+                            </li>
+                            <li>
+                                <a href="layout_boxed_page.html">
+                                    Reorder Stock
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <!-- BEGIN FRONTEND THEME LINKS -->
+                    <li>
+                        <a href="javascript:;">
+                            <i class="icon-star"></i>
+                            <span class="title">
+                                SALES ORDER
+                            </span>
+                            <span class="arrow">
+                            </span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="layout_horizontal_sidebar_menu.html">
+                                    New Order   
+                                </a>
+                            </li>
+                            <li>
+                                <a href="layout_horizontal_sidebar_menu.html">
+                                    Order List
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- END FRONTEND THEME LINKS -->
+                    <li>
+                        <a href="javascript:;">
+                            <i class="fa fa-male" aria-hidden="true"></i>
+                            <span class="title">CUSTOMER</span>
+                            <span class="arrow "></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="ui_general.html">
+                                    <i class="fa fa-male" aria-hidden="true"></i>
+                                    New Customer
+                                </a>
+                            </li>
+                            <li>
+                                <a href="ui_buttons.html">
+                                    <i class="fa fa-users" aria-hidden="true"></i>
+                                    Customer List
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- END SIDEBAR MENU -->
+            </div>
+        </div>
+        <!-- Common Div for Pop Up Start here -->
+        <div id="DivCommonPoupDiv" class="overlay" style="display: none;">     <!--24052017 -->
+            <div id="DivPoupContantContainer" class="pop_container wdt_70prc">
+                <div id="DivPoupContant" class="panel-body">
+                </div>
+            </div>
+        </div>
+        <!-- Common Div for Pop Up End here -->
+        <!-- END SIDEBAR -->
+        <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper">
+            <div class="page-content">
+                @RenderBody()
+            </div>
+        </div>
+        <!-- END CONTENT -->
+    </div>
+    <!-- END CONTAINER -->
+    <!-- BEGIN FOOTER -->
+    <div class="page-footer">
+        <div class="page-footer-inner">
+            @DateTime.Now.Year &copy; Inventory.
+        </div>
+        <div class="page-footer-tools">
+            <span class="go-top">
+                <i class="fa fa-angle-up"></i>
+            </span>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    <script src="~/Content/assets/global/plugins/jquery-migrate-1.2.1.min.js"></script>
+
+    <script src="~/Content/assets/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="~/Content/assets/global/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+
+    <script src="~/Content/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="~/Content/assets/global/plugins/jquery.blockui.min.js"></script>
+    <script src="~/Content/assets/global/plugins/jquery.cokie.min.js"></script>
+    <script src="~/Content/assets/global/plugins/uniform/jquery.uniform.min.js"></script>
+    <script src="~/Content/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+
+    <script src="~/Content/assets/global/plugins/select2/select2.min.js"></script>
+    <script src="~/Content/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="~/Content/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
+
+    <!-- END CORE PLUGINS -->
+    <script src="~/Content/assets/metronic.js"></script>
+    <script src="~/Content/assets/layout.js"></script>
+    <script src="~/Content/assets/quick-sidebar.js"></script>
+    <script src="~/Content/assets/demo.js"></script>
+    @*<script src="~/Content/assets/table-managed.js"></script>*@
+
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <script src="~/Scripts/LayoutScripts/jquery.flot.min.js"></script>
+    <script src="~/Scripts/LayoutScripts/jquery.flot.resize.min.js"></script>
+    <script src="~/Scripts/LayoutScripts/jquery.flot.categories.min.js"></script>
+    <script src="~/Scripts/LayoutScripts/jquery.pulsate.min.js"></script>
+    <script src="~/Scripts/LayoutScripts/moment.min.js"></script>
+    <script src="~/Scripts/LayoutScripts/daterangepicker.js"></script>
+    <script src="~/Scripts/LayoutScripts/bootstrap-datepicker.js"></script>
+
+    <!-- IMPORTANT! fullcalendar depends on jquery-ui-1.10.3.custom.min.js for drag & drop support -->
+
+    <script src="~/Scripts/LayoutScripts/fullcalendar.min.js"></script>
+    <script src="~/Scripts/LayoutScripts/jquery.easypiechart.min.js"></script>
+    <script src="~/Scripts/LayoutScripts/jquery.sparkline.min.js"></script>
+    <script src="~/Scripts/LayoutScripts/jquery.gritter.js"></script>
+
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+
+    <script src="~/Scripts/CustomScripts/maskedinput.js"></script>
+    <script src="~/Scripts/CustomScripts/maskedinput.min.js"></script>
+    <script src="~/Scripts/CustomScripts/Common.js"></script>
+    <script src="~/Scripts/LayoutScripts/index.js"></script>
+    <script src="~/Scripts/LayoutScripts/tasks.js"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->
+
+   
+  
+    <script>
+        jQuery(document).ready(function () {
+            $("#txt_PhoneNo").mask('999-999-9999');
+            $("#txt_PhoneNo_PO").mask('999-999-9999');
+            Metronic.init(); // init metronic core componets
+            Layout.init(); // init layout
+            QuickSidebar.init() // init quick sidebar
+            Index.init();
+            Index.initDashboardDaterange();
+            Index.initCalendar(); // init index page's custom scripts
+            Index.initCharts(); // init index page's custom scripts
+            Index.initChat();
+            Index.initMiniCharts();
+            Index.initIntro();
+            Tasks.initDashboardWidget();
+            Demo.init();
+            //TableManaged.init();
+            //TableEditable.init();
+        });
+    </script>
+    <!-- END JAVASCRIPTS -->
+</body>
+</html>

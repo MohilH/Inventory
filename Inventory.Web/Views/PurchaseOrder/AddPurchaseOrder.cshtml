@@ -1,0 +1,612 @@
+﻿@model  Inventory.CommonViewModels.PurchaseOrderVM
+
+@{
+
+    //ViewBag.Title = "PurchaseOrdeList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+
+}
+<script src="~/Scripts/CustomScripts/jquery.toaster.js"></script>
+
+<script src="~/Scripts/CustomScripts/PurchaseOrder.js"></script>
+<style>
+    .partialDiv {
+        box-shadow: 10px 10px 5px #888888;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #c1baba;
+    }
+
+    .table {
+        height: 180px;
+    }
+
+    .nonHeader th {
+        font-weight: normal !important;
+    }
+
+    .saveBtnMargin {
+        margin-right: 20px;
+    }
+
+    .label_padd .form-group label.col-md-3.control-label {
+        text-align: left !important;
+        margin-left: 10px;
+    }
+</style>
+
+
+<div class="row">
+
+    <div class="col-md-12">
+        <div class="tabbable tabbable-custom tabbable-full-width">
+
+            <form class="form-horizontal" id="frm_AddPurchaseOrder">
+
+                <div class="partialDiv">
+                    @Html.Partial("_PurchaseOrderHeader", Model)
+
+                </div>
+                <br />
+
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a data-toggle="tab" id="purchaseOrderItem_tabId" name="purchase" href="#purchaseOrderItem_tab">
+                            PURCHASE
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="tab" id="receiveItem_tabId" name="receive" href="#purchaseOrderReceiveItem_tab">
+                            Receive
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="tab" id="returnItem_tabId" name="return" href="#purchaseOrderReturnItem_tab">
+                            Return
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="tab" id="unstockItem_tabId" name="unstock" href="#purchaseOrderUnstockItem_tab">
+                            Unstock
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+
+                    @*tab-pane active*@
+                    <div id="purchaseOrderItem_tab" class="tab-pane active">
+
+                        @if (Model.PurchaseOrderDetails != null)
+                        {
+                            @Html.Partial("_PurchaseOrderItemGrid", Model)
+                        }
+                        else
+                        {
+                            @Html.Partial("_PurchaseOrderAddNewItemGrid", Model)
+                        }
+
+
+
+                        <div class="portlet-body form">
+
+                            <div id="footer" class="partialDiv">
+
+                                <div class="portlet-body form">
+                                    <div class="form-horizontal">
+                                        <div class="form-body">
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <div class="label_padd">
+                                                        <div id="CarrierDiv" class="form-group">
+                                                            <label class="col-md-3 control-label">Carrier</label>
+                                                            <div class="col-md-8">
+                                                                @Html.TextBoxFor(x => x.PurchaseOrderDetails.Carrier, new { placeholder = "Carrier", @class = "form-control input-sm", @id = "txt_Carrier_PO" })
+
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label">Currency</label>
+                                                            <div class="col-md-8">
+
+                                                                @Html.DropDownListFor(x => x.PurchaseOrderDetails.CurrencyId, new SelectList(Model.VendorCurrencyList, "CurrencyId", "Description"), "Select Currency", new { @id = "ddl_CurrencyId_PO", @class = "form-control input-sm" })
+
+
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label">Due Date</label>
+                                                            <div class="col-md-8">
+                                                                @if (Model.PurchaseOrderDetails != null)
+                                                                {
+                                                                    @Html.TextBoxFor(x => x.PurchaseOrderDetails.DueDate, string.Format("{0:d}", Model.PurchaseOrderDetails.DueDate), new { @id = "txt_DueDate_datepicker_PO", placeholder = "DueDate", @class = "form-control datepicker input-sm" })
+                                                                }
+                                                                else
+                                                                {
+                                                                    @Html.TextBoxFor(x => x.PurchaseOrderDetails.DueDate, new { @id = "txt_DueDate_datepicker_PO", placeholder = "DueDate", @class = "form-control datepicker input-sm" })
+                                                                }
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label">Taxing Scheme</label>
+                                                            <div class="col-md-8">
+
+                                                                @Html.DropDownListFor(x => x.PurchaseOrderDetails.TaxingSchemeId, new SelectList(Model.VendorTaxingSchemeList, "TaxingSchemeId", "Name"), "Select Tax", new { @id = "ddl_TaxingSchemeId_PO", @class = "form-control input-sm" })
+
+
+                                                            </div>
+
+
+                                                        </div>
+
+
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <div class="label_padd">
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label">R.Ship Date</label>
+                                                            <div class="col-md-8">
+                                                                @if (Model.PurchaseOrderDetails != null)
+                                                                {
+                                                                    @Html.TextBoxFor(x => x.PurchaseOrderDetails.RequestShipDate, string.Format("{0:d}", Model.PurchaseOrderDetails.RequestShipDate), new { @id = "txt_RequestShipDate_datepicker_PO", placeholder = "ShipDate", @class = "form-control datepicker input-sm" })
+
+                                                                }
+                                                                else
+                                                                {
+                                                                    @Html.TextBoxFor(x => x.PurchaseOrderDetails.RequestShipDate, new { @id = "txt_RequestShipDate_datepicker_PO", placeholder = "ShipDate", @class = "form-control datepicker input-sm" })
+
+                                                                }
+
+
+                                                            </div>
+
+
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label">Remark</label>
+                                                            <div class="col-md-8">
+
+                                                                @Html.TextAreaFor(x => x.PurchaseOrderDetails.OrderRemarks, new { @id = "txt_OrderRemarks_PO", rows = 2, placeholder = "", @class = "form-control" })
+
+
+                                                            </div>
+
+
+
+
+                                                        </div>
+
+
+                                                        <div class="form-group">
+                                                            @if (Model.PurchaseOrderDetails != null)
+                                                            {
+                                                                <div class="col-md-8" style=" margin: 10px 0px 0px 116px ;">
+
+                                                                    <button type="button" id="btnFullfilled" class="btn btn-warning fullFilledBtn">Fullfilled</button>
+                                                                    <button type="button" id="btnUnfullfilled" class="btn hidden fullFilledBtn">Unfullfilled</button>
+                                                                    <button type="button" id="btnPay" class="btn btn-warning PayBtn">Pay</button>
+                                                                    <button type="button" id="btnUnpay" class="btn hidden PayBtn">Unpay</button>
+                                                                </div>
+                                                            }
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="col-md-8" style=" margin: -5px 0px 0px 116px;">
+
+                                                                @if (Model.PurchaseOrderDetails != null)
+                                                                {
+                                                                    <button type="button" id="" class="PurchaseOrderDataSave btn green">Update</button>
+
+                                                                }
+                                                                else
+                                                                {
+                                                                    <button type="button" id="" class="PurchaseOrderDataSave btn green">Save</button>
+
+                                                                }
+
+                                                            </div>
+
+                                                        </div>
+
+
+
+
+
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="col-sm-4">
+
+                                                    <div class="label_padd">
+
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label">Sub-Total</label>
+                                                            <div class="col-md-8">
+                                                                @if (Model.PurchaseOrderDetails != null)
+                                                                {
+                                                                    @Html.TextBoxFor(x => x.PurchaseOrderDetails.OrderSubTotal, new { Value = String.Format("{0:0.00}", Model.PurchaseOrderDetails.OrderSubTotal), id = "txt_CompleteGridItemOrderSubTotal_PO", placeholder = "", @class = "form-control input-sm ", disabled = "true" })
+
+
+                                                                }
+                                                                else
+                                                                {
+                                                                    @Html.TextBoxFor(x => x.PurchaseOrderDetails.OrderSubTotal, new { id = "txt_CompleteGridItemOrderSubTotal_PO", placeholder = "", @class = "form-control input-sm ", disabled = "true" })
+
+
+                                                                }
+
+                                                            </div>
+                                                        </div>
+                                                        <div id="FreightDiv" class="form-group">
+                                                            <label class="col-md-3 control-label">Freight</label>
+                                                            <div class="col-md-8">
+                                                                @if (Model.PurchaseOrderDetails != null)
+                                                                {
+                                                                    @Html.TextBoxFor(x => x.PurchaseOrderDetails.Freight, new { Value = String.Format("{0:0.00}", Model.PurchaseOrderDetails.Freight), @id = "txt_Freight_PO", placeholder = "", @class = "GridDigit form-control input-sm" })
+
+
+                                                                }
+                                                                else
+                                                                {
+                                                                    @Html.TextBoxFor(x => x.PurchaseOrderDetails.Freight, new { @id = "txt_Freight_PO", placeholder = "", @class = "GridDigit form-control input-sm" })
+
+
+                                                                }
+
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label">Total</label>
+                                                            <div class="col-md-8">
+                                                                @if (Model.PurchaseOrderDetails != null)
+                                                                {
+                                                                    @Html.TextBoxFor(x => x.PurchaseOrderDetails.OrderTotal, new { Value = String.Format("{0:0.00}", Model.PurchaseOrderDetails.OrderTotal), id = "txt_OrderTotal_PO", placeholder = "$0.00", @class = "form-control input-sm ", disabled = "true" })
+
+
+                                                                }
+                                                                else
+                                                                {
+                                                                    @Html.TextBoxFor(x => x.PurchaseOrderDetails.OrderTotal, new { id = "txt_OrderTotal_PO", placeholder = "$0.00", @class = "form-control input-sm ", disabled = "true" })
+
+
+                                                                }
+
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label">Paid</label>
+                                                            <div class="col-md-8">
+
+                                                                @if (Model.PurchaseOrderDetails != null)
+                                                                {
+                                                                    @Html.TextBoxFor(x => x.PurchaseOrderDetails.AmountPaid, new { Value = String.Format("{0:0.00}", Model.PurchaseOrderDetails.AmountPaid), @id = "txt_AmountPaid_PO", placeholder = "", @class = "GridDigit form-control input-sm" })
+
+
+                                                                }
+                                                                else
+                                                                {
+                                                                    @Html.TextBoxFor(x => x.PurchaseOrderDetails.AmountPaid, new { @id = "txt_AmountPaid_PO", placeholder = "", @class = "GridDigit form-control input-sm" })
+
+
+                                                                }
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-md-3 control-label bold">Balance</label>
+                                                            <div class="col-md-8">
+                                                                @if (Model.PurchaseOrderDetails != null)
+                                                                {
+                                                                    @Html.TextBoxFor(x => x.PurchaseOrderDetails.Balance, new { Value = String.Format("{0:0.00}", Model.PurchaseOrderDetails.Balance), id = "txt_Balance_PO", placeholder = "$0.00", @class = "form-control input-sm ", disabled = "true" })
+
+
+                                                                }
+                                                                else
+                                                                {
+                                                                    @Html.TextBoxFor(x => x.PurchaseOrderDetails.Balance, new { id = "txt_Balance_PO", placeholder = "$0.00", @class = "form-control input-sm ", disabled = "true" })
+
+
+                                                                }
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!--end tab-pane-->
+
+                    <div id="purchaseOrderReceiveItem_tab" class="tab-pane">
+
+                        @Html.Partial("_PurchaseOrderReceiveGrid", Model)
+                        <div class="portlet-body form">
+
+
+
+                            <div id="footer" class="partialDiv">
+
+
+                                <div class="portlet-body form">
+                                    <div class="form-horizontal">
+                                        <div class="form-body">
+                                            <div class="row">
+
+
+                                                <div class="col-sm-8">
+
+
+                                                    <div class="form-group">
+                                                        <div class="label_padd">
+                                                            <label class="col-md-3 control-label" style="text-align:left;">Remark</label>
+                                                            <div class="col-md-9">
+
+                                                                @Html.TextAreaFor(x => x.PurchaseOrderDetails.ReceiveRemarks, new { @id = "txt_ReceiveRemarks_OP", rows = 3, placeholder = "", @class = "form-control" })
+
+                                                            </div>
+
+                                                            <div class="" style="float: right; margin: 10px 15px 0px 0px;">
+
+                                                                <button type="button" id=" " class="saveBtnMargin btn green PurchaseOrderDataSave">Save</button>
+                                                                <button type="button" id="autoFillReceiveItems" class="btn green">Auto Fill</button>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="label_padd">
+                                                        <div class="form-group">
+                                                            <label class="col-md-5 control-label">Total Order</label>
+                                                            <div class="col-md-6">
+                                                                @Html.TextBoxFor(m => m.OrderTotal, new { @id = "txt_TotalOrder_RPO", placeholder = "0", @class = "form-control input-sm ", disabled = "true" })
+                                                            </div>
+                                                        </div>
+                                                        <br />
+                                                        <div class="form-group">
+                                                            <label class="col-md-5 control-label">Total Received</label>
+                                                            <div class="col-md-6">
+                                                                @Html.TextBoxFor(m => m.OrderTotal, new { @id = "txt_TotalReceived_RPO", placeholder = "0", @class = "form-control input-sm ", disabled = "true" })
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--end tab-pane-->
+
+                    <div id="purchaseOrderReturnItem_tab" class="tab-pane">
+                        @Html.Partial("_PurchaseOrderReturnGrid", Model)
+                        <div class="portlet-body form">
+
+
+                            <div id="footer" class="partialDiv">
+
+
+                                <div class="portlet-body form">
+                                    <div class="form-horizontal">
+                                        <div class="form-body">
+                                            <div class="row">
+
+
+                                                <div class="col-sm-8">
+                                                    <div class="form-group">
+                                                        <div class="label_padd">
+                                                            <label class="col-md-3 control-label" style="text-align:left;">Remark</label>
+                                                            <div class="col-md-9">
+
+                                                                @Html.TextAreaFor(x => x.PurchaseOrderDetails.ReturnRemarks, new { @id = "txt_ReturnRemarks_OP", rows = 3, placeholder = "", @class = "form-control" })
+
+                                                            </div>
+
+                                                            <div class="" style="float: right; margin: 10px 15px 0px 0px;">
+
+                                                                <button type="button" id=" " class="saveBtnMargin btn green PurchaseOrderDataSave">Save</button>
+                                                                <button type="button" id="autoFillReceiveItems" class="btn green">Auto Fill</button>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-sm-4">
+
+                                                    <div>
+
+                                                        <div class="form-group">
+                                                            <label class="col-md-5 control-label">Sub-Total</label>
+                                                            <div class="col-md-6">
+                                                                @if (Model.PurchaseOrderDetails != null)
+                                                                {
+                                                                    @Html.TextBoxFor(x => x.PurchaseOrderDetails.ReturnSubTotal, new { Value = String.Format("{0:0.00}", Model.PurchaseOrderDetails.ReturnSubTotal), id = "txt_CompleteGridItemReturnSubTotal_PO", placeholder = "", @class = "form-control input-sm ", disabled = "true" })
+
+
+                                                                }
+                                                                else
+                                                                {
+                                                                    @Html.TextBoxFor(x => x.PurchaseOrderDetails.ReturnSubTotal, new { id = "txt_CompleteGridItemReturnSubTotal_PO", placeholder = "", @class = "form-control input-sm ", disabled = "true" })
+
+
+                                                                }
+
+                                                            </div>
+                                                        </div>
+                                                        <div id="FreightDiv" class="form-group">
+                                                            <label class="col-md-5 control-label">Freight</label>
+                                                            <div class="col-md-6">
+                                                                @if (Model.PurchaseOrderDetails != null)
+                                                                {
+                                                                    @Html.TextBoxFor(x => x.PurchaseOrderDetails.Freight, new { Value = String.Format("{0:0.00}", Model.PurchaseOrderDetails.Freight), @id = "txt_Freight_PO", placeholder = "", @class = "GridDigit form-control input-sm" })
+
+
+                                                                }
+                                                                else
+                                                                {
+                                                                    @Html.TextBoxFor(x => x.PurchaseOrderDetails.Freight, new { @id = "txt_Freight_PO", placeholder = "", @class = "GridDigit form-control input-sm" })
+
+
+                                                                }
+
+
+                                                            </div>
+                                                        </div>
+
+                                                        @*<div class="form-group">
+                                                                <label class="col-md-6 control-label">Free</label>
+                                                                <div class="col-md-6">
+                                                                    <input type="text" class="form-control input-sm" placeholder="">
+                                                                </div>
+                                                            </div>*@
+
+                                                        <div class="form-group">
+                                                            <label class="col-md-5 control-label">Total</label>
+                                                            <div class="col-md-6">
+                                                                @if (Model.PurchaseOrderDetails != null)
+                                                                {
+                                                                    @Html.TextBoxFor(x => x.PurchaseOrderDetails.ReturnTotal, new { Value = String.Format("{0:0.00}", Model.PurchaseOrderDetails.ReturnTotal), id = "txt_ReturnTotal_PO", placeholder = "$0.00", @class = "form-control input-sm ", disabled = "true" })
+
+
+                                                                }
+                                                                else
+                                                                {
+                                                                    @Html.TextBoxFor(x => x.PurchaseOrderDetails.ReturnTotal, new { id = "txt_ReturnTotal_PO", placeholder = "$0.00", @class = "form-control input-sm ", disabled = "true" })
+
+
+                                                                }
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!--end tab-pane-->
+
+                    <div id="purchaseOrderUnstockItem_tab" class="tab-pane">
+
+                        @Html.Partial("_PurchaseOrderUnstockGrid", Model)
+                        <div class="portlet-body form">
+
+
+                            <div id="footer" class="partialDiv">
+
+
+                                <div class="portlet-body form">
+                                    <div class="form-horizontal">
+
+                                        <div class="form-body">
+                                            <div class="row">
+
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <div class="label_padd">
+                                                            <label class="col-md-3 control-label" style="text-align:left;">Remark</label>
+                                                            <div class="col-md-9">
+
+                                                                @Html.TextAreaFor(x => x.PurchaseOrderDetails.UnstockRemarks, new { @id = "txt_UnstockRemarks_OP", rows = 3, placeholder = "", @class = "form-control" })
+
+                                                            </div>
+
+                                                            <div class="" style="float: right; margin: 10px 15px 0px 0px;">
+
+                                                                <button type="button" id=" " class="saveBtnMargin btn green PurchaseOrderDataSave">Save</button>
+                                                                <button type="button" id="autoFillReceiveItems" class="btn green">Auto Fill</button>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+
+
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--end tab-pane-->
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <!--end tabbable-->
+</div>
+
+
+
+<script src="~/Scripts/CustomScripts/bootbox.min.js"></script>
+<script>
+    jQuery(document).ready(function () {
+
+        // TableManaged.init();
+        TableEditable.init();
+    });
+</script>
+
+
+
+
+

@@ -1,0 +1,177 @@
+﻿@model  Inventory.CommonViewModels.PurchaseOrderVM
+@{
+
+ 
+}
+
+<div>
+
+</div>
+<style>
+    .Redvalidation {
+        color: red;
+    }
+
+    
+
+    .headerdiv {
+        min-height: 41px;
+        background-color: #35aa47;
+    }
+</style>
+ 
+
+<div class="headerdiv">
+
+</div>
+
+<div class="form-horizontal" style="margin: 10px;">
+    <div class="form-body">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="label_padd">
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Vendor</label>
+                        <div class="col-md-8">
+
+
+                            @Html.HiddenFor(x => x.PurchaseOrderDetails.PurchaseOrderId, new { @id = "hdn_PurchaseOrderId_PO" })
+
+                            @Html.DropDownListFor(x => x.PurchaseOrderDetails.VendorId, new SelectList(Model._VendorList, "VendorId", "Name"), "Select Vendor", new { @id = "ddl_VendorId_PO", @class = "form-control input-sm", @data_msg_required = "Vendor is Required!", @data_rule_required = "true" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Contact Name</label>
+                        <div class="col-md-8">
+                            @Html.TextBoxFor(x => x.PurchaseOrderDetails.ContactName, new { @id = "txt_ContactName_PO", placeholder = "Contact Name", @class = "form-control input-sm" })
+
+                        </div>
+
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Phone</label>
+                        <div class="col-md-8">
+                            @Html.TextBoxFor(x => x.PurchaseOrderDetails.Phone, new { placeholder = "Phone", @class = "form-control input-sm", @id = "txt_Phone_PO" })
+                        </div>
+
+
+
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Vendor Address</label>
+                        <div class="col-md-8">
+                            @Html.TextAreaFor(x => x.PurchaseOrderDetails.VendorAddress1, new { @id = "txt_VendorAddress1_PO", rows = 2, placeholder = "Address", @class = "form-control" })
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="label_padd">
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Location</label>
+                        <div class="col-md-8">
+
+                            @Html.DropDownListFor(x => x.PurchaseOrderDetails.LocationId, new SelectList(Model.VendorLocationList, "LocationId", "Name"), "Select Location", new { @id = "ddl_LocationId_PO", @class = "form-control input-sm" })
+
+                        </div>
+
+
+                    </div>
+                    <div id="TermsDIV" class="form-group">
+                        <label class="col-md-3 control-label">Terms</label>
+                        <div class="col-md-8">
+
+                            @Html.DropDownListFor(x => x.PurchaseOrderDetails.PaymentTermsId, new SelectList(Model.VendorPaymentTermList, "PaymentTermsId", "Name"), "Select Payment", new { @id = "ddl_PaymentTermsId_PO" , @class = "form-control input-sm" })
+
+                        </div>
+                    </div>
+                    <div id="V_DIV" class="form-group">
+                        <label class="col-md-3 control-label">V.Order#</label>
+                        <div class="col-md-8">
+                            @Html.TextBoxFor(x => x.PurchaseOrderDetails.VendorOrderNumber, new { @id = "txt_VendorOrderNumber_PO",  placeholder = "V.Order#", @class = "form-control input-sm" })
+                        </div>
+
+                    </div>
+
+
+                    <div id="ShipDIV" class="form-group">
+
+                        <label class="col-md-3 control-label">Ship-to Address</label>
+
+
+
+                        <div class="col-md-8">
+
+                            @Html.TextAreaFor(x => x.PurchaseOrderDetails.ShipToAddress1, new { @id = "txt_ShipToAddress1_PO", rows = 2, placeholder = "Address", @class = "form-control" })
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="label_padd">
+                    <div style="height: 125px;  border-style: solid; border-width: 1px; border-color: #c1baba;">
+                        <div style="margin: 4px 0px 0px 21px;">
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Order#</label>
+                                <div class="col-md-8">
+
+                                    @Html.TextBoxFor(x => x.PurchaseOrderDetails.OrderNumber, new { @id = "txt_OrderNumber_PO", placeholder = "PO-000001", @class = "form-control input-sm", disabled = "true" })
+
+                                </div>
+
+
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Date</label>
+                                @if (Model.PurchaseOrderDetails != null)
+                                   {
+                                    <div class="col-md-8">
+                                        @Html.TextBoxFor(x => x.PurchaseOrderDetails.OrderDate, string.Format("{0:d}", Model.PurchaseOrderDetails.OrderDate), new { @id = "txt_OrderDate_datepicker_PO", placeholder = "Date", @class = "form-control datepicker input-sm" })
+                                    </div>
+                                  }
+                                    else
+                                      {
+                                    <div class="col-md-8">
+                                        @Html.TextBoxFor(x => x.PurchaseOrderDetails.OrderDate , new { @id = "txt_OrderDate_datepicker_PO", placeholder = "Date", @class = "form-control datepicker input-sm" })
+                                    </div>
+                                     }
+
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Status</label>
+
+                                <div class="col-md-8">
+                                    @Html.TextBox("Status", null, new { @id="txt_purchaseOrderStatus_PO" , placeholder = "", @class = "form-control input-sm ", disabled = "true" , @Value="UnFulfilled,Unpaid" })
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+

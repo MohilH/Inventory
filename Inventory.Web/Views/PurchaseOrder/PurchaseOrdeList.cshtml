@@ -1,0 +1,193 @@
+﻿@model IEnumerable<Inventory.CommonViewModels.ListPurchaseOrderVM>
+    @{
+        ViewBag.Title = "PurchaseOrdeList";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+
+    }
+
+    <script src="~/Scripts/CustomScripts/PurchaseOrderList_table-managed.js"></script>
+    <style>
+        .clickable {
+            cursor: pointer;
+            background: #ffff99;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $('tbody tr').hover(function () {
+                $(this).toggleClass('clickable');
+            }).on('click', function () {
+                location.href = '/PurchaseOrder/AddPurchaseOrder/?PurchaseOrderNumber=' + $(this).find('td:first').text().trim();
+                //location.href = '/UpdatePurchaseOrder/AddPurchaseOrder' + $(this).find('td:first').text();$(this).find('td:nth-child(2)').text();
+            });
+        });
+        
+        //$(function () {
+        //    $('tbody tr').hover(function () {
+        //        $(this).toggleClass('clickable');
+        //    }).on('click', function () {
+        //        debugger;
+        //        var first = $(this).find('td:first').text().trim();
+        //        var second = $(this).find('td:nth-child(13)').text().trim();
+        //        var valueArray =[];
+        //        valueArray.push(first);
+        //        valueArray.push(second);
+
+        //        var model = {
+        //            OrderNumber: valueArray[0],
+        //            VendorId: valueArray[1]
+
+        //        };
+
+              
+        //        var valueForFilter =JSON.stringify(model);
+
+        //        $.ajax({
+
+        //            url: '/PurchaseOrder/AddPurchaseOrder',
+        //            contentType: "application/json; charset=utf-8",
+        //            type: "get",
+        //            data: { filterValue: valueForFilter },
+        //            success: function (data) {
+        //                alert("Test");
+        //               // window.location.href = "/PurchaseOrder/AddPurchaseOrder/?PurchaseOrderID= "+ data+ ;
+        //            }
+
+        //        });
+        //    });
+        //});
+    </script>
+
+    <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-globe"></i>PurchaseOrder List
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse">
+                </a>
+                <a href="#portlet-config" data-toggle="modal" class="config">
+                </a>
+                <a href="javascript:;" class="reload">
+                </a>
+                <a href="javascript:;" class="remove">
+                </a>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <table class="table table-striped table-bordered table-hover" id="sample_1">
+                <thead>
+                    <tr>
+
+                        <th>
+                            OrderNumber
+                        </th>
+                        <th>
+                            OrderDate
+                        </th>
+                        <th>
+                            InventoryStatus
+                        </th>
+                        <th>
+                            PaymentStatus
+                        </th>
+
+                        <th>
+                            V.OrderNumber
+                        </th>
+                        <th>
+                            Vendor
+                        </th>
+                        <th>
+                            Location
+                        </th>
+                        <th>
+                            R.ShipDate
+                        </th>
+                        <th>
+                            DueDate
+                        </th>
+                        <th>
+                            Total
+                        </th>
+                        <th>
+                            Paid
+                        </th>
+                        <th>
+                            Balance
+                        </th>
+                        
+
+                      
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td>
+                               
+                                
+                                @item.OrderNumber
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.OrderDate)
+                              
+                          
+                            </td>
+                            <td>
+                                @item.InventoryStatus
+                            </td>
+                            <td class="center">
+                                @item.PaymentStatus
+                            </td>
+                            <td>
+                                @item.VendorOrderNumber
+                            </td>
+                            <td>
+                                @item.VendorName
+                              
+                            </td>
+                            <td>
+                                @item.LocationName
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RequestShipDate)
+                              
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DueDate)
+                           
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.OrderTotal)
+                               
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AmountPaid)
+                            
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Balance)
+                              
+                            </td>
+
+                           
+                           
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- END SAMPLE FORM PORTLET-->
+
+    <script>
+        jQuery(document).ready(function () {
+
+            TableManaged.init();
+
+        });
+    </script>

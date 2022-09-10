@@ -1,0 +1,2257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InventoryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ACC_ProductDefaultCost">
+    <Key>
+      <PropertyRef Name="ProdId" />
+    </Key>
+    <Property Name="ProdId" Type="int" Nullable="false" />
+    <Property Name="UnitCost" Type="decimal" Precision="22" Scale="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Base_BillOfMaterials">
+    <Key>
+      <PropertyRef Name="BillOfMaterialId" />
+    </Key>
+    <Property Name="BillOfMaterialId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProdId" Type="int" />
+    <Property Name="LocationId" Type="int" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TotalCost" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Base_Carrier">
+    <Key>
+      <PropertyRef Name="CarrierId" />
+    </Key>
+    <Property Name="CarrierId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Carrier" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="BASE_Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ParentCategoryId" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="BASE_City">
+    <Key>
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="CityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="FKStateId" Type="int" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="BASE_Country">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="BASE_Customer">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Version" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="VendorPermitNumber" Type="nvarchar" MaxLength="100" />
+    <Property Name="Remarks" Type="nvarchar(max)" />
+    <Property Name="DefaultPricingSchemeId" Type="int" />
+    <Property Name="Discount" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="DefaultPaymentTermsId" Type="int" />
+    <Property Name="TaxingSchemeId" Type="int" />
+    <Property Name="DefaultCarrier" Type="nvarchar" MaxLength="100" />
+    <Property Name="DefaultPaymentMethod" Type="nvarchar" MaxLength="100" />
+    <Property Name="ContactName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="200" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="200" />
+    <Property Name="City" Type="nvarchar" MaxLength="100" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="200" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="AddressRemarks" Type="nvarchar(max)" />
+    <Property Name="AddressType" Type="int" />
+    <Property Name="UsingBillingAddress" Type="bit" />
+    <Property Name="BillingAddress1" Type="nvarchar" MaxLength="200" />
+    <Property Name="BillingAddress2" Type="nvarchar" MaxLength="200" />
+    <Property Name="BillingCity" Type="nvarchar" MaxLength="100" />
+    <Property Name="BillingState" Type="nvarchar" MaxLength="50" />
+    <Property Name="BillingCountry" Type="nvarchar" MaxLength="200" />
+    <Property Name="BillingPostalCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="BillingAddressRemarks" Type="nvarchar(max)" />
+    <Property Name="BillingAddressType" Type="int" />
+    <Property Name="UsingShippingAddress" Type="bit" />
+    <Property Name="ShippingAddress1" Type="nvarchar" MaxLength="200" />
+    <Property Name="ShippingAddress2" Type="nvarchar" MaxLength="200" />
+    <Property Name="ShippingCity" Type="nvarchar" MaxLength="100" />
+    <Property Name="ShippingState" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShippingCountry" Type="nvarchar" MaxLength="200" />
+    <Property Name="ShippingPostalCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="ShippingAddressRemarks" Type="nvarchar(max)" />
+    <Property Name="ShippingAddressType" Type="int" />
+    <Property Name="CCardType" Type="nvarchar" MaxLength="50" />
+    <Property Name="CCardNum" Type="nvarchar" MaxLength="25" />
+    <Property Name="CCardSecurityNum" Type="nvarchar" MaxLength="5" />
+    <Property Name="CCardExpDate" Type="nvarchar" MaxLength="10" />
+    <Property Name="LastModUserId" Type="int" />
+    <Property Name="LastModDttm" Type="datetime" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="Website" Type="nvarchar(max)" />
+    <Property Name="DefaultSalesRep" Type="nvarchar(max)" />
+    <Property Name="DefaultLocationId" Type="int" />
+  </EntityType>
+  <EntityType Name="BASE_ItemPrice">
+    <Key>
+      <PropertyRef Name="ItemPriceId" />
+    </Key>
+    <Property Name="ItemPriceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PricingSchemeId" Type="int" Nullable="false" />
+    <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="LastModUserId" Type="int" />
+    <Property Name="LastModDttm" Type="datetime" />
+    <Property Name="ProdId" Type="int" />
+    <Property Name="NormalPrice" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="BASE_Location">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="LastModUserId" Type="int" />
+    <Property Name="LastModDttm" Type="datetime" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="BASE_PaymentMethod">
+    <Key>
+      <PropertyRef Name="DefaultPaymentMethodId" />
+    </Key>
+    <Property Name="DefaultPaymentMethodId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DefaultPaymentMethod" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="BASE_PaymentTerms">
+    <Key>
+      <PropertyRef Name="PaymentTermsId" />
+    </Key>
+    <Property Name="PaymentTermsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DaysDue" Type="int" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="BASE_PricingScheme">
+    <Key>
+      <PropertyRef Name="PricingSchemeId" />
+    </Key>
+    <Property Name="PricingSchemeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="LastModUserId" Type="int" />
+    <Property Name="LastModDttm" Type="datetime" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CurrencyId" Type="int" />
+  </EntityType>
+  <EntityType Name="BASE_Product">
+    <Key>
+      <PropertyRef Name="ProdId" />
+    </Key>
+    <Property Name="Version" Type="int" />
+    <Property Name="ItemType" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Remarks" Type="nvarchar(max)" />
+    <Property Name="BarCode" Type="nvarchar" MaxLength="500" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="DefaultLocationId" Type="nvarchar(max)" />
+    <Property Name="DefaultSublocation" Type="nvarchar" MaxLength="100" />
+    <Property Name="ReorderPoint" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="ReorderQuantity" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Uom" Type="nvarchar" MaxLength="20" />
+    <Property Name="MasterPackQty" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="InnerPackQty" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="CaseLength" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="CaseWidth" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="CaseHeight" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="CaseWeight" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="ProductLength" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="ProductWidth" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="ProductHeight" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="ProductWeight" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="LastVendorId" Type="int" />
+    <Property Name="IsSellable" Type="bit" />
+    <Property Name="IsPurchaseable" Type="bit" />
+    <Property Name="DateIntroduced" Type="datetime" />
+    <Property Name="DateUpdated" Type="datetime" />
+    <Property Name="LastModUserId" Type="int" />
+    <Property Name="LastModDttm" Type="datetime" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="PictureFileAttachmentId" Type="nvarchar(max)" />
+    <Property Name="SoUomName" Type="nvarchar" MaxLength="20" />
+    <Property Name="SoUomRatioStd" Type="decimal" Precision="10" Scale="4" />
+    <Property Name="SoUomRatio" Type="decimal" Precision="10" Scale="4" />
+    <Property Name="PoUomName" Type="nvarchar" MaxLength="20" />
+    <Property Name="PoUomRatioStd" Type="decimal" Precision="10" Scale="4" />
+    <Property Name="PoUomRatio" Type="decimal" Precision="10" Scale="4" />
+    <Property Name="ProdId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TrackSerials" Type="bit" />
+    <Property Name="ProductCost" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="NormalPrice" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Base_Quantity">
+    <Key>
+      <PropertyRef Name="QuantityId" />
+    </Key>
+    <Property Name="QuantityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="LocationId" Type="int" />
+    <Property Name="ProdId" Type="int" />
+  </EntityType>
+  <EntityType Name="BASE_ReceivingAddress">
+    <Key>
+      <PropertyRef Name="ReceivingAddressId" />
+    </Key>
+    <Property Name="ReceivingAddressId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="200" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="200" />
+    <Property Name="City" Type="nvarchar" MaxLength="100" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="200" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddressRemarks" Type="nvarchar(max)" />
+    <Property Name="AddressType" Type="int" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Base_SalesRep">
+    <Key>
+      <PropertyRef Name="SalesRepId" />
+    </Key>
+    <Property Name="SalesRepId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalesRep" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="BASE_State">
+    <Key>
+      <PropertyRef Name="StateId" />
+    </Key>
+    <Property Name="StateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StateName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="FKCountryId" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="BASE_TaxCode">
+    <Key>
+      <PropertyRef Name="TaxCodeId" />
+    </Key>
+    <Property Name="TaxCodeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TaxingSchemeId" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Tax1Rate" Type="decimal" Precision="10" Scale="5" />
+    <Property Name="Tax2Rate" Type="decimal" Precision="10" Scale="5" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="LastModUserId" Type="int" />
+    <Property Name="LastModDttm" Type="datetime" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="BASE_TaxingScheme">
+    <Key>
+      <PropertyRef Name="TaxingSchemeId" />
+    </Key>
+    <Property Name="TaxingSchemeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Tax1Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Tax2Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="CalculateTax2OnTax1" Type="bit" />
+    <Property Name="LastModUserId" Type="int" />
+    <Property Name="LastModDttm" Type="datetime" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="Tax1OnShipping" Type="bit" />
+    <Property Name="DefaultTaxCodeId" Type="int" />
+    <Property Name="Tax2OnShipping" Type="bit" />
+  </EntityType>
+  <EntityType Name="Base_Unit">
+    <Key>
+      <PropertyRef Name="UnitesId" />
+    </Key>
+    <Property Name="UnitesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Units" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="BASE_User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="PasswordHash" Type="binary" MaxLength="20" Nullable="false" />
+    <Property Name="PasswordSalt" Type="binary" MaxLength="16" Nullable="false" />
+    <Property Name="IsAdministrator" Type="bit" Nullable="false" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="LocationId" Type="int" />
+    <Property Name="DefaultSalesRep" Type="nvarchar(max)" />
+    <Property Name="TargetEdition" Type="int" Nullable="false" />
+    <Property Name="IsInternal" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BASE_Vendor">
+    <Key>
+      <PropertyRef Name="VendorId" />
+    </Key>
+    <Property Name="VendorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Version" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Remarks" Type="nvarchar(max)" />
+    <Property Name="DefaultPaymentTermsId" Type="int" />
+    <Property Name="TaxingSchemeId" Type="int" />
+    <Property Name="DefaultCarrier" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="200" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="200" />
+    <Property Name="City" Type="nvarchar" MaxLength="100" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="200" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="AddressRemarks" Type="nvarchar(max)" />
+    <Property Name="AddressType" Type="int" />
+    <Property Name="ContactName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="LastModUserId" Type="int" />
+    <Property Name="LastModDttm" Type="datetime" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="Website" Type="nvarchar(max)" />
+    <Property Name="CurrencyId" Type="int" />
+    <Property Name="Discount" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Credit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PaymentTerms" Type="nvarchar(max)" />
+    <Property Name="Currency" Type="nvarchar(max)" />
+    <Property Name="TaxingScheme" Type="nvarchar(max)" />
+    <Property Name="PriceIncludeTaxes" Type="bit" />
+  </EntityType>
+  <EntityType Name="BASE_VendorItem">
+    <Key>
+      <PropertyRef Name="VendorItemId" />
+    </Key>
+    <Property Name="VendorItemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VendorId" Type="int" Nullable="false" />
+    <Property Name="VendorItemCode" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Cost" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="LastModUserId" Type="int" />
+    <Property Name="LastModDttm" Type="datetime" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="ProdId" Type="int" />
+  </EntityType>
+  <EntityType Name="DUMMY_ReorderStock_Line">
+    <Key>
+      <PropertyRef Name="ReorderStockLineId" />
+    </Key>
+    <Property Name="ReorderStockLineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReorderStockId" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="QuantityOwned" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="ReorderPoint" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="ReorderQuantity" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="VendorId" Type="int" Nullable="false" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="QuantityOnOrder" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="QuantityPending" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="ProdId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GLOBAL_Currency">
+    <Key>
+      <PropertyRef Name="CurrencyId" />
+    </Key>
+    <Property Name="CurrencyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="5" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="Symbol" Type="nvarchar" MaxLength="5" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="DecimalPlaces" Type="smallint" />
+    <Property Name="DecimalSeparator" Type="nvarchar" MaxLength="5" />
+    <Property Name="ThousandsSeparator" Type="nvarchar" MaxLength="5" />
+    <Property Name="CRCurrencyPositionType" Type="smallint" />
+    <Property Name="CRNegativeType" Type="smallint" />
+  </EntityType>
+  <EntityType Name="INV_StockAdjustment">
+    <Key>
+      <PropertyRef Name="StockAdjustmentId" />
+    </Key>
+    <Property Name="StockAdjustmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Version" Type="int" />
+    <Property Name="AdjustmentNumber" Type="nvarchar" MaxLength="30" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Remarks" Type="nvarchar(max)" />
+    <Property Name="IsCancelled" Type="bit" />
+    <Property Name="CreatedUserId" Type="int" />
+    <Property Name="CreatedDttm" Type="datetime" />
+    <Property Name="LastModUserId" Type="int" />
+    <Property Name="LastModDttm" Type="datetime" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="INV_StockAdjustment_Line">
+    <Key>
+      <PropertyRef Name="StockAdjustmentLineId" />
+    </Key>
+    <Property Name="StockAdjustmentLineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StockAdjustmentId" Type="int" Nullable="false" />
+    <Property Name="Version" Type="int" />
+    <Property Name="ProdId" Type="int" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="LocationId" Type="int" />
+    <Property Name="Sublocation" Type="nvarchar" MaxLength="100" />
+    <Property Name="QuantityBefore" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="QuantityBeforeUom" Type="nvarchar" MaxLength="20" />
+    <Property Name="QuantityBeforeDisplay" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="QuantityAfter" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="QuantityAfterUom" Type="nvarchar" MaxLength="20" />
+    <Property Name="QuantityAfterDisplay" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Difference" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="DifferenceUom" Type="nvarchar" MaxLength="20" />
+    <Property Name="DifferenceDisplay" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="Serials" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PO_InventoryStatus">
+    <Key>
+      <PropertyRef Name="InventoryStatusId" />
+    </Key>
+    <Property Name="InventoryStatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PO_PaymentStatus">
+    <Key>
+      <PropertyRef Name="PaymentStatusId" />
+    </Key>
+    <Property Name="PaymentStatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PO_PurchaseOrder">
+    <Key>
+      <PropertyRef Name="PurchaseOrderId" />
+    </Key>
+    <Property Name="PurchaseOrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Version" Type="int" />
+    <Property Name="OrderNumber" Type="nvarchar" MaxLength="30" />
+    <Property Name="VendorOrderNumber" Type="nvarchar" MaxLength="100" />
+    <Property Name="OrderDate" Type="datetime" />
+    <Property Name="VendorId" Type="int" />
+    <Property Name="PaymentTermsId" Type="int" />
+    <Property Name="Carrier" Type="nvarchar" MaxLength="100" />
+    <Property Name="ContactName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="VendorAddress1" Type="nvarchar" MaxLength="200" />
+    <Property Name="VendorAddress2" Type="nvarchar" MaxLength="200" />
+    <Property Name="VendorCity" Type="nvarchar" MaxLength="100" />
+    <Property Name="VendorState" Type="nvarchar" MaxLength="50" />
+    <Property Name="VendorCountry" Type="nvarchar" MaxLength="50" />
+    <Property Name="VendorPostalCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="VendorAddressRemarks" Type="nvarchar(max)" />
+    <Property Name="VendorAddressType" Type="int" />
+    <Property Name="ShipToAddress1" Type="nvarchar" MaxLength="200" />
+    <Property Name="ShipToAddress2" Type="nvarchar" MaxLength="200" />
+    <Property Name="ShipToCity" Type="nvarchar" MaxLength="100" />
+    <Property Name="ShipToState" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShipToCountry" Type="nvarchar" MaxLength="200" />
+    <Property Name="ShipToPostalCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="ShipToAddressRemarks" Type="nvarchar(max)" />
+    <Property Name="ShipToAddressType" Type="int" />
+    <Property Name="RequestShipDate" Type="datetime" />
+    <Property Name="TaxingSchemeId" Type="int" />
+    <Property Name="OrderRemarks" Type="nvarchar(max)" />
+    <Property Name="OrderSubTotal" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="OrderTax1" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="OrderTax2" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="OrderExtra" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="OrderTotal" Type="decimal" Precision="21" Scale="2" />
+    <Property Name="Tax1Rate" Type="decimal" Precision="10" Scale="5" />
+    <Property Name="Tax2Rate" Type="decimal" Precision="10" Scale="5" />
+    <Property Name="CalculateTax2OnTax1" Type="bit" />
+    <Property Name="Tax1Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Tax2Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="ReceiveRemarks" Type="nvarchar(max)" />
+    <Property Name="DueDate" Type="datetime" />
+    <Property Name="AmountPaid" Type="decimal" Precision="21" Scale="2" />
+    <Property Name="Balance" Type="decimal" Precision="21" Scale="2" />
+    <Property Name="ReturnRemarks" Type="nvarchar(max)" />
+    <Property Name="ReturnSubTotal" Type="decimal" Precision="21" Scale="2" />
+    <Property Name="ReturnTax1" Type="decimal" Precision="21" Scale="2" />
+    <Property Name="ReturnTax2" Type="decimal" Precision="21" Scale="2" />
+    <Property Name="ReturnExtra" Type="decimal" Precision="21" Scale="2" />
+    <Property Name="ReturnTotal" Type="decimal" Precision="21" Scale="2" />
+    <Property Name="ReturnFee" Type="decimal" Precision="21" Scale="2" />
+    <Property Name="UnstockRemarks" Type="nvarchar(max)" />
+    <Property Name="LastModUserId" Type="int" />
+    <Property Name="LastModDttm" Type="datetime" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="Tax1OnShipping" Type="bit" />
+    <Property Name="AncillaryExpenses" Type="decimal" Precision="21" Scale="2" />
+    <Property Name="AncillaryIsPercent" Type="bit" />
+    <Property Name="LocationId" Type="int" />
+    <Property Name="ShowShipping" Type="bit" />
+    <Property Name="ShipToCompanyName" Type="nvarchar" MaxLength="255" />
+    <Property Name="CurrencyId" Type="int" />
+    <Property Name="ExchangeRate" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="Tax2OnShipping" Type="bit" />
+    <Property Name="SummaryLinePermutation" Type="varchar(max)" />
+    <Property Name="Total" Type="decimal" Precision="21" Scale="2" />
+    <Property Name="PaymentStatus" Type="int" />
+    <Property Name="InventoryStatus" Type="int" />
+    <Property Name="IsCancelled" Type="bit" />
+    <Property Name="IsCompleted" Type="bit" />
+    <Property Name="Freight" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TotalOrder" Type="int" />
+    <Property Name="TotalReceived" Type="int" />
+    <Property Name="ReturnAmount" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="PO_PurchaseOrder_Line">
+    <Key>
+      <PropertyRef Name="PurchaseOrderLineId" />
+    </Key>
+    <Property Name="PurchaseOrderLineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PurchaseOrderId" Type="int" Nullable="false" />
+    <Property Name="Version" Type="int" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="VendorItemCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="SubTotal" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="nvarchar" MaxLength="20" />
+    <Property Name="QuantityDisplay" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="DiscountIsPercent" Type="bit" />
+    <Property Name="ProdId" Type="int" />
+    <Property Name="LineNum" Type="int" />
+    <Property Name="TaxCodeId" Type="int" />
+    <Property Name="Tax1Rate" Type="decimal" Precision="10" Scale="5" />
+    <Property Name="Tax2Rate" Type="decimal" Precision="10" Scale="5" />
+    <Property Name="Serials" Type="nvarchar(max)" />
+    <Property Name="ServiceCompleted" Type="bit" />
+    <Property Name="OrderStatus" Type="bit" />
+    <Property Name="VendorItemCodeId" Type="int" />
+    <Property Name="PurchaseOrderReceiveLineId" Type="int" />
+  </EntityType>
+  <EntityType Name="PO_PurchaseOrder_Version">
+    <Key>
+      <PropertyRef Name="PurchaseOrderVersionId" />
+    </Key>
+    <Property Name="PurchaseOrderVersionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PurchaseOrderId" Type="int" Nullable="false" />
+    <Property Name="Version" Type="int" Nullable="false" />
+    <Property Name="OrderNumber" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="VendorOrderNumber" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="OrderDate" Type="datetime" Nullable="false" />
+    <Property Name="VendorId" Type="int" Nullable="false" />
+    <Property Name="PaymentTermsId" Type="int" />
+    <Property Name="Carrier" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ContactName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="VendorAddress1" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="VendorAddress2" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="VendorCity" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="VendorState" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="VendorCountry" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="VendorPostalCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="VendorAddressRemarks" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="VendorAddressType" Type="int" />
+    <Property Name="ShipToAddress1" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ShipToAddress2" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ShipToCity" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ShipToState" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShipToCountry" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ShipToPostalCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ShipToAddressRemarks" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ShipToAddressType" Type="int" />
+    <Property Name="RequestShipDate" Type="datetime" />
+    <Property Name="TaxingSchemeId" Type="int" Nullable="false" />
+    <Property Name="OrderRemarks" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OrderSubTotal" Type="decimal" Precision="21" Scale="5" Nullable="false" />
+    <Property Name="OrderTax1" Type="decimal" Precision="21" Scale="5" Nullable="false" />
+    <Property Name="OrderTax2" Type="decimal" Precision="21" Scale="5" Nullable="false" />
+    <Property Name="OrderExtra" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="OrderTotal" Type="decimal" Precision="21" Scale="5" Nullable="false" />
+    <Property Name="Tax1Rate" Type="decimal" Precision="10" Scale="5" />
+    <Property Name="Tax2Rate" Type="decimal" Precision="10" Scale="5" />
+    <Property Name="CalculateTax2OnTax1" Type="bit" Nullable="false" />
+    <Property Name="Tax1Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Tax2Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ReceiveRemarks" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DueDate" Type="datetime" />
+    <Property Name="AmountPaid" Type="decimal" Precision="21" Scale="5" Nullable="false" />
+    <Property Name="Balance" Type="decimal" Precision="21" Scale="5" Nullable="false" />
+    <Property Name="ReturnRemarks" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ReturnSubTotal" Type="decimal" Precision="21" Scale="5" Nullable="false" />
+    <Property Name="ReturnTax1" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnTax2" Type="decimal" Precision="21" Scale="5" Nullable="false" />
+    <Property Name="ReturnExtra" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnTotal" Type="decimal" Precision="21" Scale="5" Nullable="false" />
+    <Property Name="ReturnFee" Type="decimal" Precision="21" Scale="5" Nullable="false" />
+    <Property Name="UnstockRemarks" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Custom2" Type="nvarchar(max)" />
+    <Property Name="Custom1" Type="nvarchar(max)" />
+    <Property Name="Custom3" Type="nvarchar(max)" />
+    <Property Name="Custom4" Type="nvarchar(max)" />
+    <Property Name="Custom5" Type="nvarchar(max)" />
+    <Property Name="LastModUserId" Type="int" Nullable="false" />
+    <Property Name="LastModDttm" Type="datetime" Nullable="false" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Tax1OnShipping" Type="bit" Nullable="false" />
+    <Property Name="AncillaryExpenses" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="AncillaryIsPercent" Type="bit" Nullable="false" />
+    <Property Name="LocationId" Type="int" />
+    <Property Name="ShowShipping" Type="bit" Nullable="false" />
+    <Property Name="ShipToCompanyName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="CurrencyId" Type="int" Nullable="false" />
+    <Property Name="ExchangeRate" Type="decimal" Precision="20" Scale="10" Nullable="false" />
+    <Property Name="Tax2OnShipping" Type="bit" Nullable="false" />
+    <Property Name="SummaryLinePermutation" Type="varchar(max)" />
+    <Property Name="Total" Type="decimal" Precision="21" Scale="5" Nullable="false" />
+    <Property Name="PaymentStatus" Type="int" Nullable="false" />
+    <Property Name="InventoryStatus" Type="int" Nullable="false" />
+    <Property Name="IsCancelled" Type="bit" Nullable="false" />
+    <Property Name="IsCompleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PO_PurchaseOrderReceive_Line">
+    <Key>
+      <PropertyRef Name="PurchaseOrderReceiveLineId" />
+    </Key>
+    <Property Name="PurchaseOrderReceiveLineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PurchaseOrderId" Type="int" Nullable="false" />
+    <Property Name="Version" Type="int" />
+    <Property Name="ReceiveDate" Type="datetime" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="VendorItemCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="LocationId" Type="int" />
+    <Property Name="Sublocation" Type="nvarchar" MaxLength="100" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="nvarchar" MaxLength="20" />
+    <Property Name="QuantityDisplay" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="ProdId" Type="int" />
+    <Property Name="LineNum" Type="int" />
+    <Property Name="Serials" Type="nvarchar(max)" />
+    <Property Name="VendorItemCodeId" Type="int" />
+    <Property Name="PurchaseOrderLineId" Type="int" />
+  </EntityType>
+  <EntityType Name="PO_PurchaseOrderReturn_Line">
+    <Key>
+      <PropertyRef Name="PurchaseOrderReturnLineId" />
+    </Key>
+    <Property Name="PurchaseOrderReturnLineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PurchaseOrderId" Type="int" Nullable="false" />
+    <Property Name="Version" Type="int" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="VendorItemCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="SubTotal" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="nvarchar" MaxLength="20" />
+    <Property Name="QuantityDisplay" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="DiscountIsPercent" Type="bit" />
+    <Property Name="ProdId" Type="int" />
+    <Property Name="LineNum" Type="int" />
+    <Property Name="TaxCodeId" Type="int" />
+    <Property Name="Tax1Rate" Type="decimal" Precision="10" Scale="5" />
+    <Property Name="Tax2Rate" Type="decimal" Precision="10" Scale="5" />
+    <Property Name="Serials" Type="nvarchar(max)" />
+    <Property Name="ReturnDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PO_PurchaseOrderUnstock_Line">
+    <Key>
+      <PropertyRef Name="PurchaseOrderUnstockLineId" />
+    </Key>
+    <Property Name="PurchaseOrderUnstockLineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PurchaseOrderId" Type="int" Nullable="false" />
+    <Property Name="Version" Type="int" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="LocationId" Type="int" />
+    <Property Name="Sublocation" Type="nvarchar" MaxLength="100" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="nvarchar" MaxLength="20" />
+    <Property Name="QuantityDisplay" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="ProdId" Type="int" />
+    <Property Name="LineNum" Type="int" />
+    <Property Name="Serials" Type="nvarchar(max)" />
+    <Property Name="VendorItemCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="UnstockDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PO_Status">
+    <Key>
+      <PropertyRef Name="StatusId" />
+    </Key>
+    <Property Name="StatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Status" Type="nvarchar(max)" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="InventoryStatus" Type="int" />
+    <Property Name="PaymentStatus" Type="int" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrder">
+    <Key>
+      <PropertyRef Name="SalesOrderId" />
+    </Key>
+    <Property Name="SalesOrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Version" Type="int" />
+    <Property Name="OrderNumber" Type="nvarchar" MaxLength="30" />
+    <Property Name="OrderDate" Type="datetime" />
+    <Property Name="CustomerId" Type="int" />
+    <Property Name="SalesRep" Type="nvarchar" MaxLength="200" />
+    <Property Name="PONumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="RequestShipDate" Type="datetime" />
+    <Property Name="PaymentTermsId" Type="int" />
+    <Property Name="DueDate" Type="datetime" />
+    <Property Name="PricingSchemeId" Type="int" />
+    <Property Name="OrderRemarks" Type="nvarchar(max)" />
+    <Property Name="OrderSubTotal" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="OrderTax1" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="OrderTax2" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="OrderExtra" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="OrderTotal" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="TaxingSchemeId" Type="int" />
+    <Property Name="Tax1Rate" Type="decimal" Precision="10" Scale="5" />
+    <Property Name="Tax2Rate" Type="decimal" Precision="10" Scale="5" />
+    <Property Name="CalculateTax2OnTax1" Type="bit" />
+    <Property Name="Tax1Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Tax2Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="PickedDate" Type="datetime" />
+    <Property Name="PickingRemarks" Type="nvarchar(max)" />
+    <Property Name="PackedDate" Type="datetime" />
+    <Property Name="PackingRemarks" Type="nvarchar(max)" />
+    <Property Name="ShippingRemarks" Type="nvarchar(max)" />
+    <Property Name="InvoicedDate" Type="datetime" />
+    <Property Name="AmountPaid" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="Balance" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnRemarks" Type="nvarchar(max)" />
+    <Property Name="ReturnSubTotal" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnTax1" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnTax2" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnExtra" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnTotal" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnFee" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="RestockRemarks" Type="nvarchar(max)" />
+    <Property Name="ContactName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="BillingAddress1" Type="nvarchar" MaxLength="200" />
+    <Property Name="BillingAddress2" Type="nvarchar" MaxLength="200" />
+    <Property Name="BillingCity" Type="nvarchar" MaxLength="100" />
+    <Property Name="BillingState" Type="nvarchar" MaxLength="50" />
+    <Property Name="BillingCountry" Type="nvarchar" MaxLength="200" />
+    <Property Name="BillingPostalCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="BillingAddressRemarks" Type="nvarchar(max)" />
+    <Property Name="BillingAddressType" Type="int" />
+    <Property Name="ShippingAddress1" Type="nvarchar" MaxLength="200" />
+    <Property Name="ShippingAddress2" Type="nvarchar" MaxLength="200" />
+    <Property Name="ShippingCity" Type="nvarchar" MaxLength="100" />
+    <Property Name="ShippingState" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShippingCountry" Type="nvarchar" MaxLength="200" />
+    <Property Name="ShippingPostalCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="ShippingAddressRemarks" Type="nvarchar(max)" />
+    <Property Name="ShippingAddressType" Type="int" />
+    <Property Name="Custom1" Type="nvarchar(max)" />
+    <Property Name="Custom2" Type="nvarchar(max)" />
+    <Property Name="Custom3" Type="nvarchar(max)" />
+    <Property Name="Custom4" Type="nvarchar(max)" />
+    <Property Name="Custom5" Type="nvarchar(max)" />
+    <Property Name="LastModUserId" Type="int" />
+    <Property Name="LastModDttm" Type="datetime" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="ParentSalesOrderId" Type="int" />
+    <Property Name="SplitPartNumber" Type="int" />
+    <Property Name="Tax1OnShipping" Type="bit" />
+    <Property Name="LocationId" Type="int" />
+    <Property Name="ShowShipping" Type="bit" />
+    <Property Name="ShipToCompanyName" Type="nvarchar" MaxLength="255" />
+    <Property Name="CurrencyId" Type="int" />
+    <Property Name="ExchangeRate" Type="decimal" Precision="20" Scale="10" />
+    <Property Name="Tax2OnShipping" Type="bit" />
+    <Property Name="Total" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="PaymentStatus" Type="int" />
+    <Property Name="InventoryStatus" Type="int" />
+    <Property Name="IsCancelled" Type="bit" />
+    <Property Name="SummaryLinePermutation" Type="varchar(max)" />
+    <Property Name="NonCustomerCost" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="NonCustomerCostIsPercent" Type="bit" />
+    <Property Name="IsQuote" Type="bit" />
+    <Property Name="IsInvoiced" Type="bit" />
+    <Property Name="IsCompleted" Type="bit" />
+    <Property Name="SameBillingAndShipping" Type="bit" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrder_Line">
+    <Key>
+      <PropertyRef Name="SalesOrderLineId" />
+    </Key>
+    <Property Name="SalesOrderLineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalesOrderId" Type="int" Nullable="false" />
+    <Property Name="Version" Type="int" />
+    <Property Name="LineNum" Type="int" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Quantity" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="SubTotal" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="nvarchar" MaxLength="20" />
+    <Property Name="QuantityDisplay" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="DiscountIsPercent" Type="bit" />
+    <Property Name="ProdId" Type="int" />
+    <Property Name="TaxCodeId" Type="int" />
+    <Property Name="Tax1Rate" Type="decimal" Precision="10" Scale="5" />
+    <Property Name="Tax2Rate" Type="decimal" Precision="10" Scale="5" />
+    <Property Name="ServiceCompleted" Type="bit" />
+    <Property Name="Serials" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrder_Line_Version">
+    <Key>
+      <PropertyRef Name="SalesOrderVersionLineId" />
+    </Key>
+    <Property Name="SalesOrderVersionLineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalesOrderLineId" Type="int" Nullable="false" />
+    <Property Name="SalesOrderId" Type="int" Nullable="false" />
+    <Property Name="Version" Type="int" />
+    <Property Name="LineNum" Type="int" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Quantity" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="SubTotal" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="nvarchar" MaxLength="20" />
+    <Property Name="QuantityDisplay" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="DiscountIsPercent" Type="bit" />
+    <Property Name="ProdId" Type="int" />
+    <Property Name="TaxCodeId" Type="int" />
+    <Property Name="Tax1Rate" Type="decimal" Precision="10" Scale="5" />
+    <Property Name="Tax2Rate" Type="decimal" Precision="10" Scale="5" />
+    <Property Name="ServiceCompleted" Type="bit" />
+    <Property Name="Serials" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrder_Version">
+    <Key>
+      <PropertyRef Name="SalesOrderVersionId" />
+    </Key>
+    <Property Name="SalesOrderVersionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalesOrderId" Type="int" Nullable="false" />
+    <Property Name="Version" Type="int" />
+    <Property Name="OrderNumber" Type="nvarchar" MaxLength="30" />
+    <Property Name="OrderDate" Type="datetime" />
+    <Property Name="CustomerId" Type="int" />
+    <Property Name="SalesRep" Type="nvarchar" MaxLength="200" />
+    <Property Name="PONumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="RequestShipDate" Type="datetime" />
+    <Property Name="PaymentTermsId" Type="int" />
+    <Property Name="DueDate" Type="datetime" />
+    <Property Name="PricingSchemeId" Type="int" />
+    <Property Name="OrderRemarks" Type="nvarchar(max)" />
+    <Property Name="OrderSubTotal" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="OrderTax1" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="OrderTax2" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="OrderExtra" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="OrderTotal" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="TaxingSchemeId" Type="int" />
+    <Property Name="Tax1Rate" Type="decimal" Precision="10" Scale="5" />
+    <Property Name="Tax2Rate" Type="decimal" Precision="10" Scale="5" />
+    <Property Name="CalculateTax2OnTax1" Type="bit" />
+    <Property Name="Tax1Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Tax2Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="PickedDate" Type="datetime" />
+    <Property Name="PickingRemarks" Type="nvarchar(max)" />
+    <Property Name="PackedDate" Type="datetime" />
+    <Property Name="PackingRemarks" Type="nvarchar(max)" />
+    <Property Name="ShippingRemarks" Type="nvarchar(max)" />
+    <Property Name="InvoicedDate" Type="datetime" />
+    <Property Name="AmountPaid" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="Balance" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnRemarks" Type="nvarchar(max)" />
+    <Property Name="ReturnSubTotal" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnTax1" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnTax2" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnExtra" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnTotal" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnFee" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="RestockRemarks" Type="nvarchar(max)" />
+    <Property Name="ContactName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="BillingAddress1" Type="nvarchar" MaxLength="200" />
+    <Property Name="BillingAddress2" Type="nvarchar" MaxLength="200" />
+    <Property Name="BillingCity" Type="nvarchar" MaxLength="100" />
+    <Property Name="BillingState" Type="nvarchar" MaxLength="50" />
+    <Property Name="BillingCountry" Type="nvarchar" MaxLength="200" />
+    <Property Name="BillingPostalCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="BillingAddressRemarks" Type="nvarchar(max)" />
+    <Property Name="BillingAddressType" Type="int" />
+    <Property Name="ShippingAddress1" Type="nvarchar" MaxLength="200" />
+    <Property Name="ShippingAddress2" Type="nvarchar" MaxLength="200" />
+    <Property Name="ShippingCity" Type="nvarchar" MaxLength="100" />
+    <Property Name="ShippingState" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShippingCountry" Type="nvarchar" MaxLength="200" />
+    <Property Name="ShippingPostalCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="ShippingAddressRemarks" Type="nvarchar(max)" />
+    <Property Name="ShippingAddressType" Type="int" />
+    <Property Name="Custom1" Type="nvarchar(max)" />
+    <Property Name="Custom2" Type="nvarchar(max)" />
+    <Property Name="Custom3" Type="nvarchar(max)" />
+    <Property Name="Custom4" Type="nvarchar(max)" />
+    <Property Name="Custom5" Type="nvarchar(max)" />
+    <Property Name="LastModUserId" Type="int" />
+    <Property Name="LastModDttm" Type="datetime" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="ParentSalesOrderId" Type="int" />
+    <Property Name="SplitPartNumber" Type="int" />
+    <Property Name="Tax1OnShipping" Type="bit" />
+    <Property Name="LocationId" Type="int" />
+    <Property Name="ShowShipping" Type="bit" />
+    <Property Name="ShipToCompanyName" Type="nvarchar" MaxLength="255" />
+    <Property Name="CurrencyId" Type="int" />
+    <Property Name="ExchangeRate" Type="decimal" Precision="20" Scale="10" />
+    <Property Name="Tax2OnShipping" Type="bit" />
+    <Property Name="Total" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="PaymentStatus" Type="int" />
+    <Property Name="InventoryStatus" Type="int" />
+    <Property Name="IsCancelled" Type="bit" />
+    <Property Name="SummaryLinePermutation" Type="varchar(max)" />
+    <Property Name="NonCustomerCost" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="NonCustomerCostIsPercent" Type="bit" />
+    <Property Name="IsQuote" Type="bit" />
+    <Property Name="IsInvoiced" Type="bit" />
+    <Property Name="IsCompleted" Type="bit" />
+    <Property Name="SameBillingAndShipping" Type="bit" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderAttachment">
+    <Key>
+      <PropertyRef Name="SalesOrderAttachmentId" />
+    </Key>
+    <Property Name="SalesOrderAttachmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalesOrderId" Type="int" Nullable="false" />
+    <Property Name="FileAttachmentId" Type="int" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderPack_Line">
+    <Key>
+      <PropertyRef Name="SalesOrderPackLineId" />
+    </Key>
+    <Property Name="SalesOrderPackLineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalesOrderId" Type="int" Nullable="false" />
+    <Property Name="Version" Type="int" />
+    <Property Name="LineNum" Type="int" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Quantity" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="ContainerNumber" Type="nvarchar" MaxLength="100" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="nvarchar" MaxLength="20" />
+    <Property Name="QuantityDisplay" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="ProdId" Type="int" />
+    <Property Name="Serials" Type="nvarchar(max)" />
+    <Property Name="Shipped" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderPack_Line_Version">
+    <Key>
+      <PropertyRef Name="SalesOrderPackVersionLineId" />
+    </Key>
+    <Property Name="SalesOrderPackVersionLineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalesOrderPackLineId" Type="int" Nullable="false" />
+    <Property Name="SalesOrderId" Type="int" Nullable="false" />
+    <Property Name="Version" Type="int" />
+    <Property Name="LineNum" Type="int" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Quantity" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="ContainerNumber" Type="nvarchar" MaxLength="100" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="nvarchar" MaxLength="20" />
+    <Property Name="QuantityDisplay" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="ProdId" Type="int" />
+    <Property Name="Serials" Type="nvarchar(max)" />
+    <Property Name="Shipped" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderPaymentHistory_Line">
+    <Key>
+      <PropertyRef Name="SalesOrderPaymentHistoryLineId" />
+    </Key>
+    <Property Name="SalesOrderPaymentHistoryLineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalesOrderId" Type="int" Nullable="false" />
+    <Property Name="DatePaid" Type="datetime" />
+    <Property Name="PaymentType" Type="int" />
+    <Property Name="PaymentMethod" Type="nvarchar" MaxLength="100" />
+    <Property Name="ReferenceNumber" Type="nvarchar" MaxLength="100" />
+    <Property Name="Remarks" Type="nvarchar(max)" />
+    <Property Name="Amount" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="BatchPaymentId" Type="int" />
+    <Property Name="Version" Type="int" />
+    <Property Name="LineNum" Type="int" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderPaymentHistory_Line_Version">
+    <Key>
+      <PropertyRef Name="SalesOrderPaymentHistoryLineVersionId" />
+    </Key>
+    <Property Name="SalesOrderPaymentHistoryLineVersionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalesOrderPaymentHistoryLineId" Type="int" Nullable="false" />
+    <Property Name="SalesOrderId" Type="int" Nullable="false" />
+    <Property Name="DatePaid" Type="datetime" />
+    <Property Name="PaymentType" Type="int" />
+    <Property Name="PaymentMethod" Type="nvarchar" MaxLength="100" />
+    <Property Name="ReferenceNumber" Type="nvarchar" MaxLength="100" />
+    <Property Name="Remarks" Type="nvarchar(max)" />
+    <Property Name="Amount" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="BatchPaymentId" Type="int" />
+    <Property Name="Version" Type="int" />
+    <Property Name="LineNum" Type="int" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderPick_Line">
+    <Key>
+      <PropertyRef Name="SalesOrderPickLineId" />
+    </Key>
+    <Property Name="SalesOrderPickLineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalesOrderId" Type="int" Nullable="false" />
+    <Property Name="Version" Type="int" />
+    <Property Name="LineNum" Type="int" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Quantity" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="LocationId" Type="int" />
+    <Property Name="Sublocation" Type="nvarchar" MaxLength="100" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="nvarchar" MaxLength="20" />
+    <Property Name="QuantityDisplay" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="ProdId" Type="int" />
+    <Property Name="Serials" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderPick_Line_Version">
+    <Key>
+      <PropertyRef Name="SalesOrderPickVersionLineId" />
+    </Key>
+    <Property Name="SalesOrderPickVersionLineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalesOrderPickLineId" Type="int" Nullable="false" />
+    <Property Name="SalesOrderId" Type="int" Nullable="false" />
+    <Property Name="Version" Type="int" />
+    <Property Name="LineNum" Type="int" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Quantity" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="LocationId" Type="int" />
+    <Property Name="Sublocation" Type="nvarchar" MaxLength="100" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="nvarchar" MaxLength="20" />
+    <Property Name="QuantityDisplay" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="ProdId" Type="int" />
+    <Property Name="Serials" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderRestock_Line">
+    <Key>
+      <PropertyRef Name="SalesOrderRestockLineId" />
+    </Key>
+    <Property Name="SalesOrderRestockLineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalesOrderId" Type="int" Nullable="false" />
+    <Property Name="Version" Type="int" />
+    <Property Name="LineNum" Type="int" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Quantity" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="LocationId" Type="int" />
+    <Property Name="Sublocation" Type="nvarchar" MaxLength="100" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="nvarchar" MaxLength="20" />
+    <Property Name="QuantityDisplay" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="ProdId" Type="int" />
+    <Property Name="RestockDate" Type="datetime" />
+    <Property Name="Serials" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderRestock_Line_Version">
+    <Key>
+      <PropertyRef Name="SalesOrderRestockLineVersionId" />
+    </Key>
+    <Property Name="SalesOrderRestockLineVersionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalesOrderRestockLineId" Type="int" Nullable="false" />
+    <Property Name="SalesOrderId" Type="int" Nullable="false" />
+    <Property Name="Version" Type="int" />
+    <Property Name="LineNum" Type="int" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Quantity" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="LocationId" Type="int" />
+    <Property Name="Sublocation" Type="nvarchar" MaxLength="100" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="nvarchar" MaxLength="20" />
+    <Property Name="QuantityDisplay" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="ProdId" Type="int" />
+    <Property Name="RestockDate" Type="datetime" />
+    <Property Name="Serials" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderReturn_Line">
+    <Key>
+      <PropertyRef Name="SalesOrderReturnLineId" />
+    </Key>
+    <Property Name="SalesOrderReturnLineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalesOrderId" Type="int" Nullable="false" />
+    <Property Name="Version" Type="int" />
+    <Property Name="LineNum" Type="int" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Quantity" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="SubTotal" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="nvarchar" MaxLength="20" />
+    <Property Name="QuantityDisplay" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="DiscountIsPercent" Type="bit" />
+    <Property Name="ProdId" Type="int" />
+    <Property Name="TaxCodeId" Type="int" />
+    <Property Name="Tax1Rate" Type="decimal" Precision="10" Scale="5" />
+    <Property Name="Tax2Rate" Type="decimal" Precision="10" Scale="5" />
+    <Property Name="ReturnDate" Type="datetime" />
+    <Property Name="IsDiscarded" Type="bit" />
+    <Property Name="Serials" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderReturn_Line_Version">
+    <Key>
+      <PropertyRef Name="SalesOrderReturnVersionLineId" />
+    </Key>
+    <Property Name="SalesOrderReturnVersionLineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalesOrderReturnLineId" Type="int" Nullable="false" />
+    <Property Name="SalesOrderId" Type="int" Nullable="false" />
+    <Property Name="Version" Type="int" />
+    <Property Name="LineNum" Type="int" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Quantity" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="SubTotal" Type="decimal" Precision="21" Scale="5" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="nvarchar" MaxLength="20" />
+    <Property Name="QuantityDisplay" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="DiscountIsPercent" Type="bit" />
+    <Property Name="ProdId" Type="int" />
+    <Property Name="TaxCodeId" Type="int" />
+    <Property Name="Tax1Rate" Type="decimal" Precision="10" Scale="5" />
+    <Property Name="Tax2Rate" Type="decimal" Precision="10" Scale="5" />
+    <Property Name="ReturnDate" Type="datetime" />
+    <Property Name="IsDiscarded" Type="bit" />
+    <Property Name="Serials" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderShip_Line">
+    <Key>
+      <PropertyRef Name="SalesOrderShipLineId" />
+    </Key>
+    <Property Name="SalesOrderShipLineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalesOrderId" Type="int" Nullable="false" />
+    <Property Name="Version" Type="int" />
+    <Property Name="LineNum" Type="int" />
+    <Property Name="ShippedDate" Type="datetime" />
+    <Property Name="Carrier" Type="nvarchar" MaxLength="100" />
+    <Property Name="TrackingNumber" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderShip_Line_Version">
+    <Key>
+      <PropertyRef Name="SalesOrderShipVersionLineId" />
+    </Key>
+    <Property Name="SalesOrderShipVersionLineId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalesOrderShipLineId" Type="int" Nullable="false" />
+    <Property Name="SalesOrderId" Type="int" Nullable="false" />
+    <Property Name="Version" Type="int" />
+    <Property Name="LineNum" Type="int" />
+    <Property Name="ShippedDate" Type="datetime" />
+    <Property Name="Carrier" Type="nvarchar" MaxLength="100" />
+    <Property Name="TrackingNumber" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderShipContainer">
+    <Key>
+      <PropertyRef Name="SalesOrderShipContainerId" />
+    </Key>
+    <Property Name="SalesOrderShipContainerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Version" Type="int" Nullable="false" />
+    <Property Name="SalesOrderShipLineId" Type="int" />
+    <Property Name="ContainerNumber" Type="nvarchar" MaxLength="100" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderShipContainer_Version">
+    <Key>
+      <PropertyRef Name="SalesOrderShipContainerVersionId" />
+    </Key>
+    <Property Name="SalesOrderShipContainerVersionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalesOrderShipContainerId" Type="int" Nullable="false" />
+    <Property Name="Version" Type="int" />
+    <Property Name="SalesOrderShipLineId" Type="int" />
+    <Property Name="ContainerNumber" Type="nvarchar" MaxLength="100" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderSticky">
+    <Key>
+      <PropertyRef Name="SalesOrderStickyId" />
+    </Key>
+    <Property Name="SalesOrderStickyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalesOrderId" Type="int" Nullable="false" />
+    <Property Name="Version" Type="int" />
+    <Property Name="LocationX" Type="int" />
+    <Property Name="LocationY" Type="int" />
+    <Property Name="Width" Type="int" />
+    <Property Name="Height" Type="int" />
+    <Property Name="Colour" Type="int" />
+    <Property Name="Text" Type="nvarchar(max)" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderSticky_Version">
+    <Key>
+      <PropertyRef Name="SalesOrderStickyVersionId" />
+    </Key>
+    <Property Name="SalesOrderStickyVersionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalesOrderStickyId" Type="int" Nullable="false" />
+    <Property Name="SalesOrderId" Type="int" Nullable="false" />
+    <Property Name="Version" Type="int" />
+    <Property Name="LocationX" Type="int" />
+    <Property Name="LocationY" Type="int" />
+    <Property Name="Width" Type="int" />
+    <Property Name="Height" Type="int" />
+    <Property Name="Colour" Type="int" />
+    <Property Name="Text" Type="nvarchar(max)" />
+    <Property Name="Timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="tblInventory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tblPaymentHistory">
+    <Key>
+      <PropertyRef Name="PaymentHistoryId" />
+    </Key>
+    <Property Name="PaymentHistoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="DueDate" Type="datetime" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CreditBalance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Transactions" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="vendorID" Type="int" />
+  </EntityType>
+  <Association Name="FK__ACC_Produ__ProdI__7EF6D905">
+    <End Role="BASE_Product" Type="Self.BASE_Product" Multiplicity="1" />
+    <End Role="ACC_ProductDefaultCost" Type="Self.ACC_ProductDefaultCost" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="ACC_ProductDefaultCost">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Base_Bill__ProdI__0A688BB1">
+    <End Role="BASE_Product" Type="Self.BASE_Product" Multiplicity="0..1" />
+    <End Role="Base_BillOfMaterials" Type="Self.Base_BillOfMaterials" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="Base_BillOfMaterials">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblPaymen__vendo__40C49C62">
+    <End Role="BASE_Vendor" Type="Self.BASE_Vendor" Multiplicity="0..1" />
+    <End Role="tblPaymentHistory" Type="Self.tblPaymentHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Vendor">
+        <PropertyRef Name="VendorId" />
+      </Principal>
+      <Dependent Role="tblPaymentHistory">
+        <PropertyRef Name="vendorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_Category_ParentCategoryId">
+    <End Role="BASE_Category" Type="Self.BASE_Category" Multiplicity="0..1" />
+    <End Role="BASE_Category1" Type="Self.BASE_Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Category">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="BASE_Category1">
+        <PropertyRef Name="ParentCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_City_BASE_State">
+    <End Role="BASE_State" Type="Self.BASE_State" Multiplicity="0..1" />
+    <End Role="BASE_City" Type="Self.BASE_City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_State">
+        <PropertyRef Name="StateId" />
+      </Principal>
+      <Dependent Role="BASE_City">
+        <PropertyRef Name="FKStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_Customer_DefaultLocationId">
+    <End Role="BASE_Location" Type="Self.BASE_Location" Multiplicity="0..1" />
+    <End Role="BASE_Customer" Type="Self.BASE_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Location">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="BASE_Customer">
+        <PropertyRef Name="DefaultLocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_Customer_DefaultOrderTaxCodeId">
+    <End Role="BASE_TaxingScheme" Type="Self.BASE_TaxingScheme" Multiplicity="0..1" />
+    <End Role="BASE_Customer" Type="Self.BASE_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_TaxingScheme">
+        <PropertyRef Name="TaxingSchemeId" />
+      </Principal>
+      <Dependent Role="BASE_Customer">
+        <PropertyRef Name="TaxingSchemeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_Customer_DefaultPaymentTermsId">
+    <End Role="BASE_PaymentTerms" Type="Self.BASE_PaymentTerms" Multiplicity="0..1" />
+    <End Role="BASE_Customer" Type="Self.BASE_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_PaymentTerms">
+        <PropertyRef Name="PaymentTermsId" />
+      </Principal>
+      <Dependent Role="BASE_Customer">
+        <PropertyRef Name="DefaultPaymentTermsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_Customer_DefaultPricingSchemeId">
+    <End Role="BASE_PricingScheme" Type="Self.BASE_PricingScheme" Multiplicity="0..1" />
+    <End Role="BASE_Customer" Type="Self.BASE_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_PricingScheme">
+        <PropertyRef Name="PricingSchemeId" />
+      </Principal>
+      <Dependent Role="BASE_Customer">
+        <PropertyRef Name="DefaultPricingSchemeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_Customer_LastModUserId">
+    <End Role="BASE_User" Type="Self.BASE_User" Multiplicity="0..1" />
+    <End Role="BASE_Customer" Type="Self.BASE_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="BASE_Customer">
+        <PropertyRef Name="LastModUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_ItemPrice_BASE_Product">
+    <End Role="BASE_Product" Type="Self.BASE_Product" Multiplicity="0..1" />
+    <End Role="BASE_ItemPrice" Type="Self.BASE_ItemPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="BASE_ItemPrice">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_Location_LastModUserId">
+    <End Role="BASE_User" Type="Self.BASE_User" Multiplicity="0..1" />
+    <End Role="BASE_Location" Type="Self.BASE_Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="BASE_Location">
+        <PropertyRef Name="LastModUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_PricingScheme_CurrencyId">
+    <End Role="GLOBAL_Currency" Type="Self.GLOBAL_Currency" Multiplicity="0..1" />
+    <End Role="BASE_PricingScheme" Type="Self.BASE_PricingScheme" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GLOBAL_Currency">
+        <PropertyRef Name="CurrencyId" />
+      </Principal>
+      <Dependent Role="BASE_PricingScheme">
+        <PropertyRef Name="CurrencyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_PricingScheme_LastModUserId">
+    <End Role="BASE_User" Type="Self.BASE_User" Multiplicity="0..1" />
+    <End Role="BASE_PricingScheme" Type="Self.BASE_PricingScheme" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="BASE_PricingScheme">
+        <PropertyRef Name="LastModUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_Product_LastModUserId">
+    <End Role="BASE_User" Type="Self.BASE_User" Multiplicity="0..1" />
+    <End Role="BASE_Product" Type="Self.BASE_Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="BASE_Product">
+        <PropertyRef Name="LastModUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Base_Quantity_BASE_Location">
+    <End Role="BASE_Location" Type="Self.BASE_Location" Multiplicity="0..1" />
+    <End Role="Base_Quantity" Type="Self.Base_Quantity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Location">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="Base_Quantity">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Base_Quantity_BASE_Product">
+    <End Role="BASE_Product" Type="Self.BASE_Product" Multiplicity="0..1" />
+    <End Role="Base_Quantity" Type="Self.Base_Quantity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="Base_Quantity">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_State_BASE_Country">
+    <End Role="BASE_Country" Type="Self.BASE_Country" Multiplicity="1" />
+    <End Role="BASE_State" Type="Self.BASE_State" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Country">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="BASE_State">
+        <PropertyRef Name="FKCountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_TaxingScheme_BASE_TaxCode">
+    <End Role="BASE_TaxCode" Type="Self.BASE_TaxCode" Multiplicity="0..1" />
+    <End Role="BASE_TaxingScheme" Type="Self.BASE_TaxingScheme" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_TaxCode">
+        <PropertyRef Name="TaxCodeId" />
+      </Principal>
+      <Dependent Role="BASE_TaxingScheme">
+        <PropertyRef Name="DefaultTaxCodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_Vendor_CurrencyId">
+    <End Role="GLOBAL_Currency" Type="Self.GLOBAL_Currency" Multiplicity="0..1" />
+    <End Role="BASE_Vendor" Type="Self.BASE_Vendor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GLOBAL_Currency">
+        <PropertyRef Name="CurrencyId" />
+      </Principal>
+      <Dependent Role="BASE_Vendor">
+        <PropertyRef Name="CurrencyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_Vendor_DefaultPaymentTermsId">
+    <End Role="BASE_PaymentTerms" Type="Self.BASE_PaymentTerms" Multiplicity="0..1" />
+    <End Role="BASE_Vendor" Type="Self.BASE_Vendor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_PaymentTerms">
+        <PropertyRef Name="PaymentTermsId" />
+      </Principal>
+      <Dependent Role="BASE_Vendor">
+        <PropertyRef Name="DefaultPaymentTermsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_Vendor_LastModUserId">
+    <End Role="BASE_User" Type="Self.BASE_User" Multiplicity="0..1" />
+    <End Role="BASE_Vendor" Type="Self.BASE_Vendor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="BASE_Vendor">
+        <PropertyRef Name="LastModUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DUMMY_ReorderStock_Line_ProdId">
+    <End Role="BASE_Product" Type="Self.BASE_Product" Multiplicity="1" />
+    <End Role="DUMMY_ReorderStock_Line" Type="Self.DUMMY_ReorderStock_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="DUMMY_ReorderStock_Line">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrder_BASE_Location">
+    <End Role="BASE_Location" Type="Self.BASE_Location" Multiplicity="0..1" />
+    <End Role="PO_PurchaseOrder" Type="Self.PO_PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Location">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrder">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrder_CurrencyId">
+    <End Role="GLOBAL_Currency" Type="Self.GLOBAL_Currency" Multiplicity="0..1" />
+    <End Role="PO_PurchaseOrder" Type="Self.PO_PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GLOBAL_Currency">
+        <PropertyRef Name="CurrencyId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrder">
+        <PropertyRef Name="CurrencyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrder_LastModUserId">
+    <End Role="BASE_User" Type="Self.BASE_User" Multiplicity="0..1" />
+    <End Role="PO_PurchaseOrder" Type="Self.PO_PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrder">
+        <PropertyRef Name="LastModUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrder_Line_BASE_TaxCode">
+    <End Role="BASE_TaxCode" Type="Self.BASE_TaxCode" Multiplicity="0..1" />
+    <End Role="PO_PurchaseOrder_Line" Type="Self.PO_PurchaseOrder_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_TaxCode">
+        <PropertyRef Name="TaxCodeId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrder_Line">
+        <PropertyRef Name="TaxCodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrder_Line_ProdId">
+    <End Role="BASE_Product" Type="Self.BASE_Product" Multiplicity="0..1" />
+    <End Role="PO_PurchaseOrder_Line" Type="Self.PO_PurchaseOrder_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrder_Line">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrder_Line_PurchaseOrderId">
+    <End Role="PO_PurchaseOrder" Type="Self.PO_PurchaseOrder" Multiplicity="1" />
+    <End Role="PO_PurchaseOrder_Line" Type="Self.PO_PurchaseOrder_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PO_PurchaseOrder">
+        <PropertyRef Name="PurchaseOrderId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrder_Line">
+        <PropertyRef Name="PurchaseOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrder_OrderTaxCodeId">
+    <End Role="BASE_TaxingScheme" Type="Self.BASE_TaxingScheme" Multiplicity="0..1" />
+    <End Role="PO_PurchaseOrder" Type="Self.PO_PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_TaxingScheme">
+        <PropertyRef Name="TaxingSchemeId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrder">
+        <PropertyRef Name="TaxingSchemeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrder_PaymentTermsId">
+    <End Role="BASE_PaymentTerms" Type="Self.BASE_PaymentTerms" Multiplicity="0..1" />
+    <End Role="PO_PurchaseOrder" Type="Self.PO_PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_PaymentTerms">
+        <PropertyRef Name="PaymentTermsId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrder">
+        <PropertyRef Name="PaymentTermsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrderReceive_Line_LocationId">
+    <End Role="BASE_Location" Type="Self.BASE_Location" Multiplicity="0..1" />
+    <End Role="PO_PurchaseOrderReceive_Line" Type="Self.PO_PurchaseOrderReceive_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Location">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrderReceive_Line">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrderReceive_Line_ProdId">
+    <End Role="BASE_Product" Type="Self.BASE_Product" Multiplicity="0..1" />
+    <End Role="PO_PurchaseOrderReceive_Line" Type="Self.PO_PurchaseOrderReceive_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrderReceive_Line">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrderReceive_Line_PurchaseOrderId">
+    <End Role="PO_PurchaseOrder" Type="Self.PO_PurchaseOrder" Multiplicity="1" />
+    <End Role="PO_PurchaseOrderReceive_Line" Type="Self.PO_PurchaseOrderReceive_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PO_PurchaseOrder">
+        <PropertyRef Name="PurchaseOrderId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrderReceive_Line">
+        <PropertyRef Name="PurchaseOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrderReturn_Line_BASE_TaxCode">
+    <End Role="BASE_TaxCode" Type="Self.BASE_TaxCode" Multiplicity="0..1" />
+    <End Role="PO_PurchaseOrderReturn_Line" Type="Self.PO_PurchaseOrderReturn_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_TaxCode">
+        <PropertyRef Name="TaxCodeId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrderReturn_Line">
+        <PropertyRef Name="TaxCodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrderReturn_Line_ProdId">
+    <End Role="BASE_Product" Type="Self.BASE_Product" Multiplicity="0..1" />
+    <End Role="PO_PurchaseOrderReturn_Line" Type="Self.PO_PurchaseOrderReturn_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrderReturn_Line">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrderReturn_Line_PurchaseOrderId">
+    <End Role="PO_PurchaseOrder" Type="Self.PO_PurchaseOrder" Multiplicity="1" />
+    <End Role="PO_PurchaseOrderReturn_Line" Type="Self.PO_PurchaseOrderReturn_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PO_PurchaseOrder">
+        <PropertyRef Name="PurchaseOrderId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrderReturn_Line">
+        <PropertyRef Name="PurchaseOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrderUnstock_Line_LocationId">
+    <End Role="BASE_Location" Type="Self.BASE_Location" Multiplicity="0..1" />
+    <End Role="PO_PurchaseOrderUnstock_Line" Type="Self.PO_PurchaseOrderUnstock_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Location">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrderUnstock_Line">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrderUnstock_Line_ProdId">
+    <End Role="BASE_Product" Type="Self.BASE_Product" Multiplicity="0..1" />
+    <End Role="PO_PurchaseOrderUnstock_Line" Type="Self.PO_PurchaseOrderUnstock_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrderUnstock_Line">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrderUnstock_Line_PurchaseOrderId">
+    <End Role="PO_PurchaseOrder" Type="Self.PO_PurchaseOrder" Multiplicity="1" />
+    <End Role="PO_PurchaseOrderUnstock_Line" Type="Self.PO_PurchaseOrderUnstock_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PO_PurchaseOrder">
+        <PropertyRef Name="PurchaseOrderId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrderUnstock_Line">
+        <PropertyRef Name="PurchaseOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrder_Line_BASE_TaxCode">
+    <End Role="BASE_TaxCode" Type="Self.BASE_TaxCode" Multiplicity="0..1" />
+    <End Role="SO_SalesOrder_Line" Type="Self.SO_SalesOrder_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_TaxCode">
+        <PropertyRef Name="TaxCodeId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrder_Line">
+        <PropertyRef Name="TaxCodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrder_Line_ProdId">
+    <End Role="BASE_Product" Type="Self.BASE_Product" Multiplicity="0..1" />
+    <End Role="SO_SalesOrder_Line" Type="Self.SO_SalesOrder_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrder_Line">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrder_Line_SalesOrderId">
+    <End Role="SO_SalesOrder" Type="Self.SO_SalesOrder" Multiplicity="1" />
+    <End Role="SO_SalesOrder_Line" Type="Self.SO_SalesOrder_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SO_SalesOrder">
+        <PropertyRef Name="SalesOrderId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrder_Line">
+        <PropertyRef Name="SalesOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrder_ParentSalesOrderId">
+    <End Role="SO_SalesOrder" Type="Self.SO_SalesOrder" Multiplicity="0..1" />
+    <End Role="SO_SalesOrder1" Type="Self.SO_SalesOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SO_SalesOrder">
+        <PropertyRef Name="SalesOrderId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrder1">
+        <PropertyRef Name="ParentSalesOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderAttachment_SalesOrderId">
+    <End Role="SO_SalesOrder" Type="Self.SO_SalesOrder" Multiplicity="1" />
+    <End Role="SO_SalesOrderAttachment" Type="Self.SO_SalesOrderAttachment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SO_SalesOrder">
+        <PropertyRef Name="SalesOrderId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderAttachment">
+        <PropertyRef Name="SalesOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderPack_Line_ProdId">
+    <End Role="BASE_Product" Type="Self.BASE_Product" Multiplicity="0..1" />
+    <End Role="SO_SalesOrderPack_Line" Type="Self.SO_SalesOrderPack_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderPack_Line">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderPack_Line_SalesOrderId">
+    <End Role="SO_SalesOrder" Type="Self.SO_SalesOrder" Multiplicity="1" />
+    <End Role="SO_SalesOrderPack_Line" Type="Self.SO_SalesOrderPack_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SO_SalesOrder">
+        <PropertyRef Name="SalesOrderId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderPack_Line">
+        <PropertyRef Name="SalesOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderPick_Line_LocationId">
+    <End Role="BASE_Location" Type="Self.BASE_Location" Multiplicity="0..1" />
+    <End Role="SO_SalesOrderPick_Line" Type="Self.SO_SalesOrderPick_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Location">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderPick_Line">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderPick_Line_ProdId">
+    <End Role="BASE_Product" Type="Self.BASE_Product" Multiplicity="0..1" />
+    <End Role="SO_SalesOrderPick_Line" Type="Self.SO_SalesOrderPick_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderPick_Line">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderPick_Line_SalesOrderId">
+    <End Role="SO_SalesOrder" Type="Self.SO_SalesOrder" Multiplicity="1" />
+    <End Role="SO_SalesOrderPick_Line" Type="Self.SO_SalesOrderPick_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SO_SalesOrder">
+        <PropertyRef Name="SalesOrderId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderPick_Line">
+        <PropertyRef Name="SalesOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderRestock_Line_LocationId">
+    <End Role="BASE_Location" Type="Self.BASE_Location" Multiplicity="0..1" />
+    <End Role="SO_SalesOrderRestock_Line" Type="Self.SO_SalesOrderRestock_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Location">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderRestock_Line">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderRestock_Line_ProdId">
+    <End Role="BASE_Product" Type="Self.BASE_Product" Multiplicity="0..1" />
+    <End Role="SO_SalesOrderRestock_Line" Type="Self.SO_SalesOrderRestock_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderRestock_Line">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderRestock_Line_SalesOrderId">
+    <End Role="SO_SalesOrder" Type="Self.SO_SalesOrder" Multiplicity="1" />
+    <End Role="SO_SalesOrderRestock_Line" Type="Self.SO_SalesOrderRestock_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SO_SalesOrder">
+        <PropertyRef Name="SalesOrderId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderRestock_Line">
+        <PropertyRef Name="SalesOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderReturn_Line_BASE_TaxCode">
+    <End Role="BASE_TaxCode" Type="Self.BASE_TaxCode" Multiplicity="0..1" />
+    <End Role="SO_SalesOrderReturn_Line" Type="Self.SO_SalesOrderReturn_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_TaxCode">
+        <PropertyRef Name="TaxCodeId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderReturn_Line">
+        <PropertyRef Name="TaxCodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderReturn_Line_ProdId">
+    <End Role="BASE_Product" Type="Self.BASE_Product" Multiplicity="0..1" />
+    <End Role="SO_SalesOrderReturn_Line" Type="Self.SO_SalesOrderReturn_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderReturn_Line">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderReturn_Line_SalesOrderId">
+    <End Role="SO_SalesOrder" Type="Self.SO_SalesOrder" Multiplicity="1" />
+    <End Role="SO_SalesOrderReturn_Line" Type="Self.SO_SalesOrderReturn_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SO_SalesOrder">
+        <PropertyRef Name="SalesOrderId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderReturn_Line">
+        <PropertyRef Name="SalesOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderShip_Line_SalesOrderId">
+    <End Role="SO_SalesOrder" Type="Self.SO_SalesOrder" Multiplicity="1" />
+    <End Role="SO_SalesOrderShip_Line" Type="Self.SO_SalesOrderShip_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SO_SalesOrder">
+        <PropertyRef Name="SalesOrderId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderShip_Line">
+        <PropertyRef Name="SalesOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderShipContainer_SalesOrderShipLineId">
+    <End Role="SO_SalesOrderShip_Line" Type="Self.SO_SalesOrderShip_Line" Multiplicity="0..1" />
+    <End Role="SO_SalesOrderShipContainer" Type="Self.SO_SalesOrderShipContainer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SO_SalesOrderShip_Line">
+        <PropertyRef Name="SalesOrderShipLineId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderShipContainer">
+        <PropertyRef Name="SalesOrderShipLineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderSticky_SalesOrderId">
+    <End Role="SO_SalesOrder" Type="Self.SO_SalesOrder" Multiplicity="1" />
+    <End Role="SO_SalesOrderSticky" Type="Self.SO_SalesOrderSticky" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SO_SalesOrder">
+        <PropertyRef Name="SalesOrderId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderSticky">
+        <PropertyRef Name="SalesOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="InventoryModelStoreContainer">
+    <EntitySet Name="ACC_ProductDefaultCost" EntityType="Self.ACC_ProductDefaultCost" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Base_BillOfMaterials" EntityType="Self.Base_BillOfMaterials" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Base_Carrier" EntityType="Self.Base_Carrier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BASE_Category" EntityType="Self.BASE_Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BASE_City" EntityType="Self.BASE_City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BASE_Country" EntityType="Self.BASE_Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BASE_Customer" EntityType="Self.BASE_Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BASE_ItemPrice" EntityType="Self.BASE_ItemPrice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BASE_Location" EntityType="Self.BASE_Location" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BASE_PaymentMethod" EntityType="Self.BASE_PaymentMethod" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BASE_PaymentTerms" EntityType="Self.BASE_PaymentTerms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BASE_PricingScheme" EntityType="Self.BASE_PricingScheme" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BASE_Product" EntityType="Self.BASE_Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Base_Quantity" EntityType="Self.Base_Quantity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BASE_ReceivingAddress" EntityType="Self.BASE_ReceivingAddress" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Base_SalesRep" EntityType="Self.Base_SalesRep" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BASE_State" EntityType="Self.BASE_State" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BASE_TaxCode" EntityType="Self.BASE_TaxCode" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BASE_TaxingScheme" EntityType="Self.BASE_TaxingScheme" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Base_Unit" EntityType="Self.Base_Unit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BASE_User" EntityType="Self.BASE_User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BASE_Vendor" EntityType="Self.BASE_Vendor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BASE_VendorItem" EntityType="Self.BASE_VendorItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DUMMY_ReorderStock_Line" EntityType="Self.DUMMY_ReorderStock_Line" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GLOBAL_Currency" EntityType="Self.GLOBAL_Currency" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="INV_StockAdjustment" EntityType="Self.INV_StockAdjustment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="INV_StockAdjustment_Line" EntityType="Self.INV_StockAdjustment_Line" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PO_InventoryStatus" EntityType="Self.PO_InventoryStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PO_PaymentStatus" EntityType="Self.PO_PaymentStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PO_PurchaseOrder" EntityType="Self.PO_PurchaseOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PO_PurchaseOrder_Line" EntityType="Self.PO_PurchaseOrder_Line" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PO_PurchaseOrder_Version" EntityType="Self.PO_PurchaseOrder_Version" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PO_PurchaseOrderReceive_Line" EntityType="Self.PO_PurchaseOrderReceive_Line" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PO_PurchaseOrderReturn_Line" EntityType="Self.PO_PurchaseOrderReturn_Line" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PO_PurchaseOrderUnstock_Line" EntityType="Self.PO_PurchaseOrderUnstock_Line" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PO_Status" EntityType="Self.PO_Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SO_SalesOrder" EntityType="Self.SO_SalesOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SO_SalesOrder_Line" EntityType="Self.SO_SalesOrder_Line" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SO_SalesOrder_Line_Version" EntityType="Self.SO_SalesOrder_Line_Version" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SO_SalesOrder_Version" EntityType="Self.SO_SalesOrder_Version" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SO_SalesOrderAttachment" EntityType="Self.SO_SalesOrderAttachment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SO_SalesOrderPack_Line" EntityType="Self.SO_SalesOrderPack_Line" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SO_SalesOrderPack_Line_Version" EntityType="Self.SO_SalesOrderPack_Line_Version" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SO_SalesOrderPaymentHistory_Line" EntityType="Self.SO_SalesOrderPaymentHistory_Line" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SO_SalesOrderPaymentHistory_Line_Version" EntityType="Self.SO_SalesOrderPaymentHistory_Line_Version" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SO_SalesOrderPick_Line" EntityType="Self.SO_SalesOrderPick_Line" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SO_SalesOrderPick_Line_Version" EntityType="Self.SO_SalesOrderPick_Line_Version" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SO_SalesOrderRestock_Line" EntityType="Self.SO_SalesOrderRestock_Line" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SO_SalesOrderRestock_Line_Version" EntityType="Self.SO_SalesOrderRestock_Line_Version" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SO_SalesOrderReturn_Line" EntityType="Self.SO_SalesOrderReturn_Line" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SO_SalesOrderReturn_Line_Version" EntityType="Self.SO_SalesOrderReturn_Line_Version" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SO_SalesOrderShip_Line" EntityType="Self.SO_SalesOrderShip_Line" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SO_SalesOrderShip_Line_Version" EntityType="Self.SO_SalesOrderShip_Line_Version" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SO_SalesOrderShipContainer" EntityType="Self.SO_SalesOrderShipContainer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SO_SalesOrderShipContainer_Version" EntityType="Self.SO_SalesOrderShipContainer_Version" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SO_SalesOrderSticky" EntityType="Self.SO_SalesOrderSticky" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SO_SalesOrderSticky_Version" EntityType="Self.SO_SalesOrderSticky_Version" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblInventory" EntityType="Self.tblInventory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblPaymentHistory" EntityType="Self.tblPaymentHistory" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__ACC_Produ__ProdI__7EF6D905" Association="Self.FK__ACC_Produ__ProdI__7EF6D905">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="ACC_ProductDefaultCost" EntitySet="ACC_ProductDefaultCost" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Base_Bill__ProdI__0A688BB1" Association="Self.FK__Base_Bill__ProdI__0A688BB1">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="Base_BillOfMaterials" EntitySet="Base_BillOfMaterials" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblPaymen__vendo__40C49C62" Association="Self.FK__tblPaymen__vendo__40C49C62">
+      <End Role="BASE_Vendor" EntitySet="BASE_Vendor" />
+      <End Role="tblPaymentHistory" EntitySet="tblPaymentHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_Category_ParentCategoryId" Association="Self.FK_BASE_Category_ParentCategoryId">
+      <End Role="BASE_Category" EntitySet="BASE_Category" />
+      <End Role="BASE_Category1" EntitySet="BASE_Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_City_BASE_State" Association="Self.FK_BASE_City_BASE_State">
+      <End Role="BASE_State" EntitySet="BASE_State" />
+      <End Role="BASE_City" EntitySet="BASE_City" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_Customer_DefaultLocationId" Association="Self.FK_BASE_Customer_DefaultLocationId">
+      <End Role="BASE_Location" EntitySet="BASE_Location" />
+      <End Role="BASE_Customer" EntitySet="BASE_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_Customer_DefaultOrderTaxCodeId" Association="Self.FK_BASE_Customer_DefaultOrderTaxCodeId">
+      <End Role="BASE_TaxingScheme" EntitySet="BASE_TaxingScheme" />
+      <End Role="BASE_Customer" EntitySet="BASE_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_Customer_DefaultPaymentTermsId" Association="Self.FK_BASE_Customer_DefaultPaymentTermsId">
+      <End Role="BASE_PaymentTerms" EntitySet="BASE_PaymentTerms" />
+      <End Role="BASE_Customer" EntitySet="BASE_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_Customer_DefaultPricingSchemeId" Association="Self.FK_BASE_Customer_DefaultPricingSchemeId">
+      <End Role="BASE_PricingScheme" EntitySet="BASE_PricingScheme" />
+      <End Role="BASE_Customer" EntitySet="BASE_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_Customer_LastModUserId" Association="Self.FK_BASE_Customer_LastModUserId">
+      <End Role="BASE_User" EntitySet="BASE_User" />
+      <End Role="BASE_Customer" EntitySet="BASE_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_ItemPrice_BASE_Product" Association="Self.FK_BASE_ItemPrice_BASE_Product">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="BASE_ItemPrice" EntitySet="BASE_ItemPrice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_Location_LastModUserId" Association="Self.FK_BASE_Location_LastModUserId">
+      <End Role="BASE_User" EntitySet="BASE_User" />
+      <End Role="BASE_Location" EntitySet="BASE_Location" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_PricingScheme_CurrencyId" Association="Self.FK_BASE_PricingScheme_CurrencyId">
+      <End Role="GLOBAL_Currency" EntitySet="GLOBAL_Currency" />
+      <End Role="BASE_PricingScheme" EntitySet="BASE_PricingScheme" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_PricingScheme_LastModUserId" Association="Self.FK_BASE_PricingScheme_LastModUserId">
+      <End Role="BASE_User" EntitySet="BASE_User" />
+      <End Role="BASE_PricingScheme" EntitySet="BASE_PricingScheme" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_Product_LastModUserId" Association="Self.FK_BASE_Product_LastModUserId">
+      <End Role="BASE_User" EntitySet="BASE_User" />
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Base_Quantity_BASE_Location" Association="Self.FK_Base_Quantity_BASE_Location">
+      <End Role="BASE_Location" EntitySet="BASE_Location" />
+      <End Role="Base_Quantity" EntitySet="Base_Quantity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Base_Quantity_BASE_Product" Association="Self.FK_Base_Quantity_BASE_Product">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="Base_Quantity" EntitySet="Base_Quantity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_State_BASE_Country" Association="Self.FK_BASE_State_BASE_Country">
+      <End Role="BASE_Country" EntitySet="BASE_Country" />
+      <End Role="BASE_State" EntitySet="BASE_State" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_TaxingScheme_BASE_TaxCode" Association="Self.FK_BASE_TaxingScheme_BASE_TaxCode">
+      <End Role="BASE_TaxCode" EntitySet="BASE_TaxCode" />
+      <End Role="BASE_TaxingScheme" EntitySet="BASE_TaxingScheme" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_Vendor_CurrencyId" Association="Self.FK_BASE_Vendor_CurrencyId">
+      <End Role="GLOBAL_Currency" EntitySet="GLOBAL_Currency" />
+      <End Role="BASE_Vendor" EntitySet="BASE_Vendor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_Vendor_DefaultPaymentTermsId" Association="Self.FK_BASE_Vendor_DefaultPaymentTermsId">
+      <End Role="BASE_PaymentTerms" EntitySet="BASE_PaymentTerms" />
+      <End Role="BASE_Vendor" EntitySet="BASE_Vendor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_Vendor_LastModUserId" Association="Self.FK_BASE_Vendor_LastModUserId">
+      <End Role="BASE_User" EntitySet="BASE_User" />
+      <End Role="BASE_Vendor" EntitySet="BASE_Vendor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DUMMY_ReorderStock_Line_ProdId" Association="Self.FK_DUMMY_ReorderStock_Line_ProdId">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="DUMMY_ReorderStock_Line" EntitySet="DUMMY_ReorderStock_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrder_BASE_Location" Association="Self.FK_PO_PurchaseOrder_BASE_Location">
+      <End Role="BASE_Location" EntitySet="BASE_Location" />
+      <End Role="PO_PurchaseOrder" EntitySet="PO_PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrder_CurrencyId" Association="Self.FK_PO_PurchaseOrder_CurrencyId">
+      <End Role="GLOBAL_Currency" EntitySet="GLOBAL_Currency" />
+      <End Role="PO_PurchaseOrder" EntitySet="PO_PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrder_LastModUserId" Association="Self.FK_PO_PurchaseOrder_LastModUserId">
+      <End Role="BASE_User" EntitySet="BASE_User" />
+      <End Role="PO_PurchaseOrder" EntitySet="PO_PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrder_Line_BASE_TaxCode" Association="Self.FK_PO_PurchaseOrder_Line_BASE_TaxCode">
+      <End Role="BASE_TaxCode" EntitySet="BASE_TaxCode" />
+      <End Role="PO_PurchaseOrder_Line" EntitySet="PO_PurchaseOrder_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrder_Line_ProdId" Association="Self.FK_PO_PurchaseOrder_Line_ProdId">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="PO_PurchaseOrder_Line" EntitySet="PO_PurchaseOrder_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrder_Line_PurchaseOrderId" Association="Self.FK_PO_PurchaseOrder_Line_PurchaseOrderId">
+      <End Role="PO_PurchaseOrder" EntitySet="PO_PurchaseOrder" />
+      <End Role="PO_PurchaseOrder_Line" EntitySet="PO_PurchaseOrder_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrder_OrderTaxCodeId" Association="Self.FK_PO_PurchaseOrder_OrderTaxCodeId">
+      <End Role="BASE_TaxingScheme" EntitySet="BASE_TaxingScheme" />
+      <End Role="PO_PurchaseOrder" EntitySet="PO_PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrder_PaymentTermsId" Association="Self.FK_PO_PurchaseOrder_PaymentTermsId">
+      <End Role="BASE_PaymentTerms" EntitySet="BASE_PaymentTerms" />
+      <End Role="PO_PurchaseOrder" EntitySet="PO_PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrderReceive_Line_LocationId" Association="Self.FK_PO_PurchaseOrderReceive_Line_LocationId">
+      <End Role="BASE_Location" EntitySet="BASE_Location" />
+      <End Role="PO_PurchaseOrderReceive_Line" EntitySet="PO_PurchaseOrderReceive_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrderReceive_Line_ProdId" Association="Self.FK_PO_PurchaseOrderReceive_Line_ProdId">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="PO_PurchaseOrderReceive_Line" EntitySet="PO_PurchaseOrderReceive_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrderReceive_Line_PurchaseOrderId" Association="Self.FK_PO_PurchaseOrderReceive_Line_PurchaseOrderId">
+      <End Role="PO_PurchaseOrder" EntitySet="PO_PurchaseOrder" />
+      <End Role="PO_PurchaseOrderReceive_Line" EntitySet="PO_PurchaseOrderReceive_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrderReturn_Line_BASE_TaxCode" Association="Self.FK_PO_PurchaseOrderReturn_Line_BASE_TaxCode">
+      <End Role="BASE_TaxCode" EntitySet="BASE_TaxCode" />
+      <End Role="PO_PurchaseOrderReturn_Line" EntitySet="PO_PurchaseOrderReturn_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrderReturn_Line_ProdId" Association="Self.FK_PO_PurchaseOrderReturn_Line_ProdId">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="PO_PurchaseOrderReturn_Line" EntitySet="PO_PurchaseOrderReturn_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrderReturn_Line_PurchaseOrderId" Association="Self.FK_PO_PurchaseOrderReturn_Line_PurchaseOrderId">
+      <End Role="PO_PurchaseOrder" EntitySet="PO_PurchaseOrder" />
+      <End Role="PO_PurchaseOrderReturn_Line" EntitySet="PO_PurchaseOrderReturn_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrderUnstock_Line_LocationId" Association="Self.FK_PO_PurchaseOrderUnstock_Line_LocationId">
+      <End Role="BASE_Location" EntitySet="BASE_Location" />
+      <End Role="PO_PurchaseOrderUnstock_Line" EntitySet="PO_PurchaseOrderUnstock_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrderUnstock_Line_ProdId" Association="Self.FK_PO_PurchaseOrderUnstock_Line_ProdId">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="PO_PurchaseOrderUnstock_Line" EntitySet="PO_PurchaseOrderUnstock_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrderUnstock_Line_PurchaseOrderId" Association="Self.FK_PO_PurchaseOrderUnstock_Line_PurchaseOrderId">
+      <End Role="PO_PurchaseOrder" EntitySet="PO_PurchaseOrder" />
+      <End Role="PO_PurchaseOrderUnstock_Line" EntitySet="PO_PurchaseOrderUnstock_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrder_Line_BASE_TaxCode" Association="Self.FK_SO_SalesOrder_Line_BASE_TaxCode">
+      <End Role="BASE_TaxCode" EntitySet="BASE_TaxCode" />
+      <End Role="SO_SalesOrder_Line" EntitySet="SO_SalesOrder_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrder_Line_ProdId" Association="Self.FK_SO_SalesOrder_Line_ProdId">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="SO_SalesOrder_Line" EntitySet="SO_SalesOrder_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrder_Line_SalesOrderId" Association="Self.FK_SO_SalesOrder_Line_SalesOrderId">
+      <End Role="SO_SalesOrder" EntitySet="SO_SalesOrder" />
+      <End Role="SO_SalesOrder_Line" EntitySet="SO_SalesOrder_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrder_ParentSalesOrderId" Association="Self.FK_SO_SalesOrder_ParentSalesOrderId">
+      <End Role="SO_SalesOrder" EntitySet="SO_SalesOrder" />
+      <End Role="SO_SalesOrder1" EntitySet="SO_SalesOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderAttachment_SalesOrderId" Association="Self.FK_SO_SalesOrderAttachment_SalesOrderId">
+      <End Role="SO_SalesOrder" EntitySet="SO_SalesOrder" />
+      <End Role="SO_SalesOrderAttachment" EntitySet="SO_SalesOrderAttachment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderPack_Line_ProdId" Association="Self.FK_SO_SalesOrderPack_Line_ProdId">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="SO_SalesOrderPack_Line" EntitySet="SO_SalesOrderPack_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderPack_Line_SalesOrderId" Association="Self.FK_SO_SalesOrderPack_Line_SalesOrderId">
+      <End Role="SO_SalesOrder" EntitySet="SO_SalesOrder" />
+      <End Role="SO_SalesOrderPack_Line" EntitySet="SO_SalesOrderPack_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderPick_Line_LocationId" Association="Self.FK_SO_SalesOrderPick_Line_LocationId">
+      <End Role="BASE_Location" EntitySet="BASE_Location" />
+      <End Role="SO_SalesOrderPick_Line" EntitySet="SO_SalesOrderPick_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderPick_Line_ProdId" Association="Self.FK_SO_SalesOrderPick_Line_ProdId">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="SO_SalesOrderPick_Line" EntitySet="SO_SalesOrderPick_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderPick_Line_SalesOrderId" Association="Self.FK_SO_SalesOrderPick_Line_SalesOrderId">
+      <End Role="SO_SalesOrder" EntitySet="SO_SalesOrder" />
+      <End Role="SO_SalesOrderPick_Line" EntitySet="SO_SalesOrderPick_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderRestock_Line_LocationId" Association="Self.FK_SO_SalesOrderRestock_Line_LocationId">
+      <End Role="BASE_Location" EntitySet="BASE_Location" />
+      <End Role="SO_SalesOrderRestock_Line" EntitySet="SO_SalesOrderRestock_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderRestock_Line_ProdId" Association="Self.FK_SO_SalesOrderRestock_Line_ProdId">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="SO_SalesOrderRestock_Line" EntitySet="SO_SalesOrderRestock_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderRestock_Line_SalesOrderId" Association="Self.FK_SO_SalesOrderRestock_Line_SalesOrderId">
+      <End Role="SO_SalesOrder" EntitySet="SO_SalesOrder" />
+      <End Role="SO_SalesOrderRestock_Line" EntitySet="SO_SalesOrderRestock_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderReturn_Line_BASE_TaxCode" Association="Self.FK_SO_SalesOrderReturn_Line_BASE_TaxCode">
+      <End Role="BASE_TaxCode" EntitySet="BASE_TaxCode" />
+      <End Role="SO_SalesOrderReturn_Line" EntitySet="SO_SalesOrderReturn_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderReturn_Line_ProdId" Association="Self.FK_SO_SalesOrderReturn_Line_ProdId">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="SO_SalesOrderReturn_Line" EntitySet="SO_SalesOrderReturn_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderReturn_Line_SalesOrderId" Association="Self.FK_SO_SalesOrderReturn_Line_SalesOrderId">
+      <End Role="SO_SalesOrder" EntitySet="SO_SalesOrder" />
+      <End Role="SO_SalesOrderReturn_Line" EntitySet="SO_SalesOrderReturn_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderShip_Line_SalesOrderId" Association="Self.FK_SO_SalesOrderShip_Line_SalesOrderId">
+      <End Role="SO_SalesOrder" EntitySet="SO_SalesOrder" />
+      <End Role="SO_SalesOrderShip_Line" EntitySet="SO_SalesOrderShip_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderShipContainer_SalesOrderShipLineId" Association="Self.FK_SO_SalesOrderShipContainer_SalesOrderShipLineId">
+      <End Role="SO_SalesOrderShip_Line" EntitySet="SO_SalesOrderShip_Line" />
+      <End Role="SO_SalesOrderShipContainer" EntitySet="SO_SalesOrderShipContainer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderSticky_SalesOrderId" Association="Self.FK_SO_SalesOrderSticky_SalesOrderId">
+      <End Role="SO_SalesOrder" EntitySet="SO_SalesOrder" />
+      <End Role="SO_SalesOrderSticky" EntitySet="SO_SalesOrderSticky" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

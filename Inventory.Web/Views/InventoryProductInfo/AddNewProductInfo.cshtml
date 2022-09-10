@@ -1,0 +1,666 @@
+﻿@model Inventory.CommonViewModels.InventoryVM
+@{
+    ViewBag.Title = "AddNewProductInfo";
+}
+
+<link href="~/Content/CommonCss/Inventory.css" rel="stylesheet" />
+<script src="~/Scripts/CustomScripts/Inventory.js"></script>
+
+<script src="~/Scripts/CustomScripts/Inventory_Product_Vendors_table-editable.js"></script>
+<script src="~/Scripts/CustomScripts/Inventory_table-managed.js"></script>
+<script src="~/Scripts/CustomScripts/jquery.toaster.js"></script>
+<script src="~/Scripts/CustomScripts/bootbox.min.js"></script>
+<script src="~/Scripts/CustomScripts/UploadPreview.min.js"></script> 
+<div class="row">
+    <div class="col-md-12">
+        <div class="tabbable tabbable-custom boxless tabbable-reversed">
+            <ul class="nav nav-tabs">
+                <li class="active" id="li_ProductInfo">
+                    <a href="#product_Info" data-toggle="tab">
+                        Product Info
+                    </a>
+                </li>
+                <li id="li_ExtraInfo">
+                    <a href="#extra_Info" data-toggle="tab">
+                        Extra Info
+                    </a>
+                </li>
+                <li id="li_BillMaterials">
+                    <a href="#billOf_Materials" data-toggle="tab">
+                        Bill Of Materials
+                    </a>
+                </li>
+                <li id="li_ProductVendors">
+                    <a href="#product_Vendors" data-toggle="tab">
+                        Product Vendors
+                    </a>
+                </li>
+                <li id="li_MovementHistory">
+                    <a href="#movement_History" data-toggle="tab">
+                        Movement History
+                    </a>
+                </li>
+                <li id="li_OrderHistory">
+                    <a href="#order_History" data-toggle="tab">
+                        Order History
+                    </a>
+                </li>
+            </ul>
+            <!-- INVENTORY NEW PRODUCT INFO FORM START HERE-->
+            <div class="tab-content">
+                <div class="tab-pane active" id="product_Info">
+                    <div class="portlet box green">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                Product Info
+                            </div>
+                            <div class="tools">
+                                <a href="javascript:;" class="collapse">
+                                </a>
+                                <a href="#portlet-config" data-toggle="modal" class="config">
+                                </a>
+                                <a href="javascript:;" class="reload">
+                                </a>
+                                <a href="javascript:;" class="remove">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portlet-body form">
+                            <!-- BEGIN FORM-->
+
+                            <form class="form-horizontal" id="frm_InventoryNewProduct" enctype='multipart/form-data'>
+                                @Html.HiddenFor(Model => Model.InventoryProductDetails.ProdId, new { @id = "hdnProdId" })
+                                <div class="form-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Item Name</label>
+                                                <div class="col-md-9">
+                                                    @Html.TextBoxFor(Model => Model.InventoryProductDetails.Name, new { @class = "form-control", @placeholder = "Item Name", @id = "txt_ProductName", @manlength = "100", @data_msg_required = "Name Required!", @data_rule_required = "true" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Category</label>
+                                                <div class="col-md-9">
+                                                    @*@Html.DropDownListFor(Model => Model.InventoryProductDetails.CategoryId, new SelectList(Model.InventoryCategoryList, "CategoryId", "Name", "1"), "---Select Category---", new { @id = "ddl_Category", @class = "form-control" })*@
+                                                    <select class="form-control" name="CategoryId" id="ddl_Category">
+                                                        <option value="">---Select Category---</option>
+                                                        <option style="color: blue; text-decoration: underline !important;" value="00">Add New Category</option>
+                                                        @foreach (var item in Model.InventoryCategoryList)
+                                                        {
+                                                            <option value="@item.CategoryId">@item.Name</option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <a class="hidden" href="javascript:;" id="addnewcategory">Add new</a>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Item Type</label>
+                                                <div class="col-md-9">
+                                                    <select class="form-control" id="ddl_ItemType" title="Type Required!" required name="ItemType">
+                                                        <option value="">--Select ItemType--</option>
+                                                        <option value="1">Stocked Product</option>
+                                                        <option value="2">Serialized Product</option>
+                                                        <option value="3">Non-Stocked product</option>
+                                                        <option value="4">Service</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Cost</label>
+                                                <div class="col-md-9">
+                                                    @Html.TextBoxFor(Model => Model.InventoryProductDetails.UnitPrice, new { @class = "form-control", @placeholder = "Cost", @id = "txt_ProductCost" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Normal Price</label>
+                                                <div class="col-md-9">
+                                                    @Html.TextBoxFor(Model => Model.InventoryProductDetails.NormalPrice, new { @class = "form-control", @placeholder = "Normal Price", @id = "txt_NormalPrice" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Picture</label>
+                                                <div class="col-md-9">
+                                                    <div id="image-preview">
+                                                        <label for="image-upload" id="image-label">Choose File</label>
+                                                        <input type="file" name="image" id="image-upload" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--Pop Up for Add new Category-->
+                                        <!--/row-->
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 green_2">
+                                            <div class="form-group">
+                                                @Html.Partial("~/Views/InventoryProductInfo/PartialView/_ProductInfoLocationTable.cshtml")
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="button" class="btn btn-primary" value="Save" id="btn_SaveProductInfo">
+                                </div>
+                            </form>
+
+                            <!-- END FORM-->
+                        </div>
+                    </div>
+                </div>
+
+                <!--INVENTORY NEW PRODUCT INFO FORM END HERE-->
+                <!-- INVENTORY EXTRA INFO FORM START HERE-->
+                <div class="tab-pane" id="extra_Info">
+                    <div class="portlet box green">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                Extra Info
+                            </div>
+                            <div class="tools">
+                                <a href="javascript:;" class="collapse">
+                                </a>
+                                <a href="#portlet-config" data-toggle="modal" class="config">
+                                </a>
+                                <a href="javascript:;" class="reload">
+                                </a>
+                                <a href="javascript:;" class="remove">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portlet-body form">
+                            <!-- BEGIN FORM-->
+
+                            <form class="form-horizontal" id="frm_InventoryExtraInfo">
+                                <div class="form-body">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="tab_listing">
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Barcode</label>
+                                                    <div class="col-md-9">
+                                                        @Html.TextBoxFor(Model => Model.InventoryProductDetails.BarCode, new { @class = "form-control", @placeholder = "Barcode", @id = "txt_Barcode" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" id="div_StorageInfo">
+                                                    <label class=" control-label col-md-3">Reorder Qty</label>
+                                                    <div class="col-md-9">
+                                                        @Html.TextBoxFor(Model => Model.InventoryProductDetails.ReorderQuantity, new { @class = "form-control", @placeholder = "ReorderQuantity", @id = "txt_ReorderQuantity" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" id="div_StorageInfo">
+                                                    <label class="control-label col-md-3">Reorder Point</label>
+                                                    <div class="col-md-9">
+                                                        @Html.TextBoxFor(Model => Model.InventoryProductDetails.ReorderPoint, new { @class = "form-control", @placeholder = "ReorderPoint", @id = "txt_ReorderPoint" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" id="div_StorageInfo">
+                                                    <label class="control-label col-md-3">Location</label>
+                                                    <div class="col-md-9">
+                                                        @Html.DropDownListFor(Model => Model.InventoryProductDetails.DefaultLocationId, new SelectList(Model.InventoryLocationList, "LocationId", "Name"), "---Select Location---", new { @id = "ddl_Location", @class = "form-control" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3">Last Vendor</label>
+                                                    <div class="col-md-9">
+                                                        @Html.DropDownListFor(Model => Model.InventoryProductDetails.LastVendorId, new SelectList(Model.InventoryLastVendorIdList, "VendorId", "Name"), "---Select Vendor---", new { @id = "ddl_Vendor", @class = "form-control" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6">
+                                        <div class="tab_listing">
+                                            <div class="form-group" id="div_Measurement">
+                                                <label class="control-label col-md-3">Length(cm)</label>
+                                                <div class="col-md-9">
+                                                    @Html.TextBoxFor(Model => Model.InventoryProductDetails.ProductLength, new { @class = "form-control", @placeholder = "Length", @id = "txt_ProductLength" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group" id="div_Measurement">
+                                                <label class="control-label col-md-3">Width(cm)</label>
+                                                <div class="col-md-9">
+                                                    @Html.TextBoxFor(Model => Model.InventoryProductDetails.ProductWidth, new { @class = "form-control", @placeholder = "Width", @id = "txt_ProductWidth" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group" id="div_Measurement">
+                                                <label class="control-label col-md-3">Height(cm)</label>
+                                                <div class="col-md-9">
+                                                    @Html.TextBoxFor(Model => Model.InventoryProductDetails.ProductHeight, new { @class = "form-control", @placeholder = "Height", @id = "txt_ProductHeight" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group" id="div_Measurement">
+                                                <label class="control-label col-md-3">Weight(gm)</label>
+                                                <div class="col-md-9">
+                                                    @Html.TextBoxFor(Model => Model.InventoryProductDetails.ProductWeight, new { @class = "form-control", @placeholder = "Weight", @id = "txt_ProductWeight" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Remarks</label>
+                                                <div class="col-md-9">
+                                                    @Html.TextAreaFor(Model => Model.InventoryProductDetails.Remarks, new { @class = "form-control", @placeholder = "Remarks", @id = "txt_Remarks" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <input type="button" class="btn btn-primary" value="Save" id="btn_SaveProductInfo">
+                        </div>
+                       
+                        </form>
+                        <!-- END FORM-->
+                    </div>
+
+                </div>
+            </div>
+            <!-- INVENTORY EXTRA INFO FORM END HERE-->
+            <!-- BILL OF MATERIALS FORM START HERE-->
+                <div class="tab-pane" id="billOf_Materials">
+                    <div class="portlet box green">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                Bill Of Materials
+                            </div>
+                            <div class="tools">
+                                <a href="javascript:;" class="collapse">
+                                </a>
+                                <a href="#portlet-config" data-toggle="modal" class="config">
+                                </a>
+                                <a href="javascript:;" class="reload">
+                                </a>
+                                <a href="javascript:;" class="remove">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="table-toolbar">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="btn-group">
+                                            <button id="sample_editable_1_new_BillOfMaterials" class="btn green">
+                                                Add New <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <table class="table table-striped table-hover table-bordered" id="inventoryBillOfMaterialsTable">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Component Item
+                                        </th>
+                                        <th>
+                                            Quantity
+                                        </th>
+                                        <th>
+                                            Cost
+                                        </th>
+                                        <th>
+                                            Edit
+                                        </th>
+                                        <th>
+                                            Cancel
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                            <input type="button" class="btn btn-primary" value="Save" id="btn_SaveBillOfMaterialsGrid">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="current_days">
+                                <div class="form-group">
+                                    <label class="control-label col-md-4">Total Cost</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" placeholder="0.00" id="txt_TotalCost" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END EXAMPLE TABLE PORTLET-->
+                </div>
+            <!-- BILL OF MATERIALS  FORM END HERE-->
+            <!-- INVENTORY PRODUCT VENDOR FORM START HERE-->
+            <div class="tab-pane" id="product_Vendors">
+                <div class="portlet box green">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            Product Vendors
+                        </div>
+                        <div class="tools">
+                            <a href="javascript:;" class="collapse">
+                            </a>
+                            <a href="#portlet-config" data-toggle="modal" class="config">
+                            </a>
+                            <a href="javascript:;" class="reload">
+                            </a>
+                            <a href="javascript:;" class="remove">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="table-toolbar">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="btn-group">
+                                        <button id="sample_editable_1_new_ProductVendors" class="btn green">
+                                            Add New <i class="fa fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table table-striped table-hover table-bordered" id="inventoryProductVendorsTable">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Vendor
+                                    </th>
+                                    <th>
+                                        Vendor's Price
+                                    </th>
+                                    <th>
+                                        Vendor Product Code
+                                    </th>
+                                    <th>
+                                        Edit
+                                    </th>
+                                    <th>
+                                        Cancel
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               
+                                    @*<td>
+                                        ABC
+                                    <td>
+                                        ABC
+                                    </td>
+                                    <td>
+                                        ABC
+                                    </td>
+                                    <td>
+                                        <a class="edit" href="">
+                                            Edit
+                                        </a>
+                                    </td>
+                                    <td></td>*@
+                                
+                            </tbody>
+                        </table>
+                        <input type="button" class="btn btn-primary" value="Save" id="btn_SaveProductVendorGrid">
+                    </div>
+
+                </div>
+                <!-- END EXAMPLE TABLE PORTLET-->
+            </div>
+            <!-- INVENTORY PRODUCT VENDOR FORM END HERE-->
+            <!-- INVENTORY MOVEMENT HISTORY FORM START HERE-->
+            <div class="tab-pane" id="movement_History">
+                <div class="row row_12">
+                    <div class="col-sm-8" style="height:75px;">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <span>Transaction Type</span>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="transaction_type">
+                                            <div class='input-group date' id='transaction_movementhistory'>
+                                                <input type='text' readonly class="form-control" name="" id="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <span>Loation</span>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="location_type">
+                                            <div class='input-group date' id='location_movementhistory'>
+                                                <input type='text' readonly class="form-control" name="" id="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portlet box green">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            Movement History
+                        </div>
+                        <div class="tools">
+                            <a href="javascript:;" class="collapse">
+                            </a>
+                            <a href="#portlet-config" data-toggle="modal" class="config">
+                            </a>
+                            <a href="javascript:;" class="reload">
+                            </a>
+                            <a href="javascript:;" class="remove">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <table class="table table-striped table-bordered table-hover" id="movementHistory">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Transaction Type
+                                    </th>
+                                    <th>
+                                        Date
+                                    </th>
+                                    <th>
+                                        Location
+                                    </th>
+                                    <th>
+                                        Order Number
+                                    </th>
+                                    <th>
+                                        Qty Before
+                                    </th>
+                                    <th>
+                                        Quantity
+                                    </th>
+                                    <th>
+                                        Qty After
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="odd gradeX">
+                                    <td>
+                                        ABC
+                                    </td>
+                                    <td>
+                                        ABC
+                                    </td>
+                                    <td>
+                                        ABC
+                                    </td>
+                                    <td>
+                                        ABC
+                                    </td>
+                                    <td>
+                                        ABC
+                                    </td>
+                                    <td>
+                                        ABC
+                                    </td>
+                                    <td>
+                                        ABC
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INVENTORY MOVEMENT HISTORY FORM END HERE-->
+            <!-- INVENTORY ORDER HISTORY FORM START HERE-->
+            <div class="tab-pane" id="order_History">
+                <div class="portlet box green">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            Order History
+                        </div>
+                        <div class="tools">
+                            <a href="javascript:;" class="collapse">
+                            </a>
+                            <a href="#portlet-config" data-toggle="modal" class="config">
+                            </a>
+                            <a href="javascript:;" class="reload">
+                            </a>
+                            <a href="javascript:;" class="remove">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <table class="table table-striped table-bordered table-hover" id="orderHistory">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Type
+                                    </th>
+                                    <th>
+                                        Order#
+                                    </th>
+                                    <th>
+                                        Customer/Vendor
+                                    </th>
+                                    <th>
+                                        Date
+                                    </th>
+                                    <th>
+                                        Order Status
+                                    </th>
+                                    <th>
+                                        Quantity
+                                    </th>
+                                    <th>
+                                        Sub-Total
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="odd gradeX">
+                                    <td>
+                                        ABC
+                                    </td>
+                                    <td>
+                                        ABC
+                                    </td>
+                                    <td>
+                                        ABC
+                                    </td>
+                                    <td>
+                                        ABC
+                                    </td>
+                                    <td>
+                                        ABC
+                                    </td>
+                                    <td>
+                                        ABC
+                                    </td>
+                                    <td>
+                                        ABC
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="current_days">
+                            <div class="form-group">
+                                <label class="control-label col-md-4">Quantity on Hand</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" placeholder="0" id="txt_QuantityonHand" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="current_days">
+                            <div class="form-group">
+                                <label class="control-label col-md-4">Quantity Picked</label>
+                                <div class="col-md-8">
+                                    <input type="text" id="txt_QuantityPicked" class="form-control" placeholder="0" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="current_days">
+                            <div class="form-group">
+                                <label class="control-label col-md-4">Quantity Reserved</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" placeholder="0" id="txt_QuantityReserved" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="current_days">
+                            <div class="form-group">
+                                <label class="control-label col-md-4">Quantity on Order</label>
+                                <div class="col-md-8">
+                                    <input type="text" id="txt_QuantityonOrder" class="form-control" placeholder="0" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="current_days">
+                            <div class="form-group">
+                                <label class="control-label col-md-4">Quantity Available</label>
+                                <div class="col-md-8">
+                                    <input type="text" id="txt_QuantityAvailable" class="form-control" placeholder="0" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="current_days">
+                            <div class="form-group">
+                                <label class="control-label col-md-4">Quantity in Transit</label>
+                                <div class="col-md-8">
+                                    <input type="text" id="txt_QuantityinTransit" class="form-control" placeholder="0" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- INVENTORY ORDER HISTORY FORM END HERE-->
+        </div>
+    </div>
+</div>
+</div>
+
+
+<script>
+    jQuery(document).ready(function () {
+        TableEditable.init();
+        TableManaged.init();
+    });
+</script>

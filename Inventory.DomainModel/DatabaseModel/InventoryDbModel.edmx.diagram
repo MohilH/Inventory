@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="49f936b158be4abc95cbaab61183e964" Name="Diagram1" ZoomLevel="26" >
+        <EntityTypeShape EntityType="InventoryModel.ACC_ProductDefaultCost" Width="1.5" PointX="5.25" PointY="70.5" />
+        <EntityTypeShape EntityType="InventoryModel.Base_BillOfMaterials" Width="1.5" PointX="5.25" PointY="85.125" />
+        <EntityTypeShape EntityType="InventoryModel.Base_Carrier" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="InventoryModel.BASE_Category" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="InventoryModel.BASE_City" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="InventoryModel.BASE_Country" Width="1.5" PointX="0.75" PointY="1.125" />
+        <EntityTypeShape EntityType="InventoryModel.BASE_Customer" Width="1.5" PointX="8.25" PointY="60.125" />
+        <EntityTypeShape EntityType="InventoryModel.BASE_ItemPrice" Width="1.5" PointX="5.25" PointY="67.25" />
+        <EntityTypeShape EntityType="InventoryModel.BASE_Location" Width="1.5" PointX="3" PointY="80.125" />
+        <EntityTypeShape EntityType="InventoryModel.BASE_PaymentMethod" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="InventoryModel.BASE_PaymentTerms" Width="1.5" PointX="0.75" PointY="44.25" />
+        <EntityTypeShape EntityType="InventoryModel.BASE_PricingScheme" Width="1.5" PointX="6" PointY="49.25" />
+        <EntityTypeShape EntityType="InventoryModel.BASE_Product" Width="1.5" PointX="3" PointY="67.25" />
+        <EntityTypeShape EntityType="InventoryModel.Base_Quantity" Width="1.5" PointX="5.25" PointY="80.5" />
+        <EntityTypeShape EntityType="InventoryModel.BASE_ReceivingAddress" Width="1.5" PointX="6.75" PointY="4.75" />
+        <EntityTypeShape EntityType="InventoryModel.Base_SalesRep" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="InventoryModel.BASE_State" Width="1.5" PointX="3" PointY="0.875" />
+        <EntityTypeShape EntityType="InventoryModel.BASE_TaxCode" Width="1.5" PointX="3.75" PointY="62.25" />
+        <EntityTypeShape EntityType="InventoryModel.BASE_TaxingScheme" Width="1.5" PointX="6" PointY="62.125" />
+        <EntityTypeShape EntityType="InventoryModel.Base_Unit" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="InventoryModel.BASE_User" Width="1.5" PointX="0.75" PointY="48.5" />
+        <EntityTypeShape EntityType="InventoryModel.BASE_Vendor" Width="1.5" PointX="3" PointY="46.625" />
+        <EntityTypeShape EntityType="InventoryModel.BASE_VendorItem" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="InventoryModel.DUMMY_ReorderStock_Line" Width="1.5" PointX="5.25" PointY="92.875" />
+        <EntityTypeShape EntityType="InventoryModel.GLOBAL_Currency" Width="1.5" PointX="3.75" PointY="41.75" />
+        <EntityTypeShape EntityType="InventoryModel.INV_StockAdjustment" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="InventoryModel.INV_StockAdjustment_Line" Width="1.5" PointX="8.75" PointY="7.75" />
+        <EntityTypeShape EntityType="InventoryModel.PO_InventoryStatus" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="InventoryModel.PO_PaymentStatus" Width="1.5" PointX="4.75" PointY="9.75" />
+        <EntityTypeShape EntityType="InventoryModel.PO_PurchaseOrder" Width="1.5" PointX="11.25" PointY="53.75" />
+        <EntityTypeShape EntityType="InventoryModel.PO_PurchaseOrder_Line" Width="1.5" PointX="13.5" PointY="63.5" />
+        <EntityTypeShape EntityType="InventoryModel.PO_PurchaseOrder_Version" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="InventoryModel.PO_PurchaseOrderReceive_Line" Width="1.5" PointX="13.5" PointY="70.375" />
+        <EntityTypeShape EntityType="InventoryModel.PO_PurchaseOrderReturn_Line" Width="1.5" PointX="16.5" PointY="63.75" />
+        <EntityTypeShape EntityType="InventoryModel.PO_PurchaseOrderUnstock_Line" Width="1.5" PointX="16.5" PointY="70.5" />
+        <EntityTypeShape EntityType="InventoryModel.PO_Status" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="InventoryModel.SO_SalesOrder" Width="1.5" PointX="9" PointY="85.5" />
+        <EntityTypeShape EntityType="InventoryModel.SO_SalesOrder_Line" Width="1.5" PointX="5.25" PointY="73.625" />
+        <EntityTypeShape EntityType="InventoryModel.SO_SalesOrder_Line_Version" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="InventoryModel.SO_SalesOrder_Version" Width="1.5" PointX="2.75" PointY="12.75" />
+        <EntityTypeShape EntityType="InventoryModel.SO_SalesOrderAttachment" Width="1.5" PointX="11.25" PointY="90.375" />
+        <EntityTypeShape EntityType="InventoryModel.SO_SalesOrderPack_Line" Width="1.5" PointX="11.25" PointY="71.375" />
+        <EntityTypeShape EntityType="InventoryModel.SO_SalesOrderPack_Line_Version" Width="1.5" PointX="12.75" PointY="3.75" />
+        <EntityTypeShape EntityType="InventoryModel.SO_SalesOrderPaymentHistory_Line" Width="1.5" PointX="4.75" PointY="12.75" />
+        <EntityTypeShape EntityType="InventoryModel.SO_SalesOrderPaymentHistory_Line_Version" Width="1.5" PointX="12.75" PointY="8.75" />
+        <EntityTypeShape EntityType="InventoryModel.SO_SalesOrderPick_Line" Width="1.5" PointX="8.25" PointY="80.5" />
+        <EntityTypeShape EntityType="InventoryModel.SO_SalesOrderPick_Line_Version" Width="1.5" PointX="6.75" PointY="13.75" />
+        <EntityTypeShape EntityType="InventoryModel.SO_SalesOrderRestock_Line" Width="1.5" PointX="11.25" PointY="76.375" />
+        <EntityTypeShape EntityType="InventoryModel.SO_SalesOrderRestock_Line_Version" Width="1.5" PointX="12.75" PointY="13.75" />
+        <EntityTypeShape EntityType="InventoryModel.SO_SalesOrderReturn_Line" Width="1.5" PointX="8.25" PointY="73.5" />
+        <EntityTypeShape EntityType="InventoryModel.SO_SalesOrderReturn_Line_Version" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="InventoryModel.SO_SalesOrderShip_Line" Width="1.5" PointX="11.25" PointY="97" />
+        <EntityTypeShape EntityType="InventoryModel.SO_SalesOrderShip_Line_Version" Width="1.5" PointX="14.75" PointY="6.75" />
+        <EntityTypeShape EntityType="InventoryModel.SO_SalesOrderShipContainer" Width="1.5" PointX="13.5" PointY="97.5" />
+        <EntityTypeShape EntityType="InventoryModel.SO_SalesOrderShipContainer_Version" Width="1.5" PointX="14.75" PointY="10.75" />
+        <EntityTypeShape EntityType="InventoryModel.SO_SalesOrderSticky" Width="1.5" PointX="11.25" PointY="93.125" />
+        <EntityTypeShape EntityType="InventoryModel.SO_SalesOrderSticky_Version" Width="1.5" PointX="14.75" PointY="13.75" />
+        <EntityTypeShape EntityType="InventoryModel.tblInventory" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="InventoryModel.tblPaymentHistory" Width="1.5" PointX="5.25" PointY="53.25" />
+        <AssociationConnector Association="InventoryModel.FK__ACC_Produ__ProdI__7EF6D905" />
+        <AssociationConnector Association="InventoryModel.FK__Base_Bill__ProdI__0A688BB1" />
+        <AssociationConnector Association="InventoryModel.FK_BASE_Category_ParentCategoryId" />
+        <AssociationConnector Association="InventoryModel.FK_BASE_City_BASE_State" />
+        <AssociationConnector Association="InventoryModel.FK_BASE_State_BASE_Country" />
+        <AssociationConnector Association="InventoryModel.FK_BASE_Customer_DefaultLocationId" />
+        <AssociationConnector Association="InventoryModel.FK_BASE_Customer_DefaultOrderTaxCodeId" />
+        <AssociationConnector Association="InventoryModel.FK_BASE_Customer_DefaultPaymentTermsId" />
+        <AssociationConnector Association="InventoryModel.FK_BASE_Customer_DefaultPricingSchemeId" />
+        <AssociationConnector Association="InventoryModel.FK_BASE_Customer_LastModUserId" />
+        <AssociationConnector Association="InventoryModel.FK_BASE_ItemPrice_BASE_Product" />
+        <AssociationConnector Association="InventoryModel.FK_BASE_Location_LastModUserId" />
+        <AssociationConnector Association="InventoryModel.FK_Base_Quantity_BASE_Location" />
+        <AssociationConnector Association="InventoryModel.FK_PO_PurchaseOrder_BASE_Location" />
+        <AssociationConnector Association="InventoryModel.FK_PO_PurchaseOrderReceive_Line_LocationId" />
+        <AssociationConnector Association="InventoryModel.FK_PO_PurchaseOrderUnstock_Line_LocationId" />
+        <AssociationConnector Association="InventoryModel.FK_SO_SalesOrderPick_Line_LocationId" />
+        <AssociationConnector Association="InventoryModel.FK_SO_SalesOrderRestock_Line_LocationId" />
+        <AssociationConnector Association="InventoryModel.FK_BASE_Vendor_DefaultPaymentTermsId" />
+        <AssociationConnector Association="InventoryModel.FK_PO_PurchaseOrder_PaymentTermsId" />
+        <AssociationConnector Association="InventoryModel.FK_BASE_PricingScheme_CurrencyId" />
+        <AssociationConnector Association="InventoryModel.FK_BASE_PricingScheme_LastModUserId" />
+        <AssociationConnector Association="InventoryModel.FK_BASE_Product_LastModUserId" />
+        <AssociationConnector Association="InventoryModel.FK_Base_Quantity_BASE_Product" />
+        <AssociationConnector Association="InventoryModel.FK_DUMMY_ReorderStock_Line_ProdId" />
+        <AssociationConnector Association="InventoryModel.FK_PO_PurchaseOrder_Line_ProdId" />
+        <AssociationConnector Association="InventoryModel.FK_PO_PurchaseOrderReceive_Line_ProdId" />
+        <AssociationConnector Association="InventoryModel.FK_PO_PurchaseOrderReturn_Line_ProdId" />
+        <AssociationConnector Association="InventoryModel.FK_PO_PurchaseOrderUnstock_Line_ProdId" />
+        <AssociationConnector Association="InventoryModel.FK_SO_SalesOrder_Line_ProdId" />
+        <AssociationConnector Association="InventoryModel.FK_SO_SalesOrderPack_Line_ProdId" />
+        <AssociationConnector Association="InventoryModel.FK_SO_SalesOrderPick_Line_ProdId" />
+        <AssociationConnector Association="InventoryModel.FK_SO_SalesOrderRestock_Line_ProdId" />
+        <AssociationConnector Association="InventoryModel.FK_SO_SalesOrderReturn_Line_ProdId" />
+        <AssociationConnector Association="InventoryModel.FK_BASE_TaxingScheme_BASE_TaxCode" />
+        <AssociationConnector Association="InventoryModel.FK_PO_PurchaseOrder_Line_BASE_TaxCode" />
+        <AssociationConnector Association="InventoryModel.FK_PO_PurchaseOrderReturn_Line_BASE_TaxCode" />
+        <AssociationConnector Association="InventoryModel.FK_SO_SalesOrder_Line_BASE_TaxCode" />
+        <AssociationConnector Association="InventoryModel.FK_SO_SalesOrderReturn_Line_BASE_TaxCode" />
+        <AssociationConnector Association="InventoryModel.FK_PO_PurchaseOrder_OrderTaxCodeId" />
+        <AssociationConnector Association="InventoryModel.FK_BASE_Vendor_LastModUserId" />
+        <AssociationConnector Association="InventoryModel.FK_PO_PurchaseOrder_LastModUserId" />
+        <AssociationConnector Association="InventoryModel.FK__tblPaymen__vendo__40C49C62" />
+        <AssociationConnector Association="InventoryModel.FK_BASE_Vendor_CurrencyId" />
+        <AssociationConnector Association="InventoryModel.FK_PO_PurchaseOrder_CurrencyId" />
+        <AssociationConnector Association="InventoryModel.FK_PO_PurchaseOrder_Line_PurchaseOrderId" />
+        <AssociationConnector Association="InventoryModel.FK_PO_PurchaseOrderReceive_Line_PurchaseOrderId" />
+        <AssociationConnector Association="InventoryModel.FK_PO_PurchaseOrderReturn_Line_PurchaseOrderId" />
+        <AssociationConnector Association="InventoryModel.FK_PO_PurchaseOrderUnstock_Line_PurchaseOrderId" />
+        <AssociationConnector Association="InventoryModel.FK_SO_SalesOrder_Line_SalesOrderId" />
+        <AssociationConnector Association="InventoryModel.FK_SO_SalesOrder_ParentSalesOrderId" />
+        <AssociationConnector Association="InventoryModel.FK_SO_SalesOrderAttachment_SalesOrderId" />
+        <AssociationConnector Association="InventoryModel.FK_SO_SalesOrderPack_Line_SalesOrderId" />
+        <AssociationConnector Association="InventoryModel.FK_SO_SalesOrderPick_Line_SalesOrderId" />
+        <AssociationConnector Association="InventoryModel.FK_SO_SalesOrderRestock_Line_SalesOrderId" />
+        <AssociationConnector Association="InventoryModel.FK_SO_SalesOrderReturn_Line_SalesOrderId" />
+        <AssociationConnector Association="InventoryModel.FK_SO_SalesOrderShip_Line_SalesOrderId" />
+        <AssociationConnector Association="InventoryModel.FK_SO_SalesOrderSticky_SalesOrderId" />
+        <AssociationConnector Association="InventoryModel.FK_SO_SalesOrderShipContainer_SalesOrderShipLineId" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,62 @@
+﻿    img#Img_Product {
+        height: 175px;
+        width: 345px;
+        border: 0px solid;
+    }
+    input#btn_SaveProductInfo {
+        margin-left: 90%;
+    }
+   
+    .col-md-12.green_2 .portlet.box.green {
+        max-width: 97%;
+        margin: 0 auto;
+    }
+
+
+
+    #image-preview {
+        width: 375px;
+        height: 247px;
+        position: relative;
+        overflow: hidden;
+        background-color: rgba(210, 207, 207, 0.21);
+        color: #ecf0f1;
+        border: 1px solid;
+    }
+
+        #image-preview input {
+            line-height: 200px;
+            font-size: 200px;
+            position: absolute;
+            opacity: 0;
+            z-index: 10;
+        }
+
+        #image-preview label {
+            position: absolute;
+            z-index: 5;
+            opacity: 0.8;
+            cursor: pointer;
+            background-color: #bdc3c7;
+            width: 200px;
+            height: 50px;
+            font-size: 20px;
+            line-height: 50px;
+            text-transform: uppercase;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            text-align: center;
+        }
+    textarea#txt_Remarks {
+        resize: none;
+    }
+
+      input#btn_SaveProductVendorGrid {
+        margin-left: 90%;
+    }
+    input#btn_SaveBillOfMaterialsGrid {
+        margin-left: 93%;
+    }

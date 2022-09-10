@@ -1,0 +1,73 @@
+﻿ .openbounse {
+        opacity: 1 !important;
+        transform: scale(1.0) !important;
+        transition: all 0.5s ease 0s !important;
+    }
+
+    .pp .pop_container {
+        transform: scale(1);
+        opacity: 1;
+        transition: all 0.5s ease 0s;
+    }
+
+    .pop_container {
+        transform: scale(0);
+        opacity: 0;
+        transition: all 0.5s ease 0s;
+    }
+   .overlay {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        overflow-y: auto;
+        z-index: 10000;
+        background: rgba(0,0,0,0.7);
+        background: rgb(0,0,0);
+        background: transparent\9;
+        background: rgba(0,0,0,0.7);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#b2000000,endColorstr=#b2000000);
+        zoom: 1;
+        top: 0;
+        right: 0;
+        left: 0;
+    }
+
+    .ie9 .overlay {
+        background-color: rgba(0,0,0,0.7);
+        overflow-y: auto;
+        filter: alpha(opacity=\70);
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=\70)";
+    }
+
+    .pop_container {
+        width: 50%;
+        height: auto;
+        margin: 4% auto;
+        position: relative;
+        z-index: 0;
+        padding-bottom: 0;
+    }
+
+    #DivPoupContantContainer {
+        /*top:0px;
+    left:341.5px;*/
+    }
+
+    .panel-body {
+    padding: 15px;
+    background-color: #fafcfb;
+}
+  .btn_CategoryPopUp {
+    text-align: center;
+    margin-top: 50px;
+}
+  .close_icon {
+    /* padding: 10px 10px 0px 0px; */
+    margin-left: 630px;
+    /* margin-bottom: -2px; */
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+  input#txt_Category {
+    margin-left: -30px;
+}

@@ -1,0 +1,309 @@
+D:\Official\Projects\InventoryWebProject\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.dll
+D:\Official\Projects\InventoryWebProject\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.pdb
+D:\Official\Projects\InventoryWebProject\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.dll
+D:\Official\Projects\InventoryWebProject\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.dll
+D:\Official\Projects\InventoryWebProject\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.dll
+D:\Official\Projects\InventoryWebProject\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.pdb
+D:\Official\Projects\InventoryWebProject\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.pdb
+D:\Official\Projects\InventoryWebProject\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.xml
+D:\Official\Projects\InventoryWebProject\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.csprojResolveAssemblyReference.cache
+D:\Official\Projects\InventoryWebProject\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.dll
+D:\Official\Projects\InventoryWebProject\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.pdb
+F:\Deepak\Inventory Web\Inventory (27 April 2017 Latest)\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.dll
+F:\Deepak\Inventory Web\Inventory (27 April 2017 Latest)\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.pdb
+F:\Deepak\Inventory Web\Inventory (27 April 2017 Latest)\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.dll
+F:\Deepak\Inventory Web\Inventory (27 April 2017 Latest)\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.dll
+F:\Deepak\Inventory Web\Inventory (27 April 2017 Latest)\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.dll
+F:\Deepak\Inventory Web\Inventory (27 April 2017 Latest)\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.pdb
+F:\Deepak\Inventory Web\Inventory (27 April 2017 Latest)\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.pdb
+F:\Deepak\Inventory Web\Inventory (27 April 2017 Latest)\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.xml
+F:\Deepak\Inventory Web\Inventory (27 April 2017 Latest)\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.csprojResolveAssemblyReference.cache
+F:\Deepak\Inventory Web\Inventory (27 April 2017 Latest)\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.dll
+F:\Deepak\Inventory Web\Inventory (27 April 2017 Latest)\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.pdb
+D:\Deepak\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.dll
+D:\Deepak\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.pdb
+D:\Deepak\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.dll
+D:\Deepak\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.dll
+D:\Deepak\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.dll
+D:\Deepak\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.pdb
+D:\Deepak\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.pdb
+D:\Deepak\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.xml
+D:\Deepak\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.csprojResolveAssemblyReference.cache
+D:\Deepak\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.dll
+D:\Deepak\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.pdb
+F:\Deepak\Inventory Web\Inventory_27_8.30\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.dll
+F:\Deepak\Inventory Web\Inventory_27_8.30\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.pdb
+F:\Deepak\Inventory Web\Inventory_27_8.30\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.dll
+F:\Deepak\Inventory Web\Inventory_27_8.30\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.dll
+F:\Deepak\Inventory Web\Inventory_27_8.30\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.dll
+F:\Deepak\Inventory Web\Inventory_27_8.30\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.pdb
+F:\Deepak\Inventory Web\Inventory_27_8.30\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.pdb
+F:\Deepak\Inventory Web\Inventory_27_8.30\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.xml
+F:\Deepak\Inventory Web\Inventory_27_8.30\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.csprojResolveAssemblyReference.cache
+F:\Deepak\Inventory Web\Inventory_27_8.30\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.dll
+F:\Deepak\Inventory Web\Inventory_27_8.30\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.pdb
+C:\Users\Ariel-37\Desktop\New folder (3)\Inventory_28042017\Inventory_27_8.30\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.dll
+C:\Users\Ariel-37\Desktop\New folder (3)\Inventory_28042017\Inventory_27_8.30\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.pdb
+C:\Users\Ariel-37\Desktop\New folder (3)\Inventory_28042017\Inventory_27_8.30\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.CommonViewModels.dll
+C:\Users\Ariel-37\Desktop\New folder (3)\Inventory_28042017\Inventory_27_8.30\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.dll
+C:\Users\Ariel-37\Desktop\New folder (3)\Inventory_28042017\Inventory_27_8.30\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.dll
+C:\Users\Ariel-37\Desktop\New folder (3)\Inventory_28042017\Inventory_27_8.30\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Users\Ariel-37\Desktop\New folder (3)\Inventory_28042017\Inventory_27_8.30\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.CommonViewModels.pdb
+C:\Users\Ariel-37\Desktop\New folder (3)\Inventory_28042017\Inventory_27_8.30\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.pdb
+C:\Users\Ariel-37\Desktop\New folder (3)\Inventory_28042017\Inventory_27_8.30\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.pdb
+C:\Users\Ariel-37\Desktop\New folder (3)\Inventory_28042017\Inventory_27_8.30\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Users\Ariel-37\Desktop\New folder (3)\Inventory_28042017\Inventory_27_8.30\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\Ariel-37\Desktop\New folder (3)\Inventory_28042017\Inventory_27_8.30\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.dll
+C:\Users\Ariel-37\Desktop\New folder (3)\Inventory_28042017\Inventory_27_8.30\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.pdb
+C:\Users\Ariel-37\Desktop\New folder (3)\New folder (2)\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\Ariel-37\Desktop\New folder (3)\New folder (2)\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.dll
+C:\Users\Ariel-37\Desktop\New folder (3)\New folder (2)\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.pdb
+C:\Users\Ariel-37\Desktop\New folder (3)\New folder (2)\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.CommonViewModels.dll
+C:\Users\Ariel-37\Desktop\New folder (3)\New folder (2)\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.dll
+C:\Users\Ariel-37\Desktop\New folder (3)\New folder (2)\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.dll
+C:\Users\Ariel-37\Desktop\New folder (3)\New folder (2)\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Users\Ariel-37\Desktop\New folder (3)\New folder (2)\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.CommonViewModels.pdb
+C:\Users\Ariel-37\Desktop\New folder (3)\New folder (2)\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.pdb
+C:\Users\Ariel-37\Desktop\New folder (3)\New folder (2)\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.pdb
+C:\Users\Ariel-37\Desktop\New folder (3)\New folder (2)\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Users\Ariel-37\Desktop\New folder (3)\New folder (2)\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.dll
+C:\Users\Ariel-37\Desktop\New folder (3)\New folder (2)\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.pdb
+C:\Users\Ariel-37\Desktop\04052017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.dll
+C:\Users\Ariel-37\Desktop\04052017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.pdb
+C:\Users\Ariel-37\Desktop\04052017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.CommonViewModels.dll
+C:\Users\Ariel-37\Desktop\04052017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.dll
+C:\Users\Ariel-37\Desktop\04052017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.dll
+C:\Users\Ariel-37\Desktop\04052017\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Users\Ariel-37\Desktop\04052017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.CommonViewModels.pdb
+C:\Users\Ariel-37\Desktop\04052017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.pdb
+C:\Users\Ariel-37\Desktop\04052017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.pdb
+C:\Users\Ariel-37\Desktop\04052017\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Users\Ariel-37\Desktop\04052017\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\Ariel-37\Desktop\04052017\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.dll
+C:\Users\Ariel-37\Desktop\04052017\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.pdb
+C:\Users\Ariel-37\Desktop\09052017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.dll
+C:\Users\Ariel-37\Desktop\09052017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.pdb
+C:\Users\Ariel-37\Desktop\09052017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.CommonViewModels.dll
+C:\Users\Ariel-37\Desktop\09052017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.dll
+C:\Users\Ariel-37\Desktop\09052017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.dll
+C:\Users\Ariel-37\Desktop\09052017\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Users\Ariel-37\Desktop\09052017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.CommonViewModels.pdb
+C:\Users\Ariel-37\Desktop\09052017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.pdb
+C:\Users\Ariel-37\Desktop\09052017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.pdb
+C:\Users\Ariel-37\Desktop\09052017\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Users\Ariel-37\Desktop\09052017\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\Ariel-37\Desktop\09052017\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.dll
+C:\Users\Ariel-37\Desktop\09052017\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.pdb
+D:\mohil\Merge(15052017)\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.config
+D:\mohil\Merge(15052017)\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.dll
+D:\mohil\Merge(15052017)\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.pdb
+D:\mohil\Merge(15052017)\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.CommonViewModels.dll
+D:\mohil\Merge(15052017)\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.dll
+D:\mohil\Merge(15052017)\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.dll
+D:\mohil\Merge(15052017)\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.dll
+D:\mohil\Merge(15052017)\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.dll
+D:\mohil\Merge(15052017)\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.CommonViewModels.pdb
+D:\mohil\Merge(15052017)\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.pdb
+D:\mohil\Merge(15052017)\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.pdb
+D:\mohil\Merge(15052017)\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.xml
+D:\mohil\Merge(15052017)\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.xml
+D:\mohil\Merge(15052017)\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.csprojResolveAssemblyReference.cache
+D:\mohil\Merge(15052017)\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.dll
+D:\mohil\Merge(15052017)\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.pdb
+C:\Users\Ariel-37\Desktop\03062017\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.config
+C:\Users\Ariel-37\Desktop\03062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.dll
+C:\Users\Ariel-37\Desktop\03062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.pdb
+C:\Users\Ariel-37\Desktop\03062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.CommonViewModels.dll
+C:\Users\Ariel-37\Desktop\03062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.dll
+C:\Users\Ariel-37\Desktop\03062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.dll
+C:\Users\Ariel-37\Desktop\03062017\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.dll
+C:\Users\Ariel-37\Desktop\03062017\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Users\Ariel-37\Desktop\03062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.CommonViewModels.pdb
+C:\Users\Ariel-37\Desktop\03062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.pdb
+C:\Users\Ariel-37\Desktop\03062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.pdb
+C:\Users\Ariel-37\Desktop\03062017\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.xml
+C:\Users\Ariel-37\Desktop\03062017\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Users\Ariel-37\Desktop\03062017\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\Ariel-37\Desktop\03062017\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.dll
+C:\Users\Ariel-37\Desktop\03062017\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.pdb
+D:\mohil\Inventory_04062017\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.csprojResolveAssemblyReference.cache
+D:\mohil\Inventory_04062017\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.config
+D:\mohil\Inventory_04062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.dll
+D:\mohil\Inventory_04062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.pdb
+D:\mohil\Inventory_04062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.CommonViewModels.dll
+D:\mohil\Inventory_04062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.dll
+D:\mohil\Inventory_04062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.dll
+D:\mohil\Inventory_04062017\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.dll
+D:\mohil\Inventory_04062017\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.dll
+D:\mohil\Inventory_04062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.CommonViewModels.pdb
+D:\mohil\Inventory_04062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.pdb
+D:\mohil\Inventory_04062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.pdb
+D:\mohil\Inventory_04062017\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.xml
+D:\mohil\Inventory_04062017\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.xml
+D:\mohil\Inventory_04062017\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.dll
+D:\mohil\Inventory_04062017\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.pdb
+F:\Deepak\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.config
+F:\Deepak\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.dll
+F:\Deepak\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.pdb
+F:\Deepak\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.CommonViewModels.dll
+F:\Deepak\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.dll
+F:\Deepak\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.dll
+F:\Deepak\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.dll
+F:\Deepak\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.dll
+F:\Deepak\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.CommonViewModels.pdb
+F:\Deepak\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.pdb
+F:\Deepak\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.pdb
+F:\Deepak\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.xml
+F:\Deepak\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.xml
+F:\Deepak\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.csprojResolveAssemblyReference.cache
+F:\Deepak\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.dll
+F:\Deepak\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.pdb
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.config
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.dll
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.pdb
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.CommonViewModels.dll
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.dll
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.dll
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.dll
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.dll
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.CommonViewModels.pdb
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.pdb
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.pdb
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.xml
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.xml
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.csprojResolveAssemblyReference.cache
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.dll
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.pdb
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Helpers.dll
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Mvc.dll
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Razor.dll
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.dll
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Helpers.xml
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Mvc.xml
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Razor.xml
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.xml
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.Razor.xml
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.config
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.dll
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.pdb
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.CommonViewModels.dll
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.dll
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.dll
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.dll
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Helpers.dll
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Mvc.dll
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Razor.dll
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.dll
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.Razor.dll
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.dll
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.CommonViewModels.pdb
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.pdb
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.pdb
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.xml
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Helpers.xml
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Mvc.xml
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Razor.xml
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.xml
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.Deployment.xml
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.Razor.xml
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.xml
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.csprojResolveAssemblyReference.cache
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.dll
+F:\Deepak\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.pdb
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.config
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.dll
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.pdb
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.CommonViewModels.dll
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.dll
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.dll
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.dll
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Helpers.dll
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Mvc.dll
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Razor.dll
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.dll
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.dll
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.CommonViewModels.pdb
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.pdb
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.pdb
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.xml
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Helpers.xml
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Mvc.xml
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Razor.xml
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.xml
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.xml
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.csprojResolveAssemblyReference.cache
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.dll
+D:\Inventory_13062017_8PM\Inventory_13062017\Inventory_12062017_8PM\Inventory_07062017_5pm_mergecode\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.pdb
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.config
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.dll
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.pdb
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.CommonViewModels.dll
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.dll
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.dll
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.dll
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Helpers.dll
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Mvc.dll
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Razor.dll
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.dll
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.Razor.dll
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.dll
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.CommonViewModels.pdb
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.pdb
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.pdb
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.xml
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Helpers.xml
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Mvc.xml
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Razor.xml
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.xml
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.Deployment.xml
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.Razor.xml
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.xml
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.csprojResolveAssemblyReference.cache
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.dll
+F:\Deepak\Inventory_14062017\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.pdb
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.config
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.dll
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.BusinessLogic.pdb
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.CommonViewModels.dll
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.dll
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.dll
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.dll
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Helpers.dll
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Mvc.dll
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Razor.dll
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.dll
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.dll
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.CommonViewModels.pdb
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.pdb
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.DomainModel.dll.config
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.pdb
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\Inventory.Repositories.dll.config
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\NLog.xml
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Helpers.xml
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Mvc.xml
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.Razor.xml
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.xml
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\bin\Debug\EntityFramework.xml
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.csproj.AssemblyReference.cache
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.csproj.CoreCompileInputs.cache
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.csproj.CopyComplete
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.dll
+D:\Inventory\Inventory_14062017_7PM\Inventory_14062017\Inventory\Inventory.BusinessLogic\obj\Debug\Inventory.BusinessLogic.pdb

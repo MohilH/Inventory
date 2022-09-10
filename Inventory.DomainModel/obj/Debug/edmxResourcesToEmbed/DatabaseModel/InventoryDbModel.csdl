@@ -1,0 +1,2375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InventoryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="InventoryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ACC_ProductDefaultCost" EntityType="InventoryModel.ACC_ProductDefaultCost" />
+    <EntitySet Name="Base_BillOfMaterials" EntityType="InventoryModel.Base_BillOfMaterials" />
+    <EntitySet Name="Base_Carrier" EntityType="InventoryModel.Base_Carrier" />
+    <EntitySet Name="BASE_Category" EntityType="InventoryModel.BASE_Category" />
+    <EntitySet Name="BASE_City" EntityType="InventoryModel.BASE_City" />
+    <EntitySet Name="BASE_Country" EntityType="InventoryModel.BASE_Country" />
+    <EntitySet Name="BASE_Customer" EntityType="InventoryModel.BASE_Customer" />
+    <EntitySet Name="BASE_ItemPrice" EntityType="InventoryModel.BASE_ItemPrice" />
+    <EntitySet Name="BASE_Location" EntityType="InventoryModel.BASE_Location" />
+    <EntitySet Name="BASE_PaymentMethod" EntityType="InventoryModel.BASE_PaymentMethod" />
+    <EntitySet Name="BASE_PaymentTerms" EntityType="InventoryModel.BASE_PaymentTerms" />
+    <EntitySet Name="BASE_PricingScheme" EntityType="InventoryModel.BASE_PricingScheme" />
+    <EntitySet Name="BASE_Product" EntityType="InventoryModel.BASE_Product" />
+    <EntitySet Name="Base_Quantity" EntityType="InventoryModel.Base_Quantity" />
+    <EntitySet Name="BASE_ReceivingAddress" EntityType="InventoryModel.BASE_ReceivingAddress" />
+    <EntitySet Name="Base_SalesRep" EntityType="InventoryModel.Base_SalesRep" />
+    <EntitySet Name="BASE_State" EntityType="InventoryModel.BASE_State" />
+    <EntitySet Name="BASE_TaxCode" EntityType="InventoryModel.BASE_TaxCode" />
+    <EntitySet Name="BASE_TaxingScheme" EntityType="InventoryModel.BASE_TaxingScheme" />
+    <EntitySet Name="Base_Unit" EntityType="InventoryModel.Base_Unit" />
+    <EntitySet Name="BASE_User" EntityType="InventoryModel.BASE_User" />
+    <EntitySet Name="BASE_Vendor" EntityType="InventoryModel.BASE_Vendor" />
+    <EntitySet Name="BASE_VendorItem" EntityType="InventoryModel.BASE_VendorItem" />
+    <EntitySet Name="DUMMY_ReorderStock_Line" EntityType="InventoryModel.DUMMY_ReorderStock_Line" />
+    <EntitySet Name="GLOBAL_Currency" EntityType="InventoryModel.GLOBAL_Currency" />
+    <EntitySet Name="INV_StockAdjustment" EntityType="InventoryModel.INV_StockAdjustment" />
+    <EntitySet Name="INV_StockAdjustment_Line" EntityType="InventoryModel.INV_StockAdjustment_Line" />
+    <EntitySet Name="PO_InventoryStatus" EntityType="InventoryModel.PO_InventoryStatus" />
+    <EntitySet Name="PO_PaymentStatus" EntityType="InventoryModel.PO_PaymentStatus" />
+    <EntitySet Name="PO_PurchaseOrder" EntityType="InventoryModel.PO_PurchaseOrder" />
+    <EntitySet Name="PO_PurchaseOrder_Line" EntityType="InventoryModel.PO_PurchaseOrder_Line" />
+    <EntitySet Name="PO_PurchaseOrder_Version" EntityType="InventoryModel.PO_PurchaseOrder_Version" />
+    <EntitySet Name="PO_PurchaseOrderReceive_Line" EntityType="InventoryModel.PO_PurchaseOrderReceive_Line" />
+    <EntitySet Name="PO_PurchaseOrderReturn_Line" EntityType="InventoryModel.PO_PurchaseOrderReturn_Line" />
+    <EntitySet Name="PO_PurchaseOrderUnstock_Line" EntityType="InventoryModel.PO_PurchaseOrderUnstock_Line" />
+    <EntitySet Name="PO_Status" EntityType="InventoryModel.PO_Status" />
+    <EntitySet Name="SO_SalesOrder" EntityType="InventoryModel.SO_SalesOrder" />
+    <EntitySet Name="SO_SalesOrder_Line" EntityType="InventoryModel.SO_SalesOrder_Line" />
+    <EntitySet Name="SO_SalesOrder_Line_Version" EntityType="InventoryModel.SO_SalesOrder_Line_Version" />
+    <EntitySet Name="SO_SalesOrder_Version" EntityType="InventoryModel.SO_SalesOrder_Version" />
+    <EntitySet Name="SO_SalesOrderAttachment" EntityType="InventoryModel.SO_SalesOrderAttachment" />
+    <EntitySet Name="SO_SalesOrderPack_Line" EntityType="InventoryModel.SO_SalesOrderPack_Line" />
+    <EntitySet Name="SO_SalesOrderPack_Line_Version" EntityType="InventoryModel.SO_SalesOrderPack_Line_Version" />
+    <EntitySet Name="SO_SalesOrderPaymentHistory_Line" EntityType="InventoryModel.SO_SalesOrderPaymentHistory_Line" />
+    <EntitySet Name="SO_SalesOrderPaymentHistory_Line_Version" EntityType="InventoryModel.SO_SalesOrderPaymentHistory_Line_Version" />
+    <EntitySet Name="SO_SalesOrderPick_Line" EntityType="InventoryModel.SO_SalesOrderPick_Line" />
+    <EntitySet Name="SO_SalesOrderPick_Line_Version" EntityType="InventoryModel.SO_SalesOrderPick_Line_Version" />
+    <EntitySet Name="SO_SalesOrderRestock_Line" EntityType="InventoryModel.SO_SalesOrderRestock_Line" />
+    <EntitySet Name="SO_SalesOrderRestock_Line_Version" EntityType="InventoryModel.SO_SalesOrderRestock_Line_Version" />
+    <EntitySet Name="SO_SalesOrderReturn_Line" EntityType="InventoryModel.SO_SalesOrderReturn_Line" />
+    <EntitySet Name="SO_SalesOrderReturn_Line_Version" EntityType="InventoryModel.SO_SalesOrderReturn_Line_Version" />
+    <EntitySet Name="SO_SalesOrderShip_Line" EntityType="InventoryModel.SO_SalesOrderShip_Line" />
+    <EntitySet Name="SO_SalesOrderShip_Line_Version" EntityType="InventoryModel.SO_SalesOrderShip_Line_Version" />
+    <EntitySet Name="SO_SalesOrderShipContainer" EntityType="InventoryModel.SO_SalesOrderShipContainer" />
+    <EntitySet Name="SO_SalesOrderShipContainer_Version" EntityType="InventoryModel.SO_SalesOrderShipContainer_Version" />
+    <EntitySet Name="SO_SalesOrderSticky" EntityType="InventoryModel.SO_SalesOrderSticky" />
+    <EntitySet Name="SO_SalesOrderSticky_Version" EntityType="InventoryModel.SO_SalesOrderSticky_Version" />
+    <EntitySet Name="tblInventories" EntityType="InventoryModel.tblInventory" />
+    <EntitySet Name="tblPaymentHistories" EntityType="InventoryModel.tblPaymentHistory" />
+    <AssociationSet Name="FK__ACC_Produ__ProdI__7EF6D905" Association="InventoryModel.FK__ACC_Produ__ProdI__7EF6D905">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="ACC_ProductDefaultCost" EntitySet="ACC_ProductDefaultCost" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Base_Bill__ProdI__0A688BB1" Association="InventoryModel.FK__Base_Bill__ProdI__0A688BB1">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="Base_BillOfMaterials" EntitySet="Base_BillOfMaterials" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_Category_ParentCategoryId" Association="InventoryModel.FK_BASE_Category_ParentCategoryId">
+      <End Role="BASE_Category" EntitySet="BASE_Category" />
+      <End Role="BASE_Category1" EntitySet="BASE_Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_City_BASE_State" Association="InventoryModel.FK_BASE_City_BASE_State">
+      <End Role="BASE_State" EntitySet="BASE_State" />
+      <End Role="BASE_City" EntitySet="BASE_City" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_State_BASE_Country" Association="InventoryModel.FK_BASE_State_BASE_Country">
+      <End Role="BASE_Country" EntitySet="BASE_Country" />
+      <End Role="BASE_State" EntitySet="BASE_State" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_Customer_DefaultLocationId" Association="InventoryModel.FK_BASE_Customer_DefaultLocationId">
+      <End Role="BASE_Location" EntitySet="BASE_Location" />
+      <End Role="BASE_Customer" EntitySet="BASE_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_Customer_DefaultOrderTaxCodeId" Association="InventoryModel.FK_BASE_Customer_DefaultOrderTaxCodeId">
+      <End Role="BASE_TaxingScheme" EntitySet="BASE_TaxingScheme" />
+      <End Role="BASE_Customer" EntitySet="BASE_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_Customer_DefaultPaymentTermsId" Association="InventoryModel.FK_BASE_Customer_DefaultPaymentTermsId">
+      <End Role="BASE_PaymentTerms" EntitySet="BASE_PaymentTerms" />
+      <End Role="BASE_Customer" EntitySet="BASE_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_Customer_DefaultPricingSchemeId" Association="InventoryModel.FK_BASE_Customer_DefaultPricingSchemeId">
+      <End Role="BASE_PricingScheme" EntitySet="BASE_PricingScheme" />
+      <End Role="BASE_Customer" EntitySet="BASE_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_Customer_LastModUserId" Association="InventoryModel.FK_BASE_Customer_LastModUserId">
+      <End Role="BASE_User" EntitySet="BASE_User" />
+      <End Role="BASE_Customer" EntitySet="BASE_Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_ItemPrice_BASE_Product" Association="InventoryModel.FK_BASE_ItemPrice_BASE_Product">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="BASE_ItemPrice" EntitySet="BASE_ItemPrice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_Location_LastModUserId" Association="InventoryModel.FK_BASE_Location_LastModUserId">
+      <End Role="BASE_User" EntitySet="BASE_User" />
+      <End Role="BASE_Location" EntitySet="BASE_Location" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Base_Quantity_BASE_Location" Association="InventoryModel.FK_Base_Quantity_BASE_Location">
+      <End Role="BASE_Location" EntitySet="BASE_Location" />
+      <End Role="Base_Quantity" EntitySet="Base_Quantity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrder_BASE_Location" Association="InventoryModel.FK_PO_PurchaseOrder_BASE_Location">
+      <End Role="BASE_Location" EntitySet="BASE_Location" />
+      <End Role="PO_PurchaseOrder" EntitySet="PO_PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrderReceive_Line_LocationId" Association="InventoryModel.FK_PO_PurchaseOrderReceive_Line_LocationId">
+      <End Role="BASE_Location" EntitySet="BASE_Location" />
+      <End Role="PO_PurchaseOrderReceive_Line" EntitySet="PO_PurchaseOrderReceive_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrderUnstock_Line_LocationId" Association="InventoryModel.FK_PO_PurchaseOrderUnstock_Line_LocationId">
+      <End Role="BASE_Location" EntitySet="BASE_Location" />
+      <End Role="PO_PurchaseOrderUnstock_Line" EntitySet="PO_PurchaseOrderUnstock_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderPick_Line_LocationId" Association="InventoryModel.FK_SO_SalesOrderPick_Line_LocationId">
+      <End Role="BASE_Location" EntitySet="BASE_Location" />
+      <End Role="SO_SalesOrderPick_Line" EntitySet="SO_SalesOrderPick_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderRestock_Line_LocationId" Association="InventoryModel.FK_SO_SalesOrderRestock_Line_LocationId">
+      <End Role="BASE_Location" EntitySet="BASE_Location" />
+      <End Role="SO_SalesOrderRestock_Line" EntitySet="SO_SalesOrderRestock_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_Vendor_DefaultPaymentTermsId" Association="InventoryModel.FK_BASE_Vendor_DefaultPaymentTermsId">
+      <End Role="BASE_PaymentTerms" EntitySet="BASE_PaymentTerms" />
+      <End Role="BASE_Vendor" EntitySet="BASE_Vendor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrder_PaymentTermsId" Association="InventoryModel.FK_PO_PurchaseOrder_PaymentTermsId">
+      <End Role="BASE_PaymentTerms" EntitySet="BASE_PaymentTerms" />
+      <End Role="PO_PurchaseOrder" EntitySet="PO_PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_PricingScheme_CurrencyId" Association="InventoryModel.FK_BASE_PricingScheme_CurrencyId">
+      <End Role="GLOBAL_Currency" EntitySet="GLOBAL_Currency" />
+      <End Role="BASE_PricingScheme" EntitySet="BASE_PricingScheme" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_PricingScheme_LastModUserId" Association="InventoryModel.FK_BASE_PricingScheme_LastModUserId">
+      <End Role="BASE_User" EntitySet="BASE_User" />
+      <End Role="BASE_PricingScheme" EntitySet="BASE_PricingScheme" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_Product_LastModUserId" Association="InventoryModel.FK_BASE_Product_LastModUserId">
+      <End Role="BASE_User" EntitySet="BASE_User" />
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Base_Quantity_BASE_Product" Association="InventoryModel.FK_Base_Quantity_BASE_Product">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="Base_Quantity" EntitySet="Base_Quantity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DUMMY_ReorderStock_Line_ProdId" Association="InventoryModel.FK_DUMMY_ReorderStock_Line_ProdId">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="DUMMY_ReorderStock_Line" EntitySet="DUMMY_ReorderStock_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrder_Line_ProdId" Association="InventoryModel.FK_PO_PurchaseOrder_Line_ProdId">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="PO_PurchaseOrder_Line" EntitySet="PO_PurchaseOrder_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrderReceive_Line_ProdId" Association="InventoryModel.FK_PO_PurchaseOrderReceive_Line_ProdId">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="PO_PurchaseOrderReceive_Line" EntitySet="PO_PurchaseOrderReceive_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrderReturn_Line_ProdId" Association="InventoryModel.FK_PO_PurchaseOrderReturn_Line_ProdId">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="PO_PurchaseOrderReturn_Line" EntitySet="PO_PurchaseOrderReturn_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrderUnstock_Line_ProdId" Association="InventoryModel.FK_PO_PurchaseOrderUnstock_Line_ProdId">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="PO_PurchaseOrderUnstock_Line" EntitySet="PO_PurchaseOrderUnstock_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrder_Line_ProdId" Association="InventoryModel.FK_SO_SalesOrder_Line_ProdId">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="SO_SalesOrder_Line" EntitySet="SO_SalesOrder_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderPack_Line_ProdId" Association="InventoryModel.FK_SO_SalesOrderPack_Line_ProdId">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="SO_SalesOrderPack_Line" EntitySet="SO_SalesOrderPack_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderPick_Line_ProdId" Association="InventoryModel.FK_SO_SalesOrderPick_Line_ProdId">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="SO_SalesOrderPick_Line" EntitySet="SO_SalesOrderPick_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderRestock_Line_ProdId" Association="InventoryModel.FK_SO_SalesOrderRestock_Line_ProdId">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="SO_SalesOrderRestock_Line" EntitySet="SO_SalesOrderRestock_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderReturn_Line_ProdId" Association="InventoryModel.FK_SO_SalesOrderReturn_Line_ProdId">
+      <End Role="BASE_Product" EntitySet="BASE_Product" />
+      <End Role="SO_SalesOrderReturn_Line" EntitySet="SO_SalesOrderReturn_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_TaxingScheme_BASE_TaxCode" Association="InventoryModel.FK_BASE_TaxingScheme_BASE_TaxCode">
+      <End Role="BASE_TaxCode" EntitySet="BASE_TaxCode" />
+      <End Role="BASE_TaxingScheme" EntitySet="BASE_TaxingScheme" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrder_Line_BASE_TaxCode" Association="InventoryModel.FK_PO_PurchaseOrder_Line_BASE_TaxCode">
+      <End Role="BASE_TaxCode" EntitySet="BASE_TaxCode" />
+      <End Role="PO_PurchaseOrder_Line" EntitySet="PO_PurchaseOrder_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrderReturn_Line_BASE_TaxCode" Association="InventoryModel.FK_PO_PurchaseOrderReturn_Line_BASE_TaxCode">
+      <End Role="BASE_TaxCode" EntitySet="BASE_TaxCode" />
+      <End Role="PO_PurchaseOrderReturn_Line" EntitySet="PO_PurchaseOrderReturn_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrder_Line_BASE_TaxCode" Association="InventoryModel.FK_SO_SalesOrder_Line_BASE_TaxCode">
+      <End Role="BASE_TaxCode" EntitySet="BASE_TaxCode" />
+      <End Role="SO_SalesOrder_Line" EntitySet="SO_SalesOrder_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderReturn_Line_BASE_TaxCode" Association="InventoryModel.FK_SO_SalesOrderReturn_Line_BASE_TaxCode">
+      <End Role="BASE_TaxCode" EntitySet="BASE_TaxCode" />
+      <End Role="SO_SalesOrderReturn_Line" EntitySet="SO_SalesOrderReturn_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrder_OrderTaxCodeId" Association="InventoryModel.FK_PO_PurchaseOrder_OrderTaxCodeId">
+      <End Role="BASE_TaxingScheme" EntitySet="BASE_TaxingScheme" />
+      <End Role="PO_PurchaseOrder" EntitySet="PO_PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_Vendor_LastModUserId" Association="InventoryModel.FK_BASE_Vendor_LastModUserId">
+      <End Role="BASE_User" EntitySet="BASE_User" />
+      <End Role="BASE_Vendor" EntitySet="BASE_Vendor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrder_LastModUserId" Association="InventoryModel.FK_PO_PurchaseOrder_LastModUserId">
+      <End Role="BASE_User" EntitySet="BASE_User" />
+      <End Role="PO_PurchaseOrder" EntitySet="PO_PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblPaymen__vendo__40C49C62" Association="InventoryModel.FK__tblPaymen__vendo__40C49C62">
+      <End Role="BASE_Vendor" EntitySet="BASE_Vendor" />
+      <End Role="tblPaymentHistory" EntitySet="tblPaymentHistories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BASE_Vendor_CurrencyId" Association="InventoryModel.FK_BASE_Vendor_CurrencyId">
+      <End Role="GLOBAL_Currency" EntitySet="GLOBAL_Currency" />
+      <End Role="BASE_Vendor" EntitySet="BASE_Vendor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrder_CurrencyId" Association="InventoryModel.FK_PO_PurchaseOrder_CurrencyId">
+      <End Role="GLOBAL_Currency" EntitySet="GLOBAL_Currency" />
+      <End Role="PO_PurchaseOrder" EntitySet="PO_PurchaseOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrder_Line_PurchaseOrderId" Association="InventoryModel.FK_PO_PurchaseOrder_Line_PurchaseOrderId">
+      <End Role="PO_PurchaseOrder" EntitySet="PO_PurchaseOrder" />
+      <End Role="PO_PurchaseOrder_Line" EntitySet="PO_PurchaseOrder_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrderReceive_Line_PurchaseOrderId" Association="InventoryModel.FK_PO_PurchaseOrderReceive_Line_PurchaseOrderId">
+      <End Role="PO_PurchaseOrder" EntitySet="PO_PurchaseOrder" />
+      <End Role="PO_PurchaseOrderReceive_Line" EntitySet="PO_PurchaseOrderReceive_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrderReturn_Line_PurchaseOrderId" Association="InventoryModel.FK_PO_PurchaseOrderReturn_Line_PurchaseOrderId">
+      <End Role="PO_PurchaseOrder" EntitySet="PO_PurchaseOrder" />
+      <End Role="PO_PurchaseOrderReturn_Line" EntitySet="PO_PurchaseOrderReturn_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PO_PurchaseOrderUnstock_Line_PurchaseOrderId" Association="InventoryModel.FK_PO_PurchaseOrderUnstock_Line_PurchaseOrderId">
+      <End Role="PO_PurchaseOrder" EntitySet="PO_PurchaseOrder" />
+      <End Role="PO_PurchaseOrderUnstock_Line" EntitySet="PO_PurchaseOrderUnstock_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrder_Line_SalesOrderId" Association="InventoryModel.FK_SO_SalesOrder_Line_SalesOrderId">
+      <End Role="SO_SalesOrder" EntitySet="SO_SalesOrder" />
+      <End Role="SO_SalesOrder_Line" EntitySet="SO_SalesOrder_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrder_ParentSalesOrderId" Association="InventoryModel.FK_SO_SalesOrder_ParentSalesOrderId">
+      <End Role="SO_SalesOrder" EntitySet="SO_SalesOrder" />
+      <End Role="SO_SalesOrder1" EntitySet="SO_SalesOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderAttachment_SalesOrderId" Association="InventoryModel.FK_SO_SalesOrderAttachment_SalesOrderId">
+      <End Role="SO_SalesOrder" EntitySet="SO_SalesOrder" />
+      <End Role="SO_SalesOrderAttachment" EntitySet="SO_SalesOrderAttachment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderPack_Line_SalesOrderId" Association="InventoryModel.FK_SO_SalesOrderPack_Line_SalesOrderId">
+      <End Role="SO_SalesOrder" EntitySet="SO_SalesOrder" />
+      <End Role="SO_SalesOrderPack_Line" EntitySet="SO_SalesOrderPack_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderPick_Line_SalesOrderId" Association="InventoryModel.FK_SO_SalesOrderPick_Line_SalesOrderId">
+      <End Role="SO_SalesOrder" EntitySet="SO_SalesOrder" />
+      <End Role="SO_SalesOrderPick_Line" EntitySet="SO_SalesOrderPick_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderRestock_Line_SalesOrderId" Association="InventoryModel.FK_SO_SalesOrderRestock_Line_SalesOrderId">
+      <End Role="SO_SalesOrder" EntitySet="SO_SalesOrder" />
+      <End Role="SO_SalesOrderRestock_Line" EntitySet="SO_SalesOrderRestock_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderReturn_Line_SalesOrderId" Association="InventoryModel.FK_SO_SalesOrderReturn_Line_SalesOrderId">
+      <End Role="SO_SalesOrder" EntitySet="SO_SalesOrder" />
+      <End Role="SO_SalesOrderReturn_Line" EntitySet="SO_SalesOrderReturn_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderShip_Line_SalesOrderId" Association="InventoryModel.FK_SO_SalesOrderShip_Line_SalesOrderId">
+      <End Role="SO_SalesOrder" EntitySet="SO_SalesOrder" />
+      <End Role="SO_SalesOrderShip_Line" EntitySet="SO_SalesOrderShip_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderSticky_SalesOrderId" Association="InventoryModel.FK_SO_SalesOrderSticky_SalesOrderId">
+      <End Role="SO_SalesOrder" EntitySet="SO_SalesOrder" />
+      <End Role="SO_SalesOrderSticky" EntitySet="SO_SalesOrderSticky" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SO_SalesOrderShipContainer_SalesOrderShipLineId" Association="InventoryModel.FK_SO_SalesOrderShipContainer_SalesOrderShipLineId">
+      <End Role="SO_SalesOrderShip_Line" EntitySet="SO_SalesOrderShip_Line" />
+      <End Role="SO_SalesOrderShipContainer" EntitySet="SO_SalesOrderShipContainer" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ACC_ProductDefaultCost">
+    <Key>
+      <PropertyRef Name="ProdId" />
+    </Key>
+    <Property Name="ProdId" Type="Int32" Nullable="false" />
+    <Property Name="UnitCost" Type="Decimal" Nullable="false" Precision="22" Scale="5" />
+    <NavigationProperty Name="BASE_Product" Relationship="InventoryModel.FK__ACC_Produ__ProdI__7EF6D905" FromRole="ACC_ProductDefaultCost" ToRole="BASE_Product" />
+  </EntityType>
+  <EntityType Name="Base_BillOfMaterials">
+    <Key>
+      <PropertyRef Name="BillOfMaterialId" />
+    </Key>
+    <Property Name="BillOfMaterialId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProdId" Type="Int32" />
+    <Property Name="LocationId" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TotalCost" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="BASE_Product" Relationship="InventoryModel.FK__Base_Bill__ProdI__0A688BB1" FromRole="Base_BillOfMaterials" ToRole="BASE_Product" />
+  </EntityType>
+  <EntityType Name="Base_Carrier">
+    <Key>
+      <PropertyRef Name="CarrierId" />
+    </Key>
+    <Property Name="CarrierId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Carrier" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="BASE_Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParentCategoryId" Type="Int32" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="BASE_Category1" Relationship="InventoryModel.FK_BASE_Category_ParentCategoryId" FromRole="BASE_Category" ToRole="BASE_Category1" />
+    <NavigationProperty Name="BASE_Category2" Relationship="InventoryModel.FK_BASE_Category_ParentCategoryId" FromRole="BASE_Category1" ToRole="BASE_Category" />
+  </EntityType>
+  <EntityType Name="BASE_City">
+    <Key>
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="CityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="FKStateId" Type="Int32" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="BASE_State" Relationship="InventoryModel.FK_BASE_City_BASE_State" FromRole="BASE_City" ToRole="BASE_State" />
+  </EntityType>
+  <EntityType Name="BASE_Country">
+    <Key>
+      <PropertyRef Name="CountryId" />
+    </Key>
+    <Property Name="CountryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="BASE_State" Relationship="InventoryModel.FK_BASE_State_BASE_Country" FromRole="BASE_Country" ToRole="BASE_State" />
+  </EntityType>
+  <EntityType Name="BASE_Customer">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="VendorPermitNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DefaultPricingSchemeId" Type="Int32" />
+    <Property Name="Discount" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="DefaultPaymentTermsId" Type="Int32" />
+    <Property Name="TaxingSchemeId" Type="Int32" />
+    <Property Name="DefaultCarrier" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DefaultPaymentMethod" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ContactName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Address2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PostalCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="AddressRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AddressType" Type="Int32" />
+    <Property Name="UsingBillingAddress" Type="Boolean" />
+    <Property Name="BillingAddress1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BillingAddress2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BillingCity" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BillingState" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BillingCountry" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BillingPostalCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="BillingAddressRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BillingAddressType" Type="Int32" />
+    <Property Name="UsingShippingAddress" Type="Boolean" />
+    <Property Name="ShippingAddress1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingAddress2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingCity" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingState" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingCountry" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingPostalCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingAddressRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingAddressType" Type="Int32" />
+    <Property Name="CCardType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CCardNum" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="CCardSecurityNum" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="CCardExpDate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="LastModUserId" Type="Int32" />
+    <Property Name="LastModDttm" Type="DateTime" Precision="3" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="Website" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DefaultSalesRep" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DefaultLocationId" Type="Int32" />
+    <NavigationProperty Name="BASE_Location" Relationship="InventoryModel.FK_BASE_Customer_DefaultLocationId" FromRole="BASE_Customer" ToRole="BASE_Location" />
+    <NavigationProperty Name="BASE_TaxingScheme" Relationship="InventoryModel.FK_BASE_Customer_DefaultOrderTaxCodeId" FromRole="BASE_Customer" ToRole="BASE_TaxingScheme" />
+    <NavigationProperty Name="BASE_PaymentTerms" Relationship="InventoryModel.FK_BASE_Customer_DefaultPaymentTermsId" FromRole="BASE_Customer" ToRole="BASE_PaymentTerms" />
+    <NavigationProperty Name="BASE_PricingScheme" Relationship="InventoryModel.FK_BASE_Customer_DefaultPricingSchemeId" FromRole="BASE_Customer" ToRole="BASE_PricingScheme" />
+    <NavigationProperty Name="BASE_User" Relationship="InventoryModel.FK_BASE_Customer_LastModUserId" FromRole="BASE_Customer" ToRole="BASE_User" />
+  </EntityType>
+  <EntityType Name="BASE_ItemPrice">
+    <Key>
+      <PropertyRef Name="ItemPriceId" />
+    </Key>
+    <Property Name="ItemPriceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PricingSchemeId" Type="Int32" Nullable="false" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="LastModUserId" Type="Int32" />
+    <Property Name="LastModDttm" Type="DateTime" Precision="3" />
+    <Property Name="ProdId" Type="Int32" />
+    <Property Name="NormalPrice" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="BASE_Product" Relationship="InventoryModel.FK_BASE_ItemPrice_BASE_Product" FromRole="BASE_ItemPrice" ToRole="BASE_Product" />
+  </EntityType>
+  <EntityType Name="BASE_Location">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LastModUserId" Type="Int32" />
+    <Property Name="LastModDttm" Type="DateTime" Precision="3" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="BASE_Customer" Relationship="InventoryModel.FK_BASE_Customer_DefaultLocationId" FromRole="BASE_Location" ToRole="BASE_Customer" />
+    <NavigationProperty Name="BASE_User" Relationship="InventoryModel.FK_BASE_Location_LastModUserId" FromRole="BASE_Location" ToRole="BASE_User" />
+    <NavigationProperty Name="Base_Quantity" Relationship="InventoryModel.FK_Base_Quantity_BASE_Location" FromRole="BASE_Location" ToRole="Base_Quantity" />
+    <NavigationProperty Name="PO_PurchaseOrder" Relationship="InventoryModel.FK_PO_PurchaseOrder_BASE_Location" FromRole="BASE_Location" ToRole="PO_PurchaseOrder" />
+    <NavigationProperty Name="PO_PurchaseOrderReceive_Line" Relationship="InventoryModel.FK_PO_PurchaseOrderReceive_Line_LocationId" FromRole="BASE_Location" ToRole="PO_PurchaseOrderReceive_Line" />
+    <NavigationProperty Name="PO_PurchaseOrderUnstock_Line" Relationship="InventoryModel.FK_PO_PurchaseOrderUnstock_Line_LocationId" FromRole="BASE_Location" ToRole="PO_PurchaseOrderUnstock_Line" />
+    <NavigationProperty Name="SO_SalesOrderPick_Line" Relationship="InventoryModel.FK_SO_SalesOrderPick_Line_LocationId" FromRole="BASE_Location" ToRole="SO_SalesOrderPick_Line" />
+    <NavigationProperty Name="SO_SalesOrderRestock_Line" Relationship="InventoryModel.FK_SO_SalesOrderRestock_Line_LocationId" FromRole="BASE_Location" ToRole="SO_SalesOrderRestock_Line" />
+  </EntityType>
+  <EntityType Name="BASE_PaymentMethod">
+    <Key>
+      <PropertyRef Name="DefaultPaymentMethodId" />
+    </Key>
+    <Property Name="DefaultPaymentMethodId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DefaultPaymentMethod" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="BASE_PaymentTerms">
+    <Key>
+      <PropertyRef Name="PaymentTermsId" />
+    </Key>
+    <Property Name="PaymentTermsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DaysDue" Type="Int32" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="BASE_Customer" Relationship="InventoryModel.FK_BASE_Customer_DefaultPaymentTermsId" FromRole="BASE_PaymentTerms" ToRole="BASE_Customer" />
+    <NavigationProperty Name="BASE_Vendor" Relationship="InventoryModel.FK_BASE_Vendor_DefaultPaymentTermsId" FromRole="BASE_PaymentTerms" ToRole="BASE_Vendor" />
+    <NavigationProperty Name="PO_PurchaseOrder" Relationship="InventoryModel.FK_PO_PurchaseOrder_PaymentTermsId" FromRole="BASE_PaymentTerms" ToRole="PO_PurchaseOrder" />
+  </EntityType>
+  <EntityType Name="BASE_PricingScheme">
+    <Key>
+      <PropertyRef Name="PricingSchemeId" />
+    </Key>
+    <Property Name="PricingSchemeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LastModUserId" Type="Int32" />
+    <Property Name="LastModDttm" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CurrencyId" Type="Int32" />
+    <NavigationProperty Name="BASE_Customer" Relationship="InventoryModel.FK_BASE_Customer_DefaultPricingSchemeId" FromRole="BASE_PricingScheme" ToRole="BASE_Customer" />
+    <NavigationProperty Name="GLOBAL_Currency" Relationship="InventoryModel.FK_BASE_PricingScheme_CurrencyId" FromRole="BASE_PricingScheme" ToRole="GLOBAL_Currency" />
+    <NavigationProperty Name="BASE_User" Relationship="InventoryModel.FK_BASE_PricingScheme_LastModUserId" FromRole="BASE_PricingScheme" ToRole="BASE_User" />
+  </EntityType>
+  <EntityType Name="BASE_Product">
+    <Key>
+      <PropertyRef Name="ProdId" />
+    </Key>
+    <Property Name="Version" Type="Int32" />
+    <Property Name="ItemType" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BarCode" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CategoryId" Type="Int32" />
+    <Property Name="DefaultLocationId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DefaultSublocation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ReorderPoint" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="ReorderQuantity" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Uom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MasterPackQty" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="InnerPackQty" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="CaseLength" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="CaseWidth" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="CaseHeight" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="CaseWeight" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="ProductLength" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="ProductWidth" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="ProductHeight" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="ProductWeight" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="LastVendorId" Type="Int32" />
+    <Property Name="IsSellable" Type="Boolean" />
+    <Property Name="IsPurchaseable" Type="Boolean" />
+    <Property Name="DateIntroduced" Type="DateTime" Precision="3" />
+    <Property Name="DateUpdated" Type="DateTime" Precision="3" />
+    <Property Name="LastModUserId" Type="Int32" />
+    <Property Name="LastModDttm" Type="DateTime" Precision="3" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="PictureFileAttachmentId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SoUomName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SoUomRatioStd" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="SoUomRatio" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="PoUomName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PoUomRatioStd" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="PoUomRatio" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="ProdId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TrackSerials" Type="Boolean" />
+    <Property Name="ProductCost" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="NormalPrice" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="ACC_ProductDefaultCost" Relationship="InventoryModel.FK__ACC_Produ__ProdI__7EF6D905" FromRole="BASE_Product" ToRole="ACC_ProductDefaultCost" />
+    <NavigationProperty Name="Base_BillOfMaterials" Relationship="InventoryModel.FK__Base_Bill__ProdI__0A688BB1" FromRole="BASE_Product" ToRole="Base_BillOfMaterials" />
+    <NavigationProperty Name="BASE_ItemPrice" Relationship="InventoryModel.FK_BASE_ItemPrice_BASE_Product" FromRole="BASE_Product" ToRole="BASE_ItemPrice" />
+    <NavigationProperty Name="BASE_User" Relationship="InventoryModel.FK_BASE_Product_LastModUserId" FromRole="BASE_Product" ToRole="BASE_User" />
+    <NavigationProperty Name="Base_Quantity" Relationship="InventoryModel.FK_Base_Quantity_BASE_Product" FromRole="BASE_Product" ToRole="Base_Quantity" />
+    <NavigationProperty Name="DUMMY_ReorderStock_Line" Relationship="InventoryModel.FK_DUMMY_ReorderStock_Line_ProdId" FromRole="BASE_Product" ToRole="DUMMY_ReorderStock_Line" />
+    <NavigationProperty Name="PO_PurchaseOrder_Line" Relationship="InventoryModel.FK_PO_PurchaseOrder_Line_ProdId" FromRole="BASE_Product" ToRole="PO_PurchaseOrder_Line" />
+    <NavigationProperty Name="PO_PurchaseOrderReceive_Line" Relationship="InventoryModel.FK_PO_PurchaseOrderReceive_Line_ProdId" FromRole="BASE_Product" ToRole="PO_PurchaseOrderReceive_Line" />
+    <NavigationProperty Name="PO_PurchaseOrderReturn_Line" Relationship="InventoryModel.FK_PO_PurchaseOrderReturn_Line_ProdId" FromRole="BASE_Product" ToRole="PO_PurchaseOrderReturn_Line" />
+    <NavigationProperty Name="PO_PurchaseOrderUnstock_Line" Relationship="InventoryModel.FK_PO_PurchaseOrderUnstock_Line_ProdId" FromRole="BASE_Product" ToRole="PO_PurchaseOrderUnstock_Line" />
+    <NavigationProperty Name="SO_SalesOrder_Line" Relationship="InventoryModel.FK_SO_SalesOrder_Line_ProdId" FromRole="BASE_Product" ToRole="SO_SalesOrder_Line" />
+    <NavigationProperty Name="SO_SalesOrderPack_Line" Relationship="InventoryModel.FK_SO_SalesOrderPack_Line_ProdId" FromRole="BASE_Product" ToRole="SO_SalesOrderPack_Line" />
+    <NavigationProperty Name="SO_SalesOrderPick_Line" Relationship="InventoryModel.FK_SO_SalesOrderPick_Line_ProdId" FromRole="BASE_Product" ToRole="SO_SalesOrderPick_Line" />
+    <NavigationProperty Name="SO_SalesOrderRestock_Line" Relationship="InventoryModel.FK_SO_SalesOrderRestock_Line_ProdId" FromRole="BASE_Product" ToRole="SO_SalesOrderRestock_Line" />
+    <NavigationProperty Name="SO_SalesOrderReturn_Line" Relationship="InventoryModel.FK_SO_SalesOrderReturn_Line_ProdId" FromRole="BASE_Product" ToRole="SO_SalesOrderReturn_Line" />
+  </EntityType>
+  <EntityType Name="Base_Quantity">
+    <Key>
+      <PropertyRef Name="QuantityId" />
+    </Key>
+    <Property Name="QuantityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="LocationId" Type="Int32" />
+    <Property Name="ProdId" Type="Int32" />
+    <NavigationProperty Name="BASE_Location" Relationship="InventoryModel.FK_Base_Quantity_BASE_Location" FromRole="Base_Quantity" ToRole="BASE_Location" />
+    <NavigationProperty Name="BASE_Product" Relationship="InventoryModel.FK_Base_Quantity_BASE_Product" FromRole="Base_Quantity" ToRole="BASE_Product" />
+  </EntityType>
+  <EntityType Name="BASE_ReceivingAddress">
+    <Key>
+      <PropertyRef Name="ReceivingAddressId" />
+    </Key>
+    <Property Name="ReceivingAddressId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Address1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Address2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddressRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AddressType" Type="Int32" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Base_SalesRep">
+    <Key>
+      <PropertyRef Name="SalesRepId" />
+    </Key>
+    <Property Name="SalesRepId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesRep" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="BASE_State">
+    <Key>
+      <PropertyRef Name="StateId" />
+    </Key>
+    <Property Name="StateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StateName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="FKCountryId" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="BASE_City" Relationship="InventoryModel.FK_BASE_City_BASE_State" FromRole="BASE_State" ToRole="BASE_City" />
+    <NavigationProperty Name="BASE_Country" Relationship="InventoryModel.FK_BASE_State_BASE_Country" FromRole="BASE_State" ToRole="BASE_Country" />
+  </EntityType>
+  <EntityType Name="BASE_TaxCode">
+    <Key>
+      <PropertyRef Name="TaxCodeId" />
+    </Key>
+    <Property Name="TaxCodeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TaxingSchemeId" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Tax1Rate" Type="Decimal" Precision="10" Scale="5" />
+    <Property Name="Tax2Rate" Type="Decimal" Precision="10" Scale="5" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="LastModUserId" Type="Int32" />
+    <Property Name="LastModDttm" Type="DateTime" Precision="3" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="BASE_TaxingScheme" Relationship="InventoryModel.FK_BASE_TaxingScheme_BASE_TaxCode" FromRole="BASE_TaxCode" ToRole="BASE_TaxingScheme" />
+    <NavigationProperty Name="PO_PurchaseOrder_Line" Relationship="InventoryModel.FK_PO_PurchaseOrder_Line_BASE_TaxCode" FromRole="BASE_TaxCode" ToRole="PO_PurchaseOrder_Line" />
+    <NavigationProperty Name="PO_PurchaseOrderReturn_Line" Relationship="InventoryModel.FK_PO_PurchaseOrderReturn_Line_BASE_TaxCode" FromRole="BASE_TaxCode" ToRole="PO_PurchaseOrderReturn_Line" />
+    <NavigationProperty Name="SO_SalesOrder_Line" Relationship="InventoryModel.FK_SO_SalesOrder_Line_BASE_TaxCode" FromRole="BASE_TaxCode" ToRole="SO_SalesOrder_Line" />
+    <NavigationProperty Name="SO_SalesOrderReturn_Line" Relationship="InventoryModel.FK_SO_SalesOrderReturn_Line_BASE_TaxCode" FromRole="BASE_TaxCode" ToRole="SO_SalesOrderReturn_Line" />
+  </EntityType>
+  <EntityType Name="BASE_TaxingScheme">
+    <Key>
+      <PropertyRef Name="TaxingSchemeId" />
+    </Key>
+    <Property Name="TaxingSchemeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Tax1Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Tax2Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CalculateTax2OnTax1" Type="Boolean" />
+    <Property Name="LastModUserId" Type="Int32" />
+    <Property Name="LastModDttm" Type="DateTime" Precision="3" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="Tax1OnShipping" Type="Boolean" />
+    <Property Name="DefaultTaxCodeId" Type="Int32" />
+    <Property Name="Tax2OnShipping" Type="Boolean" />
+    <NavigationProperty Name="BASE_Customer" Relationship="InventoryModel.FK_BASE_Customer_DefaultOrderTaxCodeId" FromRole="BASE_TaxingScheme" ToRole="BASE_Customer" />
+    <NavigationProperty Name="BASE_TaxCode" Relationship="InventoryModel.FK_BASE_TaxingScheme_BASE_TaxCode" FromRole="BASE_TaxingScheme" ToRole="BASE_TaxCode" />
+    <NavigationProperty Name="PO_PurchaseOrder" Relationship="InventoryModel.FK_PO_PurchaseOrder_OrderTaxCodeId" FromRole="BASE_TaxingScheme" ToRole="PO_PurchaseOrder" />
+  </EntityType>
+  <EntityType Name="Base_Unit">
+    <Key>
+      <PropertyRef Name="UnitesId" />
+    </Key>
+    <Property Name="UnitesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Units" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="BASE_User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordHash" Type="Binary" Nullable="false" MaxLength="20" FixedLength="true" />
+    <Property Name="PasswordSalt" Type="Binary" Nullable="false" MaxLength="16" FixedLength="true" />
+    <Property Name="IsAdministrator" Type="Boolean" Nullable="false" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="LocationId" Type="Int32" />
+    <Property Name="DefaultSalesRep" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TargetEdition" Type="Int32" Nullable="false" />
+    <Property Name="IsInternal" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="BASE_Customer" Relationship="InventoryModel.FK_BASE_Customer_LastModUserId" FromRole="BASE_User" ToRole="BASE_Customer" />
+    <NavigationProperty Name="BASE_Location" Relationship="InventoryModel.FK_BASE_Location_LastModUserId" FromRole="BASE_User" ToRole="BASE_Location" />
+    <NavigationProperty Name="BASE_PricingScheme" Relationship="InventoryModel.FK_BASE_PricingScheme_LastModUserId" FromRole="BASE_User" ToRole="BASE_PricingScheme" />
+    <NavigationProperty Name="BASE_Product" Relationship="InventoryModel.FK_BASE_Product_LastModUserId" FromRole="BASE_User" ToRole="BASE_Product" />
+    <NavigationProperty Name="BASE_Vendor" Relationship="InventoryModel.FK_BASE_Vendor_LastModUserId" FromRole="BASE_User" ToRole="BASE_Vendor" />
+    <NavigationProperty Name="PO_PurchaseOrder" Relationship="InventoryModel.FK_PO_PurchaseOrder_LastModUserId" FromRole="BASE_User" ToRole="PO_PurchaseOrder" />
+  </EntityType>
+  <EntityType Name="BASE_Vendor">
+    <Key>
+      <PropertyRef Name="VendorId" />
+    </Key>
+    <Property Name="VendorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DefaultPaymentTermsId" Type="Int32" />
+    <Property Name="TaxingSchemeId" Type="Int32" />
+    <Property Name="DefaultCarrier" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Address2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PostalCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="AddressRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AddressType" Type="Int32" />
+    <Property Name="ContactName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LastModUserId" Type="Int32" />
+    <Property Name="LastModDttm" Type="DateTime" Precision="3" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="Website" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CurrencyId" Type="Int32" />
+    <Property Name="Discount" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="Balance" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Credit" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PaymentTerms" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Currency" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TaxingScheme" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PriceIncludeTaxes" Type="Boolean" />
+    <NavigationProperty Name="BASE_PaymentTerms" Relationship="InventoryModel.FK_BASE_Vendor_DefaultPaymentTermsId" FromRole="BASE_Vendor" ToRole="BASE_PaymentTerms" />
+    <NavigationProperty Name="BASE_User" Relationship="InventoryModel.FK_BASE_Vendor_LastModUserId" FromRole="BASE_Vendor" ToRole="BASE_User" />
+    <NavigationProperty Name="tblPaymentHistories" Relationship="InventoryModel.FK__tblPaymen__vendo__40C49C62" FromRole="BASE_Vendor" ToRole="tblPaymentHistory" />
+    <NavigationProperty Name="GLOBAL_Currency" Relationship="InventoryModel.FK_BASE_Vendor_CurrencyId" FromRole="BASE_Vendor" ToRole="GLOBAL_Currency" />
+  </EntityType>
+  <EntityType Name="BASE_VendorItem">
+    <Key>
+      <PropertyRef Name="VendorItemId" />
+    </Key>
+    <Property Name="VendorItemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VendorId" Type="Int32" Nullable="false" />
+    <Property Name="VendorItemCode" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Cost" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="LastModUserId" Type="Int32" />
+    <Property Name="LastModDttm" Type="DateTime" Precision="3" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="ProdId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="DUMMY_ReorderStock_Line">
+    <Key>
+      <PropertyRef Name="ReorderStockLineId" />
+    </Key>
+    <Property Name="ReorderStockLineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReorderStockId" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="QuantityOwned" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+    <Property Name="ReorderPoint" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="ReorderQuantity" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+    <Property Name="VendorId" Type="Int32" Nullable="false" />
+    <Property Name="Timestamp" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityOnOrder" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+    <Property Name="QuantityPending" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+    <Property Name="ProdId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BASE_Product" Relationship="InventoryModel.FK_DUMMY_ReorderStock_Line_ProdId" FromRole="DUMMY_ReorderStock_Line" ToRole="BASE_Product" />
+  </EntityType>
+  <EntityType Name="GLOBAL_Currency">
+    <Key>
+      <PropertyRef Name="CurrencyId" />
+    </Key>
+    <Property Name="CurrencyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Symbol" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="DecimalPlaces" Type="Int16" />
+    <Property Name="DecimalSeparator" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="ThousandsSeparator" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="CRCurrencyPositionType" Type="Int16" />
+    <Property Name="CRNegativeType" Type="Int16" />
+    <NavigationProperty Name="BASE_PricingScheme" Relationship="InventoryModel.FK_BASE_PricingScheme_CurrencyId" FromRole="GLOBAL_Currency" ToRole="BASE_PricingScheme" />
+    <NavigationProperty Name="BASE_Vendor" Relationship="InventoryModel.FK_BASE_Vendor_CurrencyId" FromRole="GLOBAL_Currency" ToRole="BASE_Vendor" />
+    <NavigationProperty Name="PO_PurchaseOrder" Relationship="InventoryModel.FK_PO_PurchaseOrder_CurrencyId" FromRole="GLOBAL_Currency" ToRole="PO_PurchaseOrder" />
+  </EntityType>
+  <EntityType Name="INV_StockAdjustment">
+    <Key>
+      <PropertyRef Name="StockAdjustmentId" />
+    </Key>
+    <Property Name="StockAdjustmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="AdjustmentNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsCancelled" Type="Boolean" />
+    <Property Name="CreatedUserId" Type="Int32" />
+    <Property Name="CreatedDttm" Type="DateTime" Precision="3" />
+    <Property Name="LastModUserId" Type="Int32" />
+    <Property Name="LastModDttm" Type="DateTime" Precision="3" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="INV_StockAdjustment_Line">
+    <Key>
+      <PropertyRef Name="StockAdjustmentLineId" />
+    </Key>
+    <Property Name="StockAdjustmentLineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StockAdjustmentId" Type="Int32" Nullable="false" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="ProdId" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LocationId" Type="Int32" />
+    <Property Name="Sublocation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="QuantityBefore" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="QuantityBeforeUom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="QuantityBeforeDisplay" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="QuantityAfter" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="QuantityAfterUom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="QuantityAfterDisplay" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Difference" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="DifferenceUom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DifferenceDisplay" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Serials" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PO_InventoryStatus">
+    <Key>
+      <PropertyRef Name="InventoryStatusId" />
+    </Key>
+    <Property Name="InventoryStatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PO_PaymentStatus">
+    <Key>
+      <PropertyRef Name="PaymentStatusId" />
+    </Key>
+    <Property Name="PaymentStatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PO_PurchaseOrder">
+    <Key>
+      <PropertyRef Name="PurchaseOrderId" />
+    </Key>
+    <Property Name="PurchaseOrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="OrderNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="VendorOrderNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="OrderDate" Type="DateTime" Precision="3" />
+    <Property Name="VendorId" Type="Int32" />
+    <Property Name="PaymentTermsId" Type="Int32" />
+    <Property Name="Carrier" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ContactName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VendorAddress1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="VendorAddress2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="VendorCity" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="VendorState" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VendorCountry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VendorPostalCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="VendorAddressRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="VendorAddressType" Type="Int32" />
+    <Property Name="ShipToAddress1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ShipToAddress2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ShipToCity" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ShipToState" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShipToCountry" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ShipToPostalCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ShipToAddressRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ShipToAddressType" Type="Int32" />
+    <Property Name="RequestShipDate" Type="DateTime" Precision="3" />
+    <Property Name="TaxingSchemeId" Type="Int32" />
+    <Property Name="OrderRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OrderSubTotal" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="OrderTax1" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="OrderTax2" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="OrderExtra" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="OrderTotal" Type="Decimal" Precision="21" Scale="2" />
+    <Property Name="Tax1Rate" Type="Decimal" Precision="10" Scale="5" />
+    <Property Name="Tax2Rate" Type="Decimal" Precision="10" Scale="5" />
+    <Property Name="CalculateTax2OnTax1" Type="Boolean" />
+    <Property Name="Tax1Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Tax2Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ReceiveRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DueDate" Type="DateTime" Precision="3" />
+    <Property Name="AmountPaid" Type="Decimal" Precision="21" Scale="2" />
+    <Property Name="Balance" Type="Decimal" Precision="21" Scale="2" />
+    <Property Name="ReturnRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ReturnSubTotal" Type="Decimal" Precision="21" Scale="2" />
+    <Property Name="ReturnTax1" Type="Decimal" Precision="21" Scale="2" />
+    <Property Name="ReturnTax2" Type="Decimal" Precision="21" Scale="2" />
+    <Property Name="ReturnExtra" Type="Decimal" Precision="21" Scale="2" />
+    <Property Name="ReturnTotal" Type="Decimal" Precision="21" Scale="2" />
+    <Property Name="ReturnFee" Type="Decimal" Precision="21" Scale="2" />
+    <Property Name="UnstockRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastModUserId" Type="Int32" />
+    <Property Name="LastModDttm" Type="DateTime" Precision="3" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Tax1OnShipping" Type="Boolean" />
+    <Property Name="AncillaryExpenses" Type="Decimal" Precision="21" Scale="2" />
+    <Property Name="AncillaryIsPercent" Type="Boolean" />
+    <Property Name="LocationId" Type="Int32" />
+    <Property Name="ShowShipping" Type="Boolean" />
+    <Property Name="ShipToCompanyName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CurrencyId" Type="Int32" />
+    <Property Name="ExchangeRate" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="Tax2OnShipping" Type="Boolean" />
+    <Property Name="SummaryLinePermutation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Total" Type="Decimal" Precision="21" Scale="2" />
+    <Property Name="PaymentStatus" Type="Int32" />
+    <Property Name="InventoryStatus" Type="Int32" />
+    <Property Name="IsCancelled" Type="Boolean" />
+    <Property Name="IsCompleted" Type="Boolean" />
+    <Property Name="Freight" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TotalOrder" Type="Int32" />
+    <Property Name="TotalReceived" Type="Int32" />
+    <Property Name="ReturnAmount" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="BASE_Location" Relationship="InventoryModel.FK_PO_PurchaseOrder_BASE_Location" FromRole="PO_PurchaseOrder" ToRole="BASE_Location" />
+    <NavigationProperty Name="BASE_PaymentTerms" Relationship="InventoryModel.FK_PO_PurchaseOrder_PaymentTermsId" FromRole="PO_PurchaseOrder" ToRole="BASE_PaymentTerms" />
+    <NavigationProperty Name="BASE_TaxingScheme" Relationship="InventoryModel.FK_PO_PurchaseOrder_OrderTaxCodeId" FromRole="PO_PurchaseOrder" ToRole="BASE_TaxingScheme" />
+    <NavigationProperty Name="BASE_User" Relationship="InventoryModel.FK_PO_PurchaseOrder_LastModUserId" FromRole="PO_PurchaseOrder" ToRole="BASE_User" />
+    <NavigationProperty Name="GLOBAL_Currency" Relationship="InventoryModel.FK_PO_PurchaseOrder_CurrencyId" FromRole="PO_PurchaseOrder" ToRole="GLOBAL_Currency" />
+    <NavigationProperty Name="PO_PurchaseOrder_Line" Relationship="InventoryModel.FK_PO_PurchaseOrder_Line_PurchaseOrderId" FromRole="PO_PurchaseOrder" ToRole="PO_PurchaseOrder_Line" />
+    <NavigationProperty Name="PO_PurchaseOrderReceive_Line" Relationship="InventoryModel.FK_PO_PurchaseOrderReceive_Line_PurchaseOrderId" FromRole="PO_PurchaseOrder" ToRole="PO_PurchaseOrderReceive_Line" />
+    <NavigationProperty Name="PO_PurchaseOrderReturn_Line" Relationship="InventoryModel.FK_PO_PurchaseOrderReturn_Line_PurchaseOrderId" FromRole="PO_PurchaseOrder" ToRole="PO_PurchaseOrderReturn_Line" />
+    <NavigationProperty Name="PO_PurchaseOrderUnstock_Line" Relationship="InventoryModel.FK_PO_PurchaseOrderUnstock_Line_PurchaseOrderId" FromRole="PO_PurchaseOrder" ToRole="PO_PurchaseOrderUnstock_Line" />
+  </EntityType>
+  <EntityType Name="PO_PurchaseOrder_Line">
+    <Key>
+      <PropertyRef Name="PurchaseOrderLineId" />
+    </Key>
+    <Property Name="PurchaseOrderLineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PurchaseOrderId" Type="Int32" Nullable="false" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="VendorItemCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="SubTotal" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="QuantityDisplay" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Discount" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="DiscountIsPercent" Type="Boolean" />
+    <Property Name="ProdId" Type="Int32" />
+    <Property Name="LineNum" Type="Int32" />
+    <Property Name="TaxCodeId" Type="Int32" />
+    <Property Name="Tax1Rate" Type="Decimal" Precision="10" Scale="5" />
+    <Property Name="Tax2Rate" Type="Decimal" Precision="10" Scale="5" />
+    <Property Name="Serials" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ServiceCompleted" Type="Boolean" />
+    <Property Name="OrderStatus" Type="Boolean" />
+    <Property Name="VendorItemCodeId" Type="Int32" />
+    <Property Name="PurchaseOrderReceiveLineId" Type="Int32" />
+    <NavigationProperty Name="BASE_Product" Relationship="InventoryModel.FK_PO_PurchaseOrder_Line_ProdId" FromRole="PO_PurchaseOrder_Line" ToRole="BASE_Product" />
+    <NavigationProperty Name="BASE_TaxCode" Relationship="InventoryModel.FK_PO_PurchaseOrder_Line_BASE_TaxCode" FromRole="PO_PurchaseOrder_Line" ToRole="BASE_TaxCode" />
+    <NavigationProperty Name="PO_PurchaseOrder" Relationship="InventoryModel.FK_PO_PurchaseOrder_Line_PurchaseOrderId" FromRole="PO_PurchaseOrder_Line" ToRole="PO_PurchaseOrder" />
+  </EntityType>
+  <EntityType Name="PO_PurchaseOrder_Version">
+    <Key>
+      <PropertyRef Name="PurchaseOrderVersionId" />
+    </Key>
+    <Property Name="PurchaseOrderVersionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PurchaseOrderId" Type="Int32" Nullable="false" />
+    <Property Name="Version" Type="Int32" Nullable="false" />
+    <Property Name="OrderNumber" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="VendorOrderNumber" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="VendorId" Type="Int32" Nullable="false" />
+    <Property Name="PaymentTermsId" Type="Int32" />
+    <Property Name="Carrier" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ContactName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VendorAddress1" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="VendorAddress2" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="VendorCity" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="VendorState" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VendorCountry" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VendorPostalCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="VendorAddressRemarks" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="VendorAddressType" Type="Int32" />
+    <Property Name="ShipToAddress1" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ShipToAddress2" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ShipToCity" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ShipToState" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShipToCountry" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ShipToPostalCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ShipToAddressRemarks" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ShipToAddressType" Type="Int32" />
+    <Property Name="RequestShipDate" Type="DateTime" Precision="3" />
+    <Property Name="TaxingSchemeId" Type="Int32" Nullable="false" />
+    <Property Name="OrderRemarks" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OrderSubTotal" Type="Decimal" Nullable="false" Precision="21" Scale="5" />
+    <Property Name="OrderTax1" Type="Decimal" Nullable="false" Precision="21" Scale="5" />
+    <Property Name="OrderTax2" Type="Decimal" Nullable="false" Precision="21" Scale="5" />
+    <Property Name="OrderExtra" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="OrderTotal" Type="Decimal" Nullable="false" Precision="21" Scale="5" />
+    <Property Name="Tax1Rate" Type="Decimal" Precision="10" Scale="5" />
+    <Property Name="Tax2Rate" Type="Decimal" Precision="10" Scale="5" />
+    <Property Name="CalculateTax2OnTax1" Type="Boolean" Nullable="false" />
+    <Property Name="Tax1Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Tax2Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ReceiveRemarks" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DueDate" Type="DateTime" Precision="3" />
+    <Property Name="AmountPaid" Type="Decimal" Nullable="false" Precision="21" Scale="5" />
+    <Property Name="Balance" Type="Decimal" Nullable="false" Precision="21" Scale="5" />
+    <Property Name="ReturnRemarks" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ReturnSubTotal" Type="Decimal" Nullable="false" Precision="21" Scale="5" />
+    <Property Name="ReturnTax1" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnTax2" Type="Decimal" Nullable="false" Precision="21" Scale="5" />
+    <Property Name="ReturnExtra" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnTotal" Type="Decimal" Nullable="false" Precision="21" Scale="5" />
+    <Property Name="ReturnFee" Type="Decimal" Nullable="false" Precision="21" Scale="5" />
+    <Property Name="UnstockRemarks" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Custom2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Custom1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Custom3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Custom4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Custom5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastModUserId" Type="Int32" Nullable="false" />
+    <Property Name="LastModDttm" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Timestamp" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Tax1OnShipping" Type="Boolean" Nullable="false" />
+    <Property Name="AncillaryExpenses" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="AncillaryIsPercent" Type="Boolean" Nullable="false" />
+    <Property Name="LocationId" Type="Int32" />
+    <Property Name="ShowShipping" Type="Boolean" Nullable="false" />
+    <Property Name="ShipToCompanyName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CurrencyId" Type="Int32" Nullable="false" />
+    <Property Name="ExchangeRate" Type="Decimal" Nullable="false" Precision="20" Scale="10" />
+    <Property Name="Tax2OnShipping" Type="Boolean" Nullable="false" />
+    <Property Name="SummaryLinePermutation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Total" Type="Decimal" Nullable="false" Precision="21" Scale="5" />
+    <Property Name="PaymentStatus" Type="Int32" Nullable="false" />
+    <Property Name="InventoryStatus" Type="Int32" Nullable="false" />
+    <Property Name="IsCancelled" Type="Boolean" Nullable="false" />
+    <Property Name="IsCompleted" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PO_PurchaseOrderReceive_Line">
+    <Key>
+      <PropertyRef Name="PurchaseOrderReceiveLineId" />
+    </Key>
+    <Property Name="PurchaseOrderReceiveLineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PurchaseOrderId" Type="Int32" Nullable="false" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="ReceiveDate" Type="DateTime" Precision="3" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="VendorItemCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="LocationId" Type="Int32" />
+    <Property Name="Sublocation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="QuantityDisplay" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="ProdId" Type="Int32" />
+    <Property Name="LineNum" Type="Int32" />
+    <Property Name="Serials" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="VendorItemCodeId" Type="Int32" />
+    <Property Name="PurchaseOrderLineId" Type="Int32" />
+    <NavigationProperty Name="BASE_Location" Relationship="InventoryModel.FK_PO_PurchaseOrderReceive_Line_LocationId" FromRole="PO_PurchaseOrderReceive_Line" ToRole="BASE_Location" />
+    <NavigationProperty Name="BASE_Product" Relationship="InventoryModel.FK_PO_PurchaseOrderReceive_Line_ProdId" FromRole="PO_PurchaseOrderReceive_Line" ToRole="BASE_Product" />
+    <NavigationProperty Name="PO_PurchaseOrder" Relationship="InventoryModel.FK_PO_PurchaseOrderReceive_Line_PurchaseOrderId" FromRole="PO_PurchaseOrderReceive_Line" ToRole="PO_PurchaseOrder" />
+  </EntityType>
+  <EntityType Name="PO_PurchaseOrderReturn_Line">
+    <Key>
+      <PropertyRef Name="PurchaseOrderReturnLineId" />
+    </Key>
+    <Property Name="PurchaseOrderReturnLineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PurchaseOrderId" Type="Int32" Nullable="false" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="VendorItemCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="SubTotal" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="QuantityDisplay" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Discount" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="DiscountIsPercent" Type="Boolean" />
+    <Property Name="ProdId" Type="Int32" />
+    <Property Name="LineNum" Type="Int32" />
+    <Property Name="TaxCodeId" Type="Int32" />
+    <Property Name="Tax1Rate" Type="Decimal" Precision="10" Scale="5" />
+    <Property Name="Tax2Rate" Type="Decimal" Precision="10" Scale="5" />
+    <Property Name="Serials" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ReturnDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="BASE_Product" Relationship="InventoryModel.FK_PO_PurchaseOrderReturn_Line_ProdId" FromRole="PO_PurchaseOrderReturn_Line" ToRole="BASE_Product" />
+    <NavigationProperty Name="BASE_TaxCode" Relationship="InventoryModel.FK_PO_PurchaseOrderReturn_Line_BASE_TaxCode" FromRole="PO_PurchaseOrderReturn_Line" ToRole="BASE_TaxCode" />
+    <NavigationProperty Name="PO_PurchaseOrder" Relationship="InventoryModel.FK_PO_PurchaseOrderReturn_Line_PurchaseOrderId" FromRole="PO_PurchaseOrderReturn_Line" ToRole="PO_PurchaseOrder" />
+  </EntityType>
+  <EntityType Name="PO_PurchaseOrderUnstock_Line">
+    <Key>
+      <PropertyRef Name="PurchaseOrderUnstockLineId" />
+    </Key>
+    <Property Name="PurchaseOrderUnstockLineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PurchaseOrderId" Type="Int32" Nullable="false" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="LocationId" Type="Int32" />
+    <Property Name="Sublocation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="QuantityDisplay" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="ProdId" Type="Int32" />
+    <Property Name="LineNum" Type="Int32" />
+    <Property Name="Serials" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="VendorItemCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UnstockDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="BASE_Location" Relationship="InventoryModel.FK_PO_PurchaseOrderUnstock_Line_LocationId" FromRole="PO_PurchaseOrderUnstock_Line" ToRole="BASE_Location" />
+    <NavigationProperty Name="BASE_Product" Relationship="InventoryModel.FK_PO_PurchaseOrderUnstock_Line_ProdId" FromRole="PO_PurchaseOrderUnstock_Line" ToRole="BASE_Product" />
+    <NavigationProperty Name="PO_PurchaseOrder" Relationship="InventoryModel.FK_PO_PurchaseOrderUnstock_Line_PurchaseOrderId" FromRole="PO_PurchaseOrderUnstock_Line" ToRole="PO_PurchaseOrder" />
+  </EntityType>
+  <EntityType Name="PO_Status">
+    <Key>
+      <PropertyRef Name="StatusId" />
+    </Key>
+    <Property Name="StatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="InventoryStatus" Type="Int32" />
+    <Property Name="PaymentStatus" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrder">
+    <Key>
+      <PropertyRef Name="SalesOrderId" />
+    </Key>
+    <Property Name="SalesOrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="OrderNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="OrderDate" Type="DateTime" Precision="3" />
+    <Property Name="CustomerId" Type="Int32" />
+    <Property Name="SalesRep" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PONumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="RequestShipDate" Type="DateTime" Precision="3" />
+    <Property Name="PaymentTermsId" Type="Int32" />
+    <Property Name="DueDate" Type="DateTime" Precision="3" />
+    <Property Name="PricingSchemeId" Type="Int32" />
+    <Property Name="OrderRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OrderSubTotal" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="OrderTax1" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="OrderTax2" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="OrderExtra" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="OrderTotal" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="TaxingSchemeId" Type="Int32" />
+    <Property Name="Tax1Rate" Type="Decimal" Precision="10" Scale="5" />
+    <Property Name="Tax2Rate" Type="Decimal" Precision="10" Scale="5" />
+    <Property Name="CalculateTax2OnTax1" Type="Boolean" />
+    <Property Name="Tax1Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Tax2Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PickedDate" Type="DateTime" Precision="3" />
+    <Property Name="PickingRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PackedDate" Type="DateTime" Precision="3" />
+    <Property Name="PackingRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="InvoicedDate" Type="DateTime" Precision="3" />
+    <Property Name="AmountPaid" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="Balance" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ReturnSubTotal" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnTax1" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnTax2" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnExtra" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnTotal" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnFee" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="RestockRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ContactName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BillingAddress1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BillingAddress2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BillingCity" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BillingState" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BillingCountry" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BillingPostalCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="BillingAddressRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BillingAddressType" Type="Int32" />
+    <Property Name="ShippingAddress1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingAddress2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingCity" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingState" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingCountry" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingPostalCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingAddressRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingAddressType" Type="Int32" />
+    <Property Name="Custom1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Custom2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Custom3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Custom4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Custom5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastModUserId" Type="Int32" />
+    <Property Name="LastModDttm" Type="DateTime" Precision="3" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="ParentSalesOrderId" Type="Int32" />
+    <Property Name="SplitPartNumber" Type="Int32" />
+    <Property Name="Tax1OnShipping" Type="Boolean" />
+    <Property Name="LocationId" Type="Int32" />
+    <Property Name="ShowShipping" Type="Boolean" />
+    <Property Name="ShipToCompanyName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CurrencyId" Type="Int32" />
+    <Property Name="ExchangeRate" Type="Decimal" Precision="20" Scale="10" />
+    <Property Name="Tax2OnShipping" Type="Boolean" />
+    <Property Name="Total" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="PaymentStatus" Type="Int32" />
+    <Property Name="InventoryStatus" Type="Int32" />
+    <Property Name="IsCancelled" Type="Boolean" />
+    <Property Name="SummaryLinePermutation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NonCustomerCost" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="NonCustomerCostIsPercent" Type="Boolean" />
+    <Property Name="IsQuote" Type="Boolean" />
+    <Property Name="IsInvoiced" Type="Boolean" />
+    <Property Name="IsCompleted" Type="Boolean" />
+    <Property Name="SameBillingAndShipping" Type="Boolean" />
+    <NavigationProperty Name="SO_SalesOrder_Line" Relationship="InventoryModel.FK_SO_SalesOrder_Line_SalesOrderId" FromRole="SO_SalesOrder" ToRole="SO_SalesOrder_Line" />
+    <NavigationProperty Name="SO_SalesOrder1" Relationship="InventoryModel.FK_SO_SalesOrder_ParentSalesOrderId" FromRole="SO_SalesOrder" ToRole="SO_SalesOrder1" />
+    <NavigationProperty Name="SO_SalesOrder2" Relationship="InventoryModel.FK_SO_SalesOrder_ParentSalesOrderId" FromRole="SO_SalesOrder1" ToRole="SO_SalesOrder" />
+    <NavigationProperty Name="SO_SalesOrderAttachment" Relationship="InventoryModel.FK_SO_SalesOrderAttachment_SalesOrderId" FromRole="SO_SalesOrder" ToRole="SO_SalesOrderAttachment" />
+    <NavigationProperty Name="SO_SalesOrderPack_Line" Relationship="InventoryModel.FK_SO_SalesOrderPack_Line_SalesOrderId" FromRole="SO_SalesOrder" ToRole="SO_SalesOrderPack_Line" />
+    <NavigationProperty Name="SO_SalesOrderPick_Line" Relationship="InventoryModel.FK_SO_SalesOrderPick_Line_SalesOrderId" FromRole="SO_SalesOrder" ToRole="SO_SalesOrderPick_Line" />
+    <NavigationProperty Name="SO_SalesOrderRestock_Line" Relationship="InventoryModel.FK_SO_SalesOrderRestock_Line_SalesOrderId" FromRole="SO_SalesOrder" ToRole="SO_SalesOrderRestock_Line" />
+    <NavigationProperty Name="SO_SalesOrderReturn_Line" Relationship="InventoryModel.FK_SO_SalesOrderReturn_Line_SalesOrderId" FromRole="SO_SalesOrder" ToRole="SO_SalesOrderReturn_Line" />
+    <NavigationProperty Name="SO_SalesOrderShip_Line" Relationship="InventoryModel.FK_SO_SalesOrderShip_Line_SalesOrderId" FromRole="SO_SalesOrder" ToRole="SO_SalesOrderShip_Line" />
+    <NavigationProperty Name="SO_SalesOrderSticky" Relationship="InventoryModel.FK_SO_SalesOrderSticky_SalesOrderId" FromRole="SO_SalesOrder" ToRole="SO_SalesOrderSticky" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrder_Line">
+    <Key>
+      <PropertyRef Name="SalesOrderLineId" />
+    </Key>
+    <Property Name="SalesOrderLineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesOrderId" Type="Int32" Nullable="false" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="LineNum" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="Discount" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="SubTotal" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="QuantityDisplay" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="DiscountIsPercent" Type="Boolean" />
+    <Property Name="ProdId" Type="Int32" />
+    <Property Name="TaxCodeId" Type="Int32" />
+    <Property Name="Tax1Rate" Type="Decimal" Precision="10" Scale="5" />
+    <Property Name="Tax2Rate" Type="Decimal" Precision="10" Scale="5" />
+    <Property Name="ServiceCompleted" Type="Boolean" />
+    <Property Name="Serials" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BASE_Product" Relationship="InventoryModel.FK_SO_SalesOrder_Line_ProdId" FromRole="SO_SalesOrder_Line" ToRole="BASE_Product" />
+    <NavigationProperty Name="BASE_TaxCode" Relationship="InventoryModel.FK_SO_SalesOrder_Line_BASE_TaxCode" FromRole="SO_SalesOrder_Line" ToRole="BASE_TaxCode" />
+    <NavigationProperty Name="SO_SalesOrder" Relationship="InventoryModel.FK_SO_SalesOrder_Line_SalesOrderId" FromRole="SO_SalesOrder_Line" ToRole="SO_SalesOrder" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrder_Line_Version">
+    <Key>
+      <PropertyRef Name="SalesOrderVersionLineId" />
+    </Key>
+    <Property Name="SalesOrderVersionLineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesOrderLineId" Type="Int32" Nullable="false" />
+    <Property Name="SalesOrderId" Type="Int32" Nullable="false" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="LineNum" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="Discount" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="SubTotal" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="QuantityDisplay" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="DiscountIsPercent" Type="Boolean" />
+    <Property Name="ProdId" Type="Int32" />
+    <Property Name="TaxCodeId" Type="Int32" />
+    <Property Name="Tax1Rate" Type="Decimal" Precision="10" Scale="5" />
+    <Property Name="Tax2Rate" Type="Decimal" Precision="10" Scale="5" />
+    <Property Name="ServiceCompleted" Type="Boolean" />
+    <Property Name="Serials" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrder_Version">
+    <Key>
+      <PropertyRef Name="SalesOrderVersionId" />
+    </Key>
+    <Property Name="SalesOrderVersionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesOrderId" Type="Int32" Nullable="false" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="OrderNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="OrderDate" Type="DateTime" Precision="3" />
+    <Property Name="CustomerId" Type="Int32" />
+    <Property Name="SalesRep" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PONumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="RequestShipDate" Type="DateTime" Precision="3" />
+    <Property Name="PaymentTermsId" Type="Int32" />
+    <Property Name="DueDate" Type="DateTime" Precision="3" />
+    <Property Name="PricingSchemeId" Type="Int32" />
+    <Property Name="OrderRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OrderSubTotal" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="OrderTax1" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="OrderTax2" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="OrderExtra" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="OrderTotal" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="TaxingSchemeId" Type="Int32" />
+    <Property Name="Tax1Rate" Type="Decimal" Precision="10" Scale="5" />
+    <Property Name="Tax2Rate" Type="Decimal" Precision="10" Scale="5" />
+    <Property Name="CalculateTax2OnTax1" Type="Boolean" />
+    <Property Name="Tax1Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Tax2Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PickedDate" Type="DateTime" Precision="3" />
+    <Property Name="PickingRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PackedDate" Type="DateTime" Precision="3" />
+    <Property Name="PackingRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="InvoicedDate" Type="DateTime" Precision="3" />
+    <Property Name="AmountPaid" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="Balance" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ReturnSubTotal" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnTax1" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnTax2" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnExtra" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnTotal" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="ReturnFee" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="RestockRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ContactName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BillingAddress1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BillingAddress2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BillingCity" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BillingState" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BillingCountry" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BillingPostalCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="BillingAddressRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BillingAddressType" Type="Int32" />
+    <Property Name="ShippingAddress1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingAddress2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingCity" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingState" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingCountry" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingPostalCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingAddressRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ShippingAddressType" Type="Int32" />
+    <Property Name="Custom1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Custom2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Custom3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Custom4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Custom5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastModUserId" Type="Int32" />
+    <Property Name="LastModDttm" Type="DateTime" Precision="3" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="ParentSalesOrderId" Type="Int32" />
+    <Property Name="SplitPartNumber" Type="Int32" />
+    <Property Name="Tax1OnShipping" Type="Boolean" />
+    <Property Name="LocationId" Type="Int32" />
+    <Property Name="ShowShipping" Type="Boolean" />
+    <Property Name="ShipToCompanyName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CurrencyId" Type="Int32" />
+    <Property Name="ExchangeRate" Type="Decimal" Precision="20" Scale="10" />
+    <Property Name="Tax2OnShipping" Type="Boolean" />
+    <Property Name="Total" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="PaymentStatus" Type="Int32" />
+    <Property Name="InventoryStatus" Type="Int32" />
+    <Property Name="IsCancelled" Type="Boolean" />
+    <Property Name="SummaryLinePermutation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NonCustomerCost" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="NonCustomerCostIsPercent" Type="Boolean" />
+    <Property Name="IsQuote" Type="Boolean" />
+    <Property Name="IsInvoiced" Type="Boolean" />
+    <Property Name="IsCompleted" Type="Boolean" />
+    <Property Name="SameBillingAndShipping" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderAttachment">
+    <Key>
+      <PropertyRef Name="SalesOrderAttachmentId" />
+    </Key>
+    <Property Name="SalesOrderAttachmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesOrderId" Type="Int32" Nullable="false" />
+    <Property Name="FileAttachmentId" Type="Int32" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="SO_SalesOrder" Relationship="InventoryModel.FK_SO_SalesOrderAttachment_SalesOrderId" FromRole="SO_SalesOrderAttachment" ToRole="SO_SalesOrder" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderPack_Line">
+    <Key>
+      <PropertyRef Name="SalesOrderPackLineId" />
+    </Key>
+    <Property Name="SalesOrderPackLineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesOrderId" Type="Int32" Nullable="false" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="LineNum" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="ContainerNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="QuantityDisplay" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="ProdId" Type="Int32" />
+    <Property Name="Serials" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Shipped" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="BASE_Product" Relationship="InventoryModel.FK_SO_SalesOrderPack_Line_ProdId" FromRole="SO_SalesOrderPack_Line" ToRole="BASE_Product" />
+    <NavigationProperty Name="SO_SalesOrder" Relationship="InventoryModel.FK_SO_SalesOrderPack_Line_SalesOrderId" FromRole="SO_SalesOrderPack_Line" ToRole="SO_SalesOrder" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderPack_Line_Version">
+    <Key>
+      <PropertyRef Name="SalesOrderPackVersionLineId" />
+    </Key>
+    <Property Name="SalesOrderPackVersionLineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesOrderPackLineId" Type="Int32" Nullable="false" />
+    <Property Name="SalesOrderId" Type="Int32" Nullable="false" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="LineNum" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="ContainerNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="QuantityDisplay" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="ProdId" Type="Int32" />
+    <Property Name="Serials" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Shipped" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderPaymentHistory_Line">
+    <Key>
+      <PropertyRef Name="SalesOrderPaymentHistoryLineId" />
+    </Key>
+    <Property Name="SalesOrderPaymentHistoryLineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesOrderId" Type="Int32" Nullable="false" />
+    <Property Name="DatePaid" Type="DateTime" Precision="3" />
+    <Property Name="PaymentType" Type="Int32" />
+    <Property Name="PaymentMethod" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ReferenceNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="BatchPaymentId" Type="Int32" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="LineNum" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderPaymentHistory_Line_Version">
+    <Key>
+      <PropertyRef Name="SalesOrderPaymentHistoryLineVersionId" />
+    </Key>
+    <Property Name="SalesOrderPaymentHistoryLineVersionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesOrderPaymentHistoryLineId" Type="Int32" Nullable="false" />
+    <Property Name="SalesOrderId" Type="Int32" Nullable="false" />
+    <Property Name="DatePaid" Type="DateTime" Precision="3" />
+    <Property Name="PaymentType" Type="Int32" />
+    <Property Name="PaymentMethod" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ReferenceNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="BatchPaymentId" Type="Int32" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="LineNum" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderPick_Line">
+    <Key>
+      <PropertyRef Name="SalesOrderPickLineId" />
+    </Key>
+    <Property Name="SalesOrderPickLineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesOrderId" Type="Int32" Nullable="false" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="LineNum" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="LocationId" Type="Int32" />
+    <Property Name="Sublocation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="QuantityDisplay" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="ProdId" Type="Int32" />
+    <Property Name="Serials" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BASE_Location" Relationship="InventoryModel.FK_SO_SalesOrderPick_Line_LocationId" FromRole="SO_SalesOrderPick_Line" ToRole="BASE_Location" />
+    <NavigationProperty Name="BASE_Product" Relationship="InventoryModel.FK_SO_SalesOrderPick_Line_ProdId" FromRole="SO_SalesOrderPick_Line" ToRole="BASE_Product" />
+    <NavigationProperty Name="SO_SalesOrder" Relationship="InventoryModel.FK_SO_SalesOrderPick_Line_SalesOrderId" FromRole="SO_SalesOrderPick_Line" ToRole="SO_SalesOrder" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderPick_Line_Version">
+    <Key>
+      <PropertyRef Name="SalesOrderPickVersionLineId" />
+    </Key>
+    <Property Name="SalesOrderPickVersionLineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesOrderPickLineId" Type="Int32" Nullable="false" />
+    <Property Name="SalesOrderId" Type="Int32" Nullable="false" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="LineNum" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="LocationId" Type="Int32" />
+    <Property Name="Sublocation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="QuantityDisplay" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="ProdId" Type="Int32" />
+    <Property Name="Serials" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderRestock_Line">
+    <Key>
+      <PropertyRef Name="SalesOrderRestockLineId" />
+    </Key>
+    <Property Name="SalesOrderRestockLineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesOrderId" Type="Int32" Nullable="false" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="LineNum" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="LocationId" Type="Int32" />
+    <Property Name="Sublocation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="QuantityDisplay" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="ProdId" Type="Int32" />
+    <Property Name="RestockDate" Type="DateTime" Precision="3" />
+    <Property Name="Serials" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BASE_Location" Relationship="InventoryModel.FK_SO_SalesOrderRestock_Line_LocationId" FromRole="SO_SalesOrderRestock_Line" ToRole="BASE_Location" />
+    <NavigationProperty Name="BASE_Product" Relationship="InventoryModel.FK_SO_SalesOrderRestock_Line_ProdId" FromRole="SO_SalesOrderRestock_Line" ToRole="BASE_Product" />
+    <NavigationProperty Name="SO_SalesOrder" Relationship="InventoryModel.FK_SO_SalesOrderRestock_Line_SalesOrderId" FromRole="SO_SalesOrderRestock_Line" ToRole="SO_SalesOrder" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderRestock_Line_Version">
+    <Key>
+      <PropertyRef Name="SalesOrderRestockLineVersionId" />
+    </Key>
+    <Property Name="SalesOrderRestockLineVersionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesOrderRestockLineId" Type="Int32" Nullable="false" />
+    <Property Name="SalesOrderId" Type="Int32" Nullable="false" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="LineNum" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="LocationId" Type="Int32" />
+    <Property Name="Sublocation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="QuantityDisplay" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="ProdId" Type="Int32" />
+    <Property Name="RestockDate" Type="DateTime" Precision="3" />
+    <Property Name="Serials" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderReturn_Line">
+    <Key>
+      <PropertyRef Name="SalesOrderReturnLineId" />
+    </Key>
+    <Property Name="SalesOrderReturnLineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesOrderId" Type="Int32" Nullable="false" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="LineNum" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="Discount" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="SubTotal" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="QuantityDisplay" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="DiscountIsPercent" Type="Boolean" />
+    <Property Name="ProdId" Type="Int32" />
+    <Property Name="TaxCodeId" Type="Int32" />
+    <Property Name="Tax1Rate" Type="Decimal" Precision="10" Scale="5" />
+    <Property Name="Tax2Rate" Type="Decimal" Precision="10" Scale="5" />
+    <Property Name="ReturnDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDiscarded" Type="Boolean" />
+    <Property Name="Serials" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BASE_Product" Relationship="InventoryModel.FK_SO_SalesOrderReturn_Line_ProdId" FromRole="SO_SalesOrderReturn_Line" ToRole="BASE_Product" />
+    <NavigationProperty Name="BASE_TaxCode" Relationship="InventoryModel.FK_SO_SalesOrderReturn_Line_BASE_TaxCode" FromRole="SO_SalesOrderReturn_Line" ToRole="BASE_TaxCode" />
+    <NavigationProperty Name="SO_SalesOrder" Relationship="InventoryModel.FK_SO_SalesOrderReturn_Line_SalesOrderId" FromRole="SO_SalesOrderReturn_Line" ToRole="SO_SalesOrder" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderReturn_Line_Version">
+    <Key>
+      <PropertyRef Name="SalesOrderReturnVersionLineId" />
+    </Key>
+    <Property Name="SalesOrderReturnVersionLineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesOrderReturnLineId" Type="Int32" Nullable="false" />
+    <Property Name="SalesOrderId" Type="Int32" Nullable="false" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="LineNum" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="Discount" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="SubTotal" Type="Decimal" Precision="21" Scale="5" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="QuantityUom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="QuantityDisplay" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="DiscountIsPercent" Type="Boolean" />
+    <Property Name="ProdId" Type="Int32" />
+    <Property Name="TaxCodeId" Type="Int32" />
+    <Property Name="Tax1Rate" Type="Decimal" Precision="10" Scale="5" />
+    <Property Name="Tax2Rate" Type="Decimal" Precision="10" Scale="5" />
+    <Property Name="ReturnDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDiscarded" Type="Boolean" />
+    <Property Name="Serials" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderShip_Line">
+    <Key>
+      <PropertyRef Name="SalesOrderShipLineId" />
+    </Key>
+    <Property Name="SalesOrderShipLineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesOrderId" Type="Int32" Nullable="false" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="LineNum" Type="Int32" />
+    <Property Name="ShippedDate" Type="DateTime" Precision="3" />
+    <Property Name="Carrier" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TrackingNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="SO_SalesOrder" Relationship="InventoryModel.FK_SO_SalesOrderShip_Line_SalesOrderId" FromRole="SO_SalesOrderShip_Line" ToRole="SO_SalesOrder" />
+    <NavigationProperty Name="SO_SalesOrderShipContainer" Relationship="InventoryModel.FK_SO_SalesOrderShipContainer_SalesOrderShipLineId" FromRole="SO_SalesOrderShip_Line" ToRole="SO_SalesOrderShipContainer" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderShip_Line_Version">
+    <Key>
+      <PropertyRef Name="SalesOrderShipVersionLineId" />
+    </Key>
+    <Property Name="SalesOrderShipVersionLineId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesOrderShipLineId" Type="Int32" Nullable="false" />
+    <Property Name="SalesOrderId" Type="Int32" Nullable="false" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="LineNum" Type="Int32" />
+    <Property Name="ShippedDate" Type="DateTime" Precision="3" />
+    <Property Name="Carrier" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TrackingNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderShipContainer">
+    <Key>
+      <PropertyRef Name="SalesOrderShipContainerId" />
+    </Key>
+    <Property Name="SalesOrderShipContainerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Version" Type="Int32" Nullable="false" />
+    <Property Name="SalesOrderShipLineId" Type="Int32" />
+    <Property Name="ContainerNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="SO_SalesOrderShip_Line" Relationship="InventoryModel.FK_SO_SalesOrderShipContainer_SalesOrderShipLineId" FromRole="SO_SalesOrderShipContainer" ToRole="SO_SalesOrderShip_Line" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderShipContainer_Version">
+    <Key>
+      <PropertyRef Name="SalesOrderShipContainerVersionId" />
+    </Key>
+    <Property Name="SalesOrderShipContainerVersionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesOrderShipContainerId" Type="Int32" Nullable="false" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="SalesOrderShipLineId" Type="Int32" />
+    <Property Name="ContainerNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderSticky">
+    <Key>
+      <PropertyRef Name="SalesOrderStickyId" />
+    </Key>
+    <Property Name="SalesOrderStickyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesOrderId" Type="Int32" Nullable="false" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="LocationX" Type="Int32" />
+    <Property Name="LocationY" Type="Int32" />
+    <Property Name="Width" Type="Int32" />
+    <Property Name="Height" Type="Int32" />
+    <Property Name="Colour" Type="Int32" />
+    <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="SO_SalesOrder" Relationship="InventoryModel.FK_SO_SalesOrderSticky_SalesOrderId" FromRole="SO_SalesOrderSticky" ToRole="SO_SalesOrder" />
+  </EntityType>
+  <EntityType Name="SO_SalesOrderSticky_Version">
+    <Key>
+      <PropertyRef Name="SalesOrderStickyVersionId" />
+    </Key>
+    <Property Name="SalesOrderStickyVersionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesOrderStickyId" Type="Int32" Nullable="false" />
+    <Property Name="SalesOrderId" Type="Int32" Nullable="false" />
+    <Property Name="Version" Type="Int32" />
+    <Property Name="LocationX" Type="Int32" />
+    <Property Name="LocationY" Type="Int32" />
+    <Property Name="Width" Type="Int32" />
+    <Property Name="Height" Type="Int32" />
+    <Property Name="Colour" Type="Int32" />
+    <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="tblInventory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblPaymentHistory">
+    <Key>
+      <PropertyRef Name="PaymentHistoryId" />
+    </Key>
+    <Property Name="PaymentHistoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="DueDate" Type="DateTime" Precision="3" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CreditBalance" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Balance" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Transactions" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="vendorID" Type="Int32" />
+    <NavigationProperty Name="BASE_Vendor" Relationship="InventoryModel.FK__tblPaymen__vendo__40C49C62" FromRole="tblPaymentHistory" ToRole="BASE_Vendor" />
+  </EntityType>
+  <Association Name="FK__ACC_Produ__ProdI__7EF6D905">
+    <End Type="InventoryModel.BASE_Product" Role="BASE_Product" Multiplicity="1" />
+    <End Type="InventoryModel.ACC_ProductDefaultCost" Role="ACC_ProductDefaultCost" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="ACC_ProductDefaultCost">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Base_Bill__ProdI__0A688BB1">
+    <End Type="InventoryModel.BASE_Product" Role="BASE_Product" Multiplicity="0..1" />
+    <End Type="InventoryModel.Base_BillOfMaterials" Role="Base_BillOfMaterials" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="Base_BillOfMaterials">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_Category_ParentCategoryId">
+    <End Type="InventoryModel.BASE_Category" Role="BASE_Category" Multiplicity="0..1" />
+    <End Type="InventoryModel.BASE_Category" Role="BASE_Category1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Category">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="BASE_Category1">
+        <PropertyRef Name="ParentCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_City_BASE_State">
+    <End Type="InventoryModel.BASE_State" Role="BASE_State" Multiplicity="0..1" />
+    <End Type="InventoryModel.BASE_City" Role="BASE_City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_State">
+        <PropertyRef Name="StateId" />
+      </Principal>
+      <Dependent Role="BASE_City">
+        <PropertyRef Name="FKStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_State_BASE_Country">
+    <End Type="InventoryModel.BASE_Country" Role="BASE_Country" Multiplicity="1" />
+    <End Type="InventoryModel.BASE_State" Role="BASE_State" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Country">
+        <PropertyRef Name="CountryId" />
+      </Principal>
+      <Dependent Role="BASE_State">
+        <PropertyRef Name="FKCountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_Customer_DefaultLocationId">
+    <End Type="InventoryModel.BASE_Location" Role="BASE_Location" Multiplicity="0..1" />
+    <End Type="InventoryModel.BASE_Customer" Role="BASE_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Location">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="BASE_Customer">
+        <PropertyRef Name="DefaultLocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_Customer_DefaultOrderTaxCodeId">
+    <End Type="InventoryModel.BASE_TaxingScheme" Role="BASE_TaxingScheme" Multiplicity="0..1" />
+    <End Type="InventoryModel.BASE_Customer" Role="BASE_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_TaxingScheme">
+        <PropertyRef Name="TaxingSchemeId" />
+      </Principal>
+      <Dependent Role="BASE_Customer">
+        <PropertyRef Name="TaxingSchemeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_Customer_DefaultPaymentTermsId">
+    <End Type="InventoryModel.BASE_PaymentTerms" Role="BASE_PaymentTerms" Multiplicity="0..1" />
+    <End Type="InventoryModel.BASE_Customer" Role="BASE_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_PaymentTerms">
+        <PropertyRef Name="PaymentTermsId" />
+      </Principal>
+      <Dependent Role="BASE_Customer">
+        <PropertyRef Name="DefaultPaymentTermsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_Customer_DefaultPricingSchemeId">
+    <End Type="InventoryModel.BASE_PricingScheme" Role="BASE_PricingScheme" Multiplicity="0..1" />
+    <End Type="InventoryModel.BASE_Customer" Role="BASE_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_PricingScheme">
+        <PropertyRef Name="PricingSchemeId" />
+      </Principal>
+      <Dependent Role="BASE_Customer">
+        <PropertyRef Name="DefaultPricingSchemeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_Customer_LastModUserId">
+    <End Type="InventoryModel.BASE_User" Role="BASE_User" Multiplicity="0..1" />
+    <End Type="InventoryModel.BASE_Customer" Role="BASE_Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="BASE_Customer">
+        <PropertyRef Name="LastModUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_ItemPrice_BASE_Product">
+    <End Type="InventoryModel.BASE_Product" Role="BASE_Product" Multiplicity="0..1" />
+    <End Type="InventoryModel.BASE_ItemPrice" Role="BASE_ItemPrice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="BASE_ItemPrice">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_Location_LastModUserId">
+    <End Type="InventoryModel.BASE_User" Role="BASE_User" Multiplicity="0..1" />
+    <End Type="InventoryModel.BASE_Location" Role="BASE_Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="BASE_Location">
+        <PropertyRef Name="LastModUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Base_Quantity_BASE_Location">
+    <End Type="InventoryModel.BASE_Location" Role="BASE_Location" Multiplicity="0..1" />
+    <End Type="InventoryModel.Base_Quantity" Role="Base_Quantity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Location">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="Base_Quantity">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrder_BASE_Location">
+    <End Type="InventoryModel.BASE_Location" Role="BASE_Location" Multiplicity="0..1" />
+    <End Type="InventoryModel.PO_PurchaseOrder" Role="PO_PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Location">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrder">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrderReceive_Line_LocationId">
+    <End Type="InventoryModel.BASE_Location" Role="BASE_Location" Multiplicity="0..1" />
+    <End Type="InventoryModel.PO_PurchaseOrderReceive_Line" Role="PO_PurchaseOrderReceive_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Location">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrderReceive_Line">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrderUnstock_Line_LocationId">
+    <End Type="InventoryModel.BASE_Location" Role="BASE_Location" Multiplicity="0..1" />
+    <End Type="InventoryModel.PO_PurchaseOrderUnstock_Line" Role="PO_PurchaseOrderUnstock_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Location">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrderUnstock_Line">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderPick_Line_LocationId">
+    <End Type="InventoryModel.BASE_Location" Role="BASE_Location" Multiplicity="0..1" />
+    <End Type="InventoryModel.SO_SalesOrderPick_Line" Role="SO_SalesOrderPick_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Location">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderPick_Line">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderRestock_Line_LocationId">
+    <End Type="InventoryModel.BASE_Location" Role="BASE_Location" Multiplicity="0..1" />
+    <End Type="InventoryModel.SO_SalesOrderRestock_Line" Role="SO_SalesOrderRestock_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Location">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderRestock_Line">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_Vendor_DefaultPaymentTermsId">
+    <End Type="InventoryModel.BASE_PaymentTerms" Role="BASE_PaymentTerms" Multiplicity="0..1" />
+    <End Type="InventoryModel.BASE_Vendor" Role="BASE_Vendor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_PaymentTerms">
+        <PropertyRef Name="PaymentTermsId" />
+      </Principal>
+      <Dependent Role="BASE_Vendor">
+        <PropertyRef Name="DefaultPaymentTermsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrder_PaymentTermsId">
+    <End Type="InventoryModel.BASE_PaymentTerms" Role="BASE_PaymentTerms" Multiplicity="0..1" />
+    <End Type="InventoryModel.PO_PurchaseOrder" Role="PO_PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_PaymentTerms">
+        <PropertyRef Name="PaymentTermsId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrder">
+        <PropertyRef Name="PaymentTermsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_PricingScheme_CurrencyId">
+    <End Type="InventoryModel.GLOBAL_Currency" Role="GLOBAL_Currency" Multiplicity="0..1" />
+    <End Type="InventoryModel.BASE_PricingScheme" Role="BASE_PricingScheme" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GLOBAL_Currency">
+        <PropertyRef Name="CurrencyId" />
+      </Principal>
+      <Dependent Role="BASE_PricingScheme">
+        <PropertyRef Name="CurrencyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_PricingScheme_LastModUserId">
+    <End Type="InventoryModel.BASE_User" Role="BASE_User" Multiplicity="0..1" />
+    <End Type="InventoryModel.BASE_PricingScheme" Role="BASE_PricingScheme" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="BASE_PricingScheme">
+        <PropertyRef Name="LastModUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_Product_LastModUserId">
+    <End Type="InventoryModel.BASE_User" Role="BASE_User" Multiplicity="0..1" />
+    <End Type="InventoryModel.BASE_Product" Role="BASE_Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="BASE_Product">
+        <PropertyRef Name="LastModUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Base_Quantity_BASE_Product">
+    <End Type="InventoryModel.BASE_Product" Role="BASE_Product" Multiplicity="0..1" />
+    <End Type="InventoryModel.Base_Quantity" Role="Base_Quantity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="Base_Quantity">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DUMMY_ReorderStock_Line_ProdId">
+    <End Type="InventoryModel.BASE_Product" Role="BASE_Product" Multiplicity="1" />
+    <End Type="InventoryModel.DUMMY_ReorderStock_Line" Role="DUMMY_ReorderStock_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="DUMMY_ReorderStock_Line">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrder_Line_ProdId">
+    <End Type="InventoryModel.BASE_Product" Role="BASE_Product" Multiplicity="0..1" />
+    <End Type="InventoryModel.PO_PurchaseOrder_Line" Role="PO_PurchaseOrder_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrder_Line">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrderReceive_Line_ProdId">
+    <End Type="InventoryModel.BASE_Product" Role="BASE_Product" Multiplicity="0..1" />
+    <End Type="InventoryModel.PO_PurchaseOrderReceive_Line" Role="PO_PurchaseOrderReceive_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrderReceive_Line">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrderReturn_Line_ProdId">
+    <End Type="InventoryModel.BASE_Product" Role="BASE_Product" Multiplicity="0..1" />
+    <End Type="InventoryModel.PO_PurchaseOrderReturn_Line" Role="PO_PurchaseOrderReturn_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrderReturn_Line">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrderUnstock_Line_ProdId">
+    <End Type="InventoryModel.BASE_Product" Role="BASE_Product" Multiplicity="0..1" />
+    <End Type="InventoryModel.PO_PurchaseOrderUnstock_Line" Role="PO_PurchaseOrderUnstock_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrderUnstock_Line">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrder_Line_ProdId">
+    <End Type="InventoryModel.BASE_Product" Role="BASE_Product" Multiplicity="0..1" />
+    <End Type="InventoryModel.SO_SalesOrder_Line" Role="SO_SalesOrder_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrder_Line">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderPack_Line_ProdId">
+    <End Type="InventoryModel.BASE_Product" Role="BASE_Product" Multiplicity="0..1" />
+    <End Type="InventoryModel.SO_SalesOrderPack_Line" Role="SO_SalesOrderPack_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderPack_Line">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderPick_Line_ProdId">
+    <End Type="InventoryModel.BASE_Product" Role="BASE_Product" Multiplicity="0..1" />
+    <End Type="InventoryModel.SO_SalesOrderPick_Line" Role="SO_SalesOrderPick_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderPick_Line">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderRestock_Line_ProdId">
+    <End Type="InventoryModel.BASE_Product" Role="BASE_Product" Multiplicity="0..1" />
+    <End Type="InventoryModel.SO_SalesOrderRestock_Line" Role="SO_SalesOrderRestock_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderRestock_Line">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderReturn_Line_ProdId">
+    <End Type="InventoryModel.BASE_Product" Role="BASE_Product" Multiplicity="0..1" />
+    <End Type="InventoryModel.SO_SalesOrderReturn_Line" Role="SO_SalesOrderReturn_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Product">
+        <PropertyRef Name="ProdId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderReturn_Line">
+        <PropertyRef Name="ProdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_TaxingScheme_BASE_TaxCode">
+    <End Type="InventoryModel.BASE_TaxCode" Role="BASE_TaxCode" Multiplicity="0..1" />
+    <End Type="InventoryModel.BASE_TaxingScheme" Role="BASE_TaxingScheme" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_TaxCode">
+        <PropertyRef Name="TaxCodeId" />
+      </Principal>
+      <Dependent Role="BASE_TaxingScheme">
+        <PropertyRef Name="DefaultTaxCodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrder_Line_BASE_TaxCode">
+    <End Type="InventoryModel.BASE_TaxCode" Role="BASE_TaxCode" Multiplicity="0..1" />
+    <End Type="InventoryModel.PO_PurchaseOrder_Line" Role="PO_PurchaseOrder_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_TaxCode">
+        <PropertyRef Name="TaxCodeId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrder_Line">
+        <PropertyRef Name="TaxCodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrderReturn_Line_BASE_TaxCode">
+    <End Type="InventoryModel.BASE_TaxCode" Role="BASE_TaxCode" Multiplicity="0..1" />
+    <End Type="InventoryModel.PO_PurchaseOrderReturn_Line" Role="PO_PurchaseOrderReturn_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_TaxCode">
+        <PropertyRef Name="TaxCodeId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrderReturn_Line">
+        <PropertyRef Name="TaxCodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrder_Line_BASE_TaxCode">
+    <End Type="InventoryModel.BASE_TaxCode" Role="BASE_TaxCode" Multiplicity="0..1" />
+    <End Type="InventoryModel.SO_SalesOrder_Line" Role="SO_SalesOrder_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_TaxCode">
+        <PropertyRef Name="TaxCodeId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrder_Line">
+        <PropertyRef Name="TaxCodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderReturn_Line_BASE_TaxCode">
+    <End Type="InventoryModel.BASE_TaxCode" Role="BASE_TaxCode" Multiplicity="0..1" />
+    <End Type="InventoryModel.SO_SalesOrderReturn_Line" Role="SO_SalesOrderReturn_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_TaxCode">
+        <PropertyRef Name="TaxCodeId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderReturn_Line">
+        <PropertyRef Name="TaxCodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrder_OrderTaxCodeId">
+    <End Type="InventoryModel.BASE_TaxingScheme" Role="BASE_TaxingScheme" Multiplicity="0..1" />
+    <End Type="InventoryModel.PO_PurchaseOrder" Role="PO_PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_TaxingScheme">
+        <PropertyRef Name="TaxingSchemeId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrder">
+        <PropertyRef Name="TaxingSchemeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_Vendor_LastModUserId">
+    <End Type="InventoryModel.BASE_User" Role="BASE_User" Multiplicity="0..1" />
+    <End Type="InventoryModel.BASE_Vendor" Role="BASE_Vendor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="BASE_Vendor">
+        <PropertyRef Name="LastModUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrder_LastModUserId">
+    <End Type="InventoryModel.BASE_User" Role="BASE_User" Multiplicity="0..1" />
+    <End Type="InventoryModel.PO_PurchaseOrder" Role="PO_PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrder">
+        <PropertyRef Name="LastModUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblPaymen__vendo__40C49C62">
+    <End Type="InventoryModel.BASE_Vendor" Role="BASE_Vendor" Multiplicity="0..1" />
+    <End Type="InventoryModel.tblPaymentHistory" Role="tblPaymentHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BASE_Vendor">
+        <PropertyRef Name="VendorId" />
+      </Principal>
+      <Dependent Role="tblPaymentHistory">
+        <PropertyRef Name="vendorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BASE_Vendor_CurrencyId">
+    <End Type="InventoryModel.GLOBAL_Currency" Role="GLOBAL_Currency" Multiplicity="0..1" />
+    <End Type="InventoryModel.BASE_Vendor" Role="BASE_Vendor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GLOBAL_Currency">
+        <PropertyRef Name="CurrencyId" />
+      </Principal>
+      <Dependent Role="BASE_Vendor">
+        <PropertyRef Name="CurrencyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrder_CurrencyId">
+    <End Type="InventoryModel.GLOBAL_Currency" Role="GLOBAL_Currency" Multiplicity="0..1" />
+    <End Type="InventoryModel.PO_PurchaseOrder" Role="PO_PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GLOBAL_Currency">
+        <PropertyRef Name="CurrencyId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrder">
+        <PropertyRef Name="CurrencyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrder_Line_PurchaseOrderId">
+    <End Type="InventoryModel.PO_PurchaseOrder" Role="PO_PurchaseOrder" Multiplicity="1" />
+    <End Type="InventoryModel.PO_PurchaseOrder_Line" Role="PO_PurchaseOrder_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PO_PurchaseOrder">
+        <PropertyRef Name="PurchaseOrderId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrder_Line">
+        <PropertyRef Name="PurchaseOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrderReceive_Line_PurchaseOrderId">
+    <End Type="InventoryModel.PO_PurchaseOrder" Role="PO_PurchaseOrder" Multiplicity="1" />
+    <End Type="InventoryModel.PO_PurchaseOrderReceive_Line" Role="PO_PurchaseOrderReceive_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PO_PurchaseOrder">
+        <PropertyRef Name="PurchaseOrderId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrderReceive_Line">
+        <PropertyRef Name="PurchaseOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrderReturn_Line_PurchaseOrderId">
+    <End Type="InventoryModel.PO_PurchaseOrder" Role="PO_PurchaseOrder" Multiplicity="1" />
+    <End Type="InventoryModel.PO_PurchaseOrderReturn_Line" Role="PO_PurchaseOrderReturn_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PO_PurchaseOrder">
+        <PropertyRef Name="PurchaseOrderId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrderReturn_Line">
+        <PropertyRef Name="PurchaseOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PO_PurchaseOrderUnstock_Line_PurchaseOrderId">
+    <End Type="InventoryModel.PO_PurchaseOrder" Role="PO_PurchaseOrder" Multiplicity="1" />
+    <End Type="InventoryModel.PO_PurchaseOrderUnstock_Line" Role="PO_PurchaseOrderUnstock_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PO_PurchaseOrder">
+        <PropertyRef Name="PurchaseOrderId" />
+      </Principal>
+      <Dependent Role="PO_PurchaseOrderUnstock_Line">
+        <PropertyRef Name="PurchaseOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrder_Line_SalesOrderId">
+    <End Type="InventoryModel.SO_SalesOrder" Role="SO_SalesOrder" Multiplicity="1" />
+    <End Type="InventoryModel.SO_SalesOrder_Line" Role="SO_SalesOrder_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SO_SalesOrder">
+        <PropertyRef Name="SalesOrderId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrder_Line">
+        <PropertyRef Name="SalesOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrder_ParentSalesOrderId">
+    <End Type="InventoryModel.SO_SalesOrder" Role="SO_SalesOrder" Multiplicity="0..1" />
+    <End Type="InventoryModel.SO_SalesOrder" Role="SO_SalesOrder1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SO_SalesOrder">
+        <PropertyRef Name="SalesOrderId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrder1">
+        <PropertyRef Name="ParentSalesOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderAttachment_SalesOrderId">
+    <End Type="InventoryModel.SO_SalesOrder" Role="SO_SalesOrder" Multiplicity="1" />
+    <End Type="InventoryModel.SO_SalesOrderAttachment" Role="SO_SalesOrderAttachment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SO_SalesOrder">
+        <PropertyRef Name="SalesOrderId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderAttachment">
+        <PropertyRef Name="SalesOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderPack_Line_SalesOrderId">
+    <End Type="InventoryModel.SO_SalesOrder" Role="SO_SalesOrder" Multiplicity="1" />
+    <End Type="InventoryModel.SO_SalesOrderPack_Line" Role="SO_SalesOrderPack_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SO_SalesOrder">
+        <PropertyRef Name="SalesOrderId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderPack_Line">
+        <PropertyRef Name="SalesOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderPick_Line_SalesOrderId">
+    <End Type="InventoryModel.SO_SalesOrder" Role="SO_SalesOrder" Multiplicity="1" />
+    <End Type="InventoryModel.SO_SalesOrderPick_Line" Role="SO_SalesOrderPick_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SO_SalesOrder">
+        <PropertyRef Name="SalesOrderId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderPick_Line">
+        <PropertyRef Name="SalesOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderRestock_Line_SalesOrderId">
+    <End Type="InventoryModel.SO_SalesOrder" Role="SO_SalesOrder" Multiplicity="1" />
+    <End Type="InventoryModel.SO_SalesOrderRestock_Line" Role="SO_SalesOrderRestock_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SO_SalesOrder">
+        <PropertyRef Name="SalesOrderId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderRestock_Line">
+        <PropertyRef Name="SalesOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderReturn_Line_SalesOrderId">
+    <End Type="InventoryModel.SO_SalesOrder" Role="SO_SalesOrder" Multiplicity="1" />
+    <End Type="InventoryModel.SO_SalesOrderReturn_Line" Role="SO_SalesOrderReturn_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SO_SalesOrder">
+        <PropertyRef Name="SalesOrderId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderReturn_Line">
+        <PropertyRef Name="SalesOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderShip_Line_SalesOrderId">
+    <End Type="InventoryModel.SO_SalesOrder" Role="SO_SalesOrder" Multiplicity="1" />
+    <End Type="InventoryModel.SO_SalesOrderShip_Line" Role="SO_SalesOrderShip_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SO_SalesOrder">
+        <PropertyRef Name="SalesOrderId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderShip_Line">
+        <PropertyRef Name="SalesOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderSticky_SalesOrderId">
+    <End Type="InventoryModel.SO_SalesOrder" Role="SO_SalesOrder" Multiplicity="1" />
+    <End Type="InventoryModel.SO_SalesOrderSticky" Role="SO_SalesOrderSticky" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SO_SalesOrder">
+        <PropertyRef Name="SalesOrderId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderSticky">
+        <PropertyRef Name="SalesOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SO_SalesOrderShipContainer_SalesOrderShipLineId">
+    <End Type="InventoryModel.SO_SalesOrderShip_Line" Role="SO_SalesOrderShip_Line" Multiplicity="0..1" />
+    <End Type="InventoryModel.SO_SalesOrderShipContainer" Role="SO_SalesOrderShipContainer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SO_SalesOrderShip_Line">
+        <PropertyRef Name="SalesOrderShipLineId" />
+      </Principal>
+      <Dependent Role="SO_SalesOrderShipContainer">
+        <PropertyRef Name="SalesOrderShipLineId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

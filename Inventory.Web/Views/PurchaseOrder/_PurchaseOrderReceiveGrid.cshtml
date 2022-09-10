@@ -1,0 +1,143 @@
+﻿@model  Inventory.CommonViewModels.PurchaseOrderVM
+@{
+
+
+}
+
+<div class="portlet box green">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-edit"></i>Order Receive Items
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse">
+            </a>
+            <a href="#portlet-config" data-toggle="modal" class="config">
+            </a>
+            <a href="javascript:;" class="reload">
+            </a>
+            <a href="javascript:;" class="remove">
+            </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="table-toolbar">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="btn-group">
+                        <button id="PurchaseOrderReceive_addNew" class="btn green">
+                            Add New <i class="fa fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="btn-group pull-right">
+                        <button class="btn dropdown-toggle" data-toggle="dropdown">
+                            Tools <i class="fa fa-angle-down"></i>
+                        </button>
+                        <ul class="dropdown-menu pull-right">
+                            <li>
+                                <a href="#">
+                                    Print
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Save as PDF
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Export to Excel
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped table-hover table-bordered" id="purchaseOrderReceiveItemGridTable">
+            <thead>
+                <tr>
+
+
+                    <th>
+                        Item
+                    </th>
+                    <th>
+                        Vendor Product Code
+                    </th>
+                    <th>
+                        Quantity
+                    </th>
+                    <th>
+                        Location
+                    </th>
+                    <th>
+                        Receive Date
+                    </th>
+
+                    <th>
+                        Edit
+                    </th>
+                    <th>
+                        Delete
+                    </th>
+                </tr>
+            </thead>
+            @if (Model.purchaseOrderReciveItem != null)
+            {
+                <tbody>
+                    @foreach (var item in Model.purchaseOrderReciveItem)
+                    {
+                        <tr id="@item.PurchaseOrderReceiveLineId">
+                            @*<td class="center">
+                                    @item.ProdId
+
+                                </td>*@
+                            <td>
+                                <span name="@item.ProdId">@item.productName</span>
+
+                            </td>
+                            <td>
+                                @item.VendorItemCode
+                                 
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Quantity)
+
+
+                            </td>
+
+                            <td>
+                                <label id="@item.LocationId">@item.LocationName</label>
+
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ReceiveDate)
+
+                            </td>
+
+
+                            <td>
+                                <a class="editReceiveOrder" href="">Edit</a>
+
+                            </td>
+                            <td>
+                                <a class="deleteReceiveOrder" href="">Delete</a>
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+            }
+            else
+            {
+                <tbody></tbody>
+            }
+
+        </table>
+    </div>
+</div>

@@ -1,0 +1,96 @@
+﻿@model IEnumerable<Inventory.CommonViewModels.VendorVM>
+
+    @{
+        ViewBag.Title = "Vendor List";
+    }
+    <script src="~/Content/assets/table-managed.js"></script>
+
+    <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-globe"></i>Vendor List
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse">
+                </a>
+                <a href="#portlet-config" data-toggle="modal" class="config">
+                </a>
+                <a href="javascript:;" class="reload">
+                </a>
+                <a href="javascript:;" class="remove">
+                </a>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <table class="table table-striped table-bordered table-hover" id="sample_1">
+                <thead>
+                    <tr>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Contact Name
+                        </th>
+                        <th>
+                            Phone
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Website
+                        </th>
+                        <th>
+                            Address
+                        </th>
+                        <th>
+                            Discount
+                        </th>
+                        <th>
+                            Update
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in (IEnumerable<Inventory.CommonViewModels.VendorVM>)Model)
+                    {
+                        <tr class="odd gradeX">
+                            <td>
+                                @item.Name
+                            </td>
+                            <td>
+                                @item.ContactName
+                            </td>
+                            <td>
+                                @item.Phone
+                            </td>
+                            <td>
+                                @item.Email
+                            </td>
+                            <td>
+                                @item.Website
+                            </td>
+                            <td>
+                                @item.Address1
+                            </td>
+                            <td>
+                                @item.Discount
+                            </td>
+                            <td>
+                                <a href="/Vendor/NewVendorInfo?venderID=@item.VendorId" id="VendorId" class="edit">Edit</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <a href="/Vendor/NewVendorInfo" style="margin-left:380px;">Back to NewVendor</a>
+        </div>
+    </div>
+
+    <!-- END SAMPLE FORM PORTLET-->
+
+    <script>
+        jQuery(document).ready(function () {
+            TableManaged.init();
+        });
+    </script>

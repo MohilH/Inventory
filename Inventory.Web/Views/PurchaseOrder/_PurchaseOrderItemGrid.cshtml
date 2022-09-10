@@ -1,0 +1,363 @@
+﻿@model  Inventory.CommonViewModels.PurchaseOrderVM
+
+@{
+
+
+}
+<style>
+    /*.purchaseReturncheckbox {
+        background: #ea1c1c !important;
+    }*/
+
+    /*div#uniform-reciveCheckbox {
+        background: #2faf0f !important;
+    }*/
+
+    .form-horizontal .radio, .form-horizontal .checkbox, .form-horizontal .radio-inline, .form-horizontal .checkbox-inline {
+        padding-top: 2px;
+    }
+
+    .receivedOrder {
+        background: green !important;
+    }
+
+    .returnedOrder {
+        background: red !important;
+    }
+  
+</style>
+@*<script>
+    function myFunction() {
+        debugger;
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+    }
+</script>*@
+ 
+ 
+<link href="~/Content/CommonCss/PurchaseOrder.css" rel="stylesheet" />
+ 
+ 
+
+<div class="portlet box green">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-edit"></i>Order Items
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse">
+            </a>
+            <a href="#portlet-config" data-toggle="modal" class="config">
+            </a>
+            <a href="javascript:;" class="reload">
+            </a>
+            <a href="javascript:;" class="remove">
+            </a>
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="table-toolbar">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="btn-group">
+                        <button id="purchaseOrderItemNewRow" class="btn green">
+                            Add New <i class="fa fa-plus"></i>
+                        </button>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="btn-group pull-right">
+                        <button class="btn dropdown-toggle" data-toggle="dropdown">
+                            Tools <i class="fa fa-angle-down"></i>
+                        </button>
+                        <ul class="dropdown-menu pull-right">
+                            <li>
+                                <a href="#">
+                                    Print
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Save as PDF
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Export to Excel
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped table-hover table-bordered" id="purchaseOrderItemGridTable">
+            <thead>
+                <tr>
+                    <th>
+
+                    </th>
+
+                    <th>
+                        Item
+                    </th>
+                    <th>
+                        Vendor Product Code
+                    </th>
+
+                    <th>
+                        Quantity
+                    </th>
+                    <th>
+                        Unit Price
+                    </th>
+                    <th>
+                        Discount
+                    </th>
+
+                    <th>
+                        Sub-Total
+                    </th>
+
+
+                    <th>
+                        Edit
+                    </th>
+                    <th>
+                        Delete
+                    </th>
+                </tr>
+            </thead>
+
+            @if (Model.PurchaseOrderItem != null)
+            {
+                <tbody>
+
+
+                    @foreach (var item in Model.PurchaseOrderItem)
+                    {
+
+                        <tr id="@item.PurchaseOrderLineId" >
+                            <td class="receivedOrder">
+                                <label for="reciveCheckbox_@item.PurchaseOrderLineId">
+
+
+                                    <input type="radio" class="purchasecheckbox" data-id="@item.PurchaseOrderLineId" id="reciveCheckbox_@item.PurchaseOrderLineId" value='@item.productName' checked />
+                                </label>
+                                
+                                <div class="popup">
+                                    <div class="popuptext" id="myPopup_@item.PurchaseOrderLineId" style="display:none">
+                                        @if (item.OrderStatus == true)
+                                        {
+                                            <input type="radio" class="purchaseOrdered" data-id="@item.VendorItemCode" data-orderlineid="@item.PurchaseOrderLineId" data-quantityid="@item.Quantity" data-itemid="@item.ProdId" id="Ordered_@item.PurchaseOrderLineId" name="PurchaseOrder_@item.PurchaseOrderLineId" value="Ordered" />
+                                            <label for="Ordered_@item.PurchaseOrderLineId">
+                                                <i>Ordered</i>
+                                            </label>
+                                            <br />
+                                            <input type="radio" class="purchaseOrdered" data-id="@item.VendorItemCode" data-orderlineid="@item.PurchaseOrderLineId" data-quantityid="@item.Quantity" data-itemid="@item.ProdId" id="Received_@item.PurchaseOrderLineId" name="PurchaseOrder_@item.PurchaseOrderLineId" value="Received" checked />
+                                            <label for="Received_@item.PurchaseOrderLineId">
+                                                <i>Received</i>
+                                            </label>
+
+                                        }
+                                        else
+                                        {
+                                            <input type="radio" class="purchaseOrdered" data-id="@item.VendorItemCode" data-orderlineid="@item.PurchaseOrderLineId" data-quantityid="@item.Quantity" data-itemid="@item.ProdId" id="Ordered_@item.PurchaseOrderLineId" name="PurchaseOrder_@item.PurchaseOrderLineId" value="Ordered" checked />
+                                            <label for="Ordered_@item.PurchaseOrderLineId">
+                                                <i>Ordered</i>
+                                            </label>
+                                            <br />
+                                            <input type="radio" class="purchaseOrdered" data-id="@item.VendorItemCode" data-orderlineid="@item.PurchaseOrderLineId" data-quantityid="@item.Quantity" data-itemid="@item.ProdId" id="Received_@item.PurchaseOrderLineId" name="PurchaseOrder_@item.PurchaseOrderLineId" value="Received" />
+                                            <label for="Received_@item.PurchaseOrderLineId">
+                                                <i>Received</i>
+                                            </label>
+
+
+                                        }
+
+
+
+
+
+                                    </div>
+                                </div>
+
+                            </td>
+
+
+
+
+
+                            <td>
+                                <span name="@item.ProdId">@item.productName</span>
+
+                            </td>
+                            <td>
+                                @item.VendorItemCode
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Quantity)
+
+
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UnitPrice)
+
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Discount)
+
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SubTotal, new { Value = String.Format("{0:0.00}", item.SubTotal) })
+
+                            </td>
+
+                            <td>
+                                <a class="edit" href="">Edit</a>
+
+                            </td>
+                            <td>
+                                <a class="delete" href="">Delete</a>
+                            </td>
+
+                        </tr>
+                    }
+
+                    @*@foreach (var item in Model.purchaseOrderReciveItem)
+                    {
+                        <tr id="@item.PurchaseOrderReceiveLineId">
+                                <td>
+
+                                    <div class="popup">
+                                        <input type="checkbox"  data-id="@item.PurchaseOrderReceiveLineId" id="reciveCheckbox_@item.PurchaseOrderReceiveLineId" class="purchasecheckbox" value='@item.productName' />
+
+                                        <div class="popuptext" id="myPopup_@item.PurchaseOrderReceiveLineId">
+                                            <input type="checkbox" name="chk_group" value='@item.productName' />Ordered
+                                            <br />
+                                            <input type="checkbox" name="chk_group" value='@item.productName' />Received
+                                        </div>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <span name="@item.ProdId">@item.productName</span>
+
+                                </td>
+                                <td>
+                                    @item.VendorItemCode
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Quantity)
+
+
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UnitPrice )
+                                    test
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Discount)
+                                    test 2
+                                </td>
+                                <td>
+                                   @Html.DisplayFor(modelItem => item.SubTotal, new { Value = String.Format("{0:0.00}", item.SubTotal) })
+                                    test 3
+                                </td>
+
+                                <td>
+                                    <a class="edit" href="">Edit</a>
+
+                                </td>
+                                <td>
+                                    <a class="delete" href="">Delete</a>
+                                </td>
+
+                            </tr>
+                    }*@
+
+                    @*@foreach (var item in Model.purchaseOrderReturnItem)
+                    {
+
+                        item.SubTotal = item.SubTotal * -1;
+                        <tr id="@item.PurchaseOrderReturnLineId">
+                            <td class="returnedOrder">
+                                <input type="radio" class="purchaseReturncheckbox" id="returnCheckbox_@item.PurchaseOrderReturnLineId" data-id="@item.PurchaseOrderReturnLineId" value='@item.productName' checked />
+
+                                <div class="popup">
+                                    <div class="popuptext" id="returnPopup_@item.PurchaseOrderReturnLineId">
+
+                                        <input type="radio" class="" id="Returned_@item.PurchaseOrderReturnLineId" name="Returned_@item.PurchaseOrderReturnLineId" value="Returned" checked />
+                                        <label for="Returned_@item.PurchaseOrderReturnLineId">
+
+                                            <i>Returned</i>
+                                        </label>
+
+                                        <br />
+                                        <input type="radio" class="" id="Unstocked_@item.PurchaseOrderReturnLineId" name="Returned_@item.PurchaseOrderReturnLineId" value="Unstocked" />
+                                        <label for="Unstocked_@item.PurchaseOrderReturnLineId">
+
+                                            <i>Unstocked</i>
+                                        </label>
+
+
+
+
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span name="@item.ProdId">@item.productName</span>
+
+                            </td>
+                            <td>
+                                @item.VendorItemCode
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Quantity)
+
+
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UnitPrice)
+
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Discount)
+
+                            </td>
+                            <td>
+
+                                @Html.DisplayFor(modelItem => item.SubTotal, new { Value = String.Format("{0:0.00}", item.SubTotal) })
+
+                            </td>
+
+                            <td>
+                                <a class="edit" href="">Edit</a>
+
+                            </td>
+                            <td>
+                                <a class="delete" href="">Delete</a>
+                            </td>
+
+                        </tr>
+
+
+                    }*@
+
+
+
+                </tbody>
+            }
+            else
+            {
+                <tbody></tbody>
+            }
+
+
+        </table>
+    </div>
+</div>
+<script src="~/Scripts/CustomScripts/PurchaseOrder_table-editable.js"></script>
+
