@@ -17,7 +17,7 @@ namespace Inventory.Web.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-
+        //Test changes to git
         public AccountController()
         {
         }
