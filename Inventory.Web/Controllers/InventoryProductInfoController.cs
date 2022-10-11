@@ -24,7 +24,7 @@ namespace Inventory.Web.Controllers
         /// Get the Inventory Information
         /// </summary>
         [HttpGet]
-        public ActionResult AddNewProductInfo()
+        public ActionResult AddNewProductInfo(int? ProdId)
         {
             InventoryVM inventoryModel = new InventoryVM();
             string urlGetAllCategory = APIURI + "InventoryProductInfo/getAllCategory";
